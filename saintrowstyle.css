@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{                    /* Background image + position */
+    background-image: url(img/srbg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}             
+.sr2 ul{                    /* Saint Row Text and border */
+    border-top: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    border-right: 3px solid rgb(255, 0, 0);
+    margin-top: 210px;
+    background-color: rgb(66, 66, 66);
+}
+.sr3 ul{
+    border-top: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    border-right: 3px solid rgb(255, 0, 0);
+    background-color: rgb(66, 66, 66);
+}
+.sr4 ul{
+    border-top: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    border-right: 3px solid rgb(255, 0, 0);
+    background-color: rgb(66, 66, 66);
+}
+.sr5 ul{
+    border-top: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    border-right: 3px solid rgb(255, 0, 0);
+    background-color: rgb(66, 66, 66);
+}
+.sr6 ul{
+    border-top: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    border-right: 3px solid rgb(255, 0, 0);
+    background-color: rgb(66, 66, 66);
+}
+.sr ul{
+    border-top: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    border-right: 3px solid rgb(255, 0, 0);
+    background-color: rgb(66, 66, 66);
+}
+.sr2 ul li a{                    /* Remove Underline From Different Saint Rows  */
+    text-decoration: none;
+}
+.sr3 ul li a{
+    text-decoration: none;
+}
+.sr4 ul li a{
+    text-decoration: none;
+}
+.sr5 ul li a{
+    text-decoration: none;
+}
+.sr6 ul li a{
+    text-decoration: none;
+}
+.sr ul li a{
+    text-decoration: none;
+} 
+.sr2content{                    /* border top 2 bottom, text color, bg color */
+    border-right: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    color: #fff;
+    background-color: rgb(66, 66, 66);
+}
+.sr3content{
+    border-right: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    color: #fff;
+    background-color: rgb(66, 66, 66);
+}
+.sr4content{
+    border-right: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    color: #fff;
+    background-color: rgb(66, 66, 66);
+}
+.sr5content{
+    border-right: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    color: #fff;
+    background-color: rgb(66, 66, 66);
+}
+.sr6content{
+    border-right: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    color: #fff;
+    background-color: rgb(66, 66, 66);
+}
+.srcontent{
+    border-right: 3px solid rgb(255, 0, 0);
+    border-left: 3px solid rgb(255, 0, 0);
+    border-bottom: 3px solid rgb(255, 0, 0);
+    color: #fff;
+    background-color: rgb(66, 66, 66);
+}
+.sr2 h1, .sr3 h1, .sr4 h1, .sr5 h1, .sr6 h1, .sr h1{                    /* Saint Row Text Color */
+    color: #900c90;
+}
+

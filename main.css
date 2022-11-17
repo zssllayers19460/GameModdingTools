@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{        /* Main Page */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url(img/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+.navbar{      /* navbar */
+    display: flex;
+}
+.logo ul li a{    /* logo stuff */
+    color: rgb(0, 255, 13);
+    text-decoration: none;
+    font-size: 28px;
+    font-family: Arial;
+    max-width: 100px;
+    float: right;
+    padding: 5px 10px;   
+}
+
+form{
+    background-color: #1c4bf4;
+    width: 250px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: auto;
+    padding-right: 5px;
+}
+input{
+    all: unset;
+    font: 16px system-ui;
+    color: #fff;
+    height: 100%;
+    width: 75%;
+    transition: 0.3s;
+    padding-left: 8px;
+}
+input:hover{
+    background-color: rgb(79, 162, 79);
+    border-radius: 9px;
+}
+::placeholder{
+    color: rgb(255, 255, 255);
+    opacity: 0.5; 
+}
+.searchbtn{
+    background-color: #1c4bf4;
+    color: #f2f2f2;
+    float: none;
+    padding: 5px;
+    margin-right: auto;
+    font-size: 14px;
+    height: 100%;
+    width: auto;
+    border: none;
+    cursor: pointer;
+    transition: 0.7s;
+}
+.searchbtn:hover{
+    background-color: rgb(255, 0, 0);
+    border-radius: 9px;
+}
+.content{    /* top info box */
+    max-width: 300px;
+    border: 2px solid rgb(0, 0, 0);
+    color: #fff;
+    background-color: rgb(66, 66, 66);
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: 5px;
+}
+.content2{      /* bottom info box */
+    width: 300px;
+    margin-top: 10px;
+    margin-left: auto;
+    border: 2px solid rgb(0, 0, 0);
+    color: #fff;
+    border-radius: 5px;
+    background-color: rgb(66, 66, 66);
+    margin-right: 5px;
+}
+.dropmenu{   /* dropdown/navbar alignment ect */
+    background-color: transparent;
+    margin-left: auto;
+}
+.dropmenu ul{
+    display: inline-flex;
+    list-style: none;
+    color: rgb(0, 0, 0);
+}
+.dropmenu ul li{   /* dropdown menu box size */
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+}
+.dropmenu ul li a{ /* dropdown and menu text color */
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    min-width: auto;
+    transition:  0.5s;
+}
+.dropmenu ul li:hover{    /* dropdown menu box */
+    background-color: transparent;
+    border-radius: 25px;  /*roundness of the boxes border*/
+    padding: 5px;
+}
+.dropmenu ul li a:hover{   /* navigation bar hover color */
+    color: rgb(0, 255, 34);
+    text-decoration: underline;
+}
+.cod-sub-menu{ /* Cod dropdown menu items */
+    display: none;
+}
+.dropmenu ul li:hover .cod-sub-menu{    /* cod dropdown menu box */
+    display: block;
+    position: absolute;
+    background-color: rgb(54, 54, 54);
+    margin-top: 10px;
+    margin-left: -9px;
+    border-radius: 20px;
+    border-bottom: 1.5px solid rgb(255, 0, 0);
+    border-left: 1.5px solid rgb(255, 0, 0);
+    border-right: 1.5px solid rgb(255, 0, 0);
+    border-top: 1.5px solid rgb(255, 0, 0);
+}
+.dropmenu ul li:hover .cod-sub-menu ul{
+    display: block;
+    margin: 10px;
+}
+.dropmenu ul li:hover .cod-sub-menu ul li{    /* cod dropdown menu */
+    width: 150px;
+    padding: 5px;
+    border-bottom: 1px solid rgb(255, 0, 0);
+    background: transparent;
+    border-radius: 0px;
+    text-align: left;
+}
+.dropmenu ul li:hover .cod-sub-menu ul li:last-child{
+    border-bottom: none;
+}
+.dropmenu ul li:hover .cod-sub-menu ul li a:hover{
+    color: rgb(236,111,0);
+}
+.gta-sub-menu{
+    display: none;
+}
+.dropmenu ul li:hover .gta-sub-menu{    /* gta dropdown menu box */
+    display: block;
+    position: absolute;
+    background-color: rgb(54, 54, 54);
+    margin-top: 10px;
+    margin-left: -9px;
+    border-radius: 10px;
+    border-bottom: 1.5px solid rgb(255, 0, 0);
+    border-left: 1.5px solid rgb(255, 0, 0);
+    border-right: 1.5px solid rgb(255, 0, 0);
+    border-top: 1.5px solid rgb(255, 0, 0);
+}
+.dropmenu ul li:hover .gta-sub-menu ul{
+    display: block;
+    margin: 10px;
+}
+.dropmenu ul li:hover .gta-sub-menu ul li{        /* gta dropdown menu */
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(255, 0, 0);
+    background: transparent;
+    border-radius: 0px;
+    text-align: left;
+}
+.dropmenu ul li:hover .gta-sub-menu ul li:last-child{
+    border-bottom: none;
+}
+.dropmenu ul li:hover .gta-sub-menu ul li a:hover{
+    color: rgb(46, 153, 0);
+}
+.sr-sub-menu{
+    display: none;
+}
+.dropmenu ul li:hover .sr-sub-menu{
+    display: block;
+    position: absolute;
+    background-color: rgb(54, 54, 54);
+    margin-top: 10px;
+    margin-left: -9px;
+    border-radius: 20px;
+    border-bottom: 1.5px solid rgb(255, 0, 0);
+    border-left: 1.5px solid rgb(255, 0, 0);
+    border-right: 1.5px solid rgb(255, 0, 0);
+    border-top: 1.5px solid rgb(255, 0, 0);
+}
+.dropmenu ul li:hover .sr-sub-menu ul{
+    display: block;
+    margin: 10px;
+}
+.dropmenu ul li:hover .sr-sub-menu ul li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(255, 1, 1);
+    background: transparent;
+    border-radius: 0px;
+    text-align: left;
+}
+.dropmenu ul li:hover .sr-sub-menu ul li:last-child{
+    border-bottom: none;
+}
+.dropmenu ul li:hover .sr-sub-menu ul li a:hover{
+    color: #9300c5;
+}
+.loadmore{
+    position: absolute;
+    left: auto;
+    width: auto;
+    top: 50px;
+    flex-wrap: wrap;
+    background-color: rgb(54, 54, 54);
+    border-radius: 20px;
+}
+.dropmenu li:hover .loadmore{
+    left: 192px;
+    border-bottom: 1.5px solid rgb(255, 0, 0);
+    border-left: 1.5px solid rgb(255, 0, 0);
+    border-right: 1.5px solid rgb(255, 0, 0);
+    border-top: 1.5px solid rgb(255, 0, 0);
+}
+
+            /* Quick Link Links */
+
+.link{    /* google quick link */
+    width: auto;
+    height: auto;
+    margin-left: 30px;
+    margin-top: 11%;
+}
+.link2{     /* Saints Row Mods Link */
+    width: auto;
+    height: auto;
+    margin-left: 30px;
+    margin-top: 1%;
+}
+.link3{       /* Grand Theft Auto Mods Wiki Link */
+    width: auto;
+    height: auto;
+    margin-left: 30px;
+    margin-top: 1%;
+}
+         
+
+
+
+
+
+
+
+
+

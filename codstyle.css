@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{                    /* Background image + position */
+    background-image: url(img/codbg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h1{
+    position: relative;
+	top: 150px;
+	color: white;
+}

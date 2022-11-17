@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{                    /* Background image + position */
+    background-image: url(img/gtabg.png);
+	background-repeat: no-repeat;
+	background-size: unset;
+	background-size: contain;
+    background-size: cover;
+	font-family: monospace;
+}
+.gta5{                    /* Text Positioning */
+    position: relative;
+    top: 30px;
+    left: 150px;
+    height: 80px;
+    width: 400px;
+    text-align: center;
+}
+.gta4{
+    position: relative;
+    bottom: 50px;
+    left: 480px;
+    height: 80px;
+    width: 400px;
+    text-align: center;
+}
+.gtasa{
+    position: relative;
+    bottom: 130px;
+    left: 830px;
+    height: 80px;
+    width: 500px;
+    text-align: center;
+}
+.gtavc{
+    position: relative;
+    bottom: 110px;
+    left: 580px;
+    height: 80px;
+    width: 500px;
+    text-align: center;
+}
+.gta5 ul, .gta4 ul, .gtasa ul, .gtavc ul{             /* removes bulletpoint(s) */
+    list-style: none
+}
+.gta5 ul li a, .gta4 ul li a, .gtasa ul li a, .gtavc ul li a{     /* removes underline(s) */
+    text-decoration: none;
+}
+.gta5 ul li a, .gta4 ul li a, .gtasa ul li a, .gtavc ul li a{       /* Hover Transition effect */
+    transition: 0.5s;
+}
+.gta5 ul li a:hover, .gta4 ul li a:hover, .gtasa ul li a:hover, .gtavc ul li a:hover{    /* Hover Effect color */
+    color: rgb(255, 0, 0);
+}
+.gta5 ul li a, .gta4 ul li a, .gtasa ul li a, .gtavc ul li a{         /* Text color */
+    color: rgb(0, 255, 13);
+}
+.type{
+    position: relative;
+    top: 500px;
+}
+.awc a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    list-style: square;
+    position: relative;
+    left: 290px;
+    top: 300px;
+}
+span{
+    color: red;
+    font-size: 20px;
+    position: relative;
+    left: 800px;
+    top: 300px;
+}

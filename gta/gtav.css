@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{								/* background image + html body */
+	background-image: url("img/gta5bg.png");
+	background-repeat: no-repeat;   
+	background-size: unset;
+	background-size: contain;
+    background-size: cover;
+}
+h1{								/* Top of page Title Text */
+	position: absolute;
+	left: 10%;
+	top: 5%;
+}
+p{								/*  text below title  */
+	position: absolute;
+	left: 10%;
+	top: 15%;
+}
+/*tr{							/*  Table config  but idk doesnt seem to be anything
+	display: table-row;
+}*/
+table{
+	width: 100%;					/*  table  */
+	background-color: #4a8d10;
+	position: absolute;
+	top: 90%;
+}
+a{								/* Table Links */
+	text-decoration: none;
+	color: white;
+}
+.title{							/* table title */
+	position: relative;
+	left: 44%;
+	border: none;
+	padding: .5em .5em .5em .5em;
+}
+img{							/* GTA logo in the table */
+	position: absolute;
+	left: 42%;
+	top: 91.5%;
+}
+.image{							/* GTA Disc Cover */
+	position: absolute;
+	left: 81%;
+	top: 5%;
+}								/* Quick Links */
+.rockstarwebsite{
+	position: absolute;
+	left: 10%;
+	top: 30%;
+}
+.gta5modsdotcom{
+	position: absolute;
+	left: 10%;
+	top: 33%;
+}
+.gta5dotnet{
+	position: absolute;
+	left: 10%;
+	top: 36%;
+}
+.gtaforums{
+	position: absolute;
+	left: 10%;
+	top: 39%;
+}                            /* Color For quick links  */
+.rockstarwebsite a, .gta5modsdotcom a, .gta5dotnet a, .gtaforums a{
+	color: purple;
+}
