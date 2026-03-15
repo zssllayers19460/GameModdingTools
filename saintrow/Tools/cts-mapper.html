@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saints Row 2 CTS Mapper - Map Editing Guide</title>
+    <link rel="stylesheet" href="../sr2.css">
+    <link rel="stylesheet" href="tool.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="../index.html" class="navbar-brand">SR MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../index.html">Games</a>
+                <span>/</span>
+                <a href="../sr2.html">Saints Row 2</a>
+                <span>/</span>
+                <span>CTS Mapper</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Saints Row 2 CTS Mapper Tool</h1>
+            <p>Map viewing and location editing for world customization</p>
+            <div class="header-badges">
+                <span class="badge">Map Editing</span>
+                <span class="badge">World Customization</span>
+                <span class="badge">v2.01</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- OVERVIEW SECTION -->
+        <section class="content-section">
+            <h2>What is CTS Mapper?</h2>
+            <div class="section-content">
+                <p>CTS Mapper is a specialized tool for viewing and editing Saints Row 2's world map. CTS stands for "Common Terrain Streamer" - it's the system Saints Row 2 uses to manage the game world, locations, spawn points, mission markers, and other world entities.</p>
+                
+                <p>The CTS Mapper gives you a bird's-eye view of Stilwater (the game's city) and allows you to:</p>
+                <ul class="asset-list" style="margin: 15px 0;">
+                    <li>View the complete game map with all buildings and streets</li>
+                    <li>Edit spawn locations for custom missions</li>
+                    <li>Place and modify mission markers and objectives</li>
+                    <li>Adjust trigger zones and world properties</li>
+                    <li>Create custom world modifications</li>
+                </ul>
+
+                <div class="info-box info-blue">
+                    <h4>Core Function</h4>
+                    <p>View 2D map of Stilwater → Locate mission spawn points and markers → Edit positions and properties → Create custom world layouts and mission starts</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- KEY FEATURES -->
+        <section class="content-section">
+            <h2>Key Features & Capabilities</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Map Visualization</h3>
+                    <p>Get a complete 2D overhead view of Stilwater showing all terrain, buildings, streets, and landmarks.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Location Viewing</h3>
+                    <p>Identify exact coordinates of important locations, spawn points, and mission markers on the map.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Spawn Point Editing</h3>
+                    <p>Move and modify player spawn locations for custom missions, cheats, or gameplay modifications.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Marker Placement</h3>
+                    <p>Add, move, or remove mission markers, activity locations, and point-of-interest indicators.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Coordinate System</h3>
+                    <p>Use precise X/Y/Z coordinates to place objects exactly where you want them in the world.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Trigger Zone Editing</h3>
+                    <p>Create or modify invisible trigger zones that activate missions, events, or special gameplay moments.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAP ELEMENTS GUIDE -->
+        <section class="content-section">
+            <h2>Understanding Stilwater's Map Elements</h2>
+            <div class="map-elements-grid">
+                <div class="map-element">
+                    <h3>Mission Spawns</h3>
+                    <p>Locations where the player starts a mission. These are crucial reference points for custom mission creation.</p>
+                    <span class="element-tag">Critical</span>
+                </div>
+                <div class="map-element">
+                    <h3>Objective Markers</h3>
+                    <p>Waypoints and target locations that guide players through missions and activities.</p>
+                    <span class="element-tag">Important</span>
+                </div>
+                <div class="map-element">
+                    <h3>Safe Houses</h3>
+                    <p>Player home locations and gang hideouts. Edit these to create new safe zones or modify existing ones.</p>
+                    <span class="element-tag">Key Locations</span>
+                </div>
+                <div class="map-element">
+                    <h3>Activity Locations</h3>
+                    <p>Places where optional activities (side missions, mini-games) occur throughout Stilwater.</p>
+                    <span class="element-tag">Gameplay</span>
+                </div>
+                <div class="map-element">
+                    <h3>Trigger Zones</h3>
+                    <p>Invisible boundaries that trigger events when the player enters. Essential for scripted moments.</p>
+                    <span class="element-tag">Advanced</span>
+                </div>
+                <div class="map-element">
+                    <h3>Enemy Spawn Points</h3>
+                    <p>Locations where enemies appear during combat. Modify for custom battle scenarios.</p>
+                    <span class="element-tag">Combat</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPLETE WORKFLOW -->
+        <section class="content-section workflow-section">
+            <h2>CTS Mapper Workflow</h2>
+            <p>Here's how to use CTS Mapper to create and modify world locations:</p>
+
+            <div class="workflow-steps">
+                <!-- STEP 1 -->
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Extract Game Files</h3>
+                        <p>Use ThomasJepp Saints Row Tools to extract the game's VPP_PC files. You need to access the CTS data files to edit them with CTS Mapper.</p>
+                    </div>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Launch CTS Mapper</h3>
+                        <p>Open the CTS Mapper application. It will present you with options to load map data from your extracted game files.</p>
+                        <div class="info-box info-yellow">
+                            <p><strong>Tip:</strong> Make sure your extracted files are from a clean, unmodified copy of Saints Row 2.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Load the Stilwater Map</h3>
+                        <p>Load the CTS map data for Stilwater. The tool will display a 2D overhead view of the entire game world.</p>
+                        <div class="info-box info-blue">
+                            <p><strong>Understanding the View:</strong> The map shows the entire city from above. Darker areas are streets/water, lighter areas are buildings and terrain.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Locate Spawn Points & Markers</h3>
+                        <p>Use the tool to find mission spawn points, objective markers, and other important locations. The tool shows these as icons or highlights on the map.</p>
+                        <ul class="asset-list">
+                            <li>Red dots = Mission spawns</li>
+                            <li>Yellow flags = Objective markers</li>
+                            <li>Green circles = Safe houses</li>
+                            <li>Blue squares = Activity locations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- STEP 5 -->
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Select Location to Edit</h3>
+                        <p>Click on a marker, spawn point, or location you want to edit. The tool will show you its current properties including coordinates, rotation, and type.</p>
+                        <div class="code-block">
+                            <code>X: 150.5 | Y: 200.3 | Z: 15.0 | Rotation: 45°</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 6 -->
+                <div class="workflow-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Modify Location Properties</h3>
+                        <p>Edit the location's properties in the properties panel. You can change:</p>
+                        <ul class="asset-list">
+                            <li><strong>Position (X, Y, Z):</strong> Move the location to a new spot</li>
+                            <li><strong>Rotation:</strong> Change facing direction</li>
+                            <li><strong>Type:</strong> Change what kind of location it is</li>
+                            <li><strong>Name:</strong> Give it a custom label</li>
+                            <li><strong>Linked Events:</strong> Attach mission triggers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- STEP 7 -->
+                <div class="workflow-step">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h3>Create New Locations (Optional)</h3>
+                        <p>Add entirely new markers, spawn points, or zones to create custom mission locations. Right-click on the map and select "Add Location".</p>
+                        <div class="info-box info-green">
+                            <p><strong>Pro Tip:</strong> Place locations on streets or open areas, not inside buildings, to avoid clipping issues.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 8 -->
+                <div class="workflow-step">
+                    <div class="step-number">8</div>
+                    <div class="step-content">
+                        <h3>Save Your Changes</h3>
+                        <p>Save the modified CTS data back to your working directory. CTS Mapper will export the modified map file.</p>
+                    </div>
+                </div>
+
+                <!-- STEP 9 -->
+                <div class="workflow-step">
+                    <div class="step-number">9</div>
+                    <div class="step-content">
+                        <h3>Repack and Test</h3>
+                        <p>Use ThomasJepp Tools to repack your modified CTS data back into the game's VPP_PC files. Launch the game to test your map changes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMON USE CASES -->
+        <section class="content-section">
+            <h2>Common Uses for CTS Mapper</h2>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <h3>Custom Mission Spawn Points</h3>
+                    <p>Create custom mission locations by moving or creating new spawn points anywhere in Stilwater. Perfect for fan-created missions and scenarios.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Safe House Relocation</h3>
+                    <p>Move player safe houses and gang hideouts to different neighborhoods. Create a completely different territory control system.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Activity Repositioning</h3>
+                    <p>Move existing side missions, mini-games, and activities to new locations for a fresh gameplay experience.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Custom Trigger Zones</h3>
+                    <p>Create invisible boundaries that trigger scripted events, cutscenes, or gameplay moments when the player enters.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Enemy Spawn Customization</h3>
+                    <p>Modify where enemies appear during combat situations. Create new ambush locations or danger zones.</p>
+                </div>
+                <div class="use-case">
+                    <h3>World Redesign</h3>
+                    <p>Completely restructure Stilwater's mission and activity layout for total conversion mods.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL GUIDE -->
+        <section class="content-section">
+            <h2>Understanding Coordinates & Properties</h2>
+            <div class="section-content">
+                <p>CTS Mapper uses a 3D coordinate system to place objects in Stilwater. Understanding this is crucial for accurate placement:</p>
+                
+                <div class="coords-explanation">
+                    <div class="coord-axis">
+                        <h3>X-Axis (Horizontal)</h3>
+                        <p>Left-to-right on the map. Negative values = west side, Positive values = east side of Stilwater.</p>
+                    </div>
+                    <div class="coord-axis">
+                        <h3>Y-Axis (Depth)</h3>
+                        <p>Front-to-back on the map. Negative values = south, Positive values = north of the city.</p>
+                    </div>
+                    <div class="coord-axis">
+                        <h3>Z-Axis (Vertical)</h3>
+                        <p>Height above ground. Typically 0-100+. Higher values = higher elevation (rooftops, elevated areas).</p>
+                    </div>
+                </div>
+
+                <div class="info-box info-blue" style="margin-top: 20px;">
+                    <h4>Rotation Values</h4>
+                    <p>0° = Facing East | 90° = Facing South | 180° = Facing West | 270° = Facing North. Use these to control which direction spawns or markers face.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIPS & BEST PRACTICES -->
+        <section class="content-section">
+            <h2>Tips & Best Practices</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>Study the Map First</h3>
+                    <p>Spend time exploring the existing locations before making changes. Understand the layout and how locations relate to each other.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Use Landmarks</h3>
+                    <p>Reference major landmarks (bridges, water, district boundaries) when placing new locations to maintain logical world design.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Avoid Clipping</h3>
+                    <p>Don't place spawn points or markers inside buildings or underwater. Test in-game to verify good placement.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Backup Before Changes</h3>
+                    <p>Always backup your original CTS files before making extensive edits. Easy to revert if something breaks.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Test Incrementally</h3>
+                    <p>Test each location change in-game before making more edits. Easier to identify which change caused problems.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Document Coordinates</h3>
+                    <p>Keep notes of important coordinates you create. Useful for reference and sharing with other modders.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Respect District Boundaries</h3>
+                    <p>Saint's Row 2 has distinct districts. Maintain logical placement within appropriate neighborhoods.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Check Z-Axis Carefully</h3>
+                    <p>Height placement is crucial. Too low = underground, too high = floating in air. Match surrounding terrain.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TROUBLESHOOTING -->
+        <section class="content-section">
+            <h2>Common Issues & Solutions</h2>
+            <div class="troubleshoot-list">
+                <div class="troubleshoot-item">
+                    <h3>Spawn Points Don't Appear in Game</h3>
+                    <p><strong>Cause:</strong> CTS data not properly repacked or incorrect file location.</p>
+                    <p><strong>Solution:</strong> Verify CTS files are in correct folder structure. Re-repack with ThomasJepp Tools.</p>
+                </div>
+                <div class="troubleshoot-item">
+                    <h3>Player Spawns Underground or in Building</h3>
+                    <p><strong>Cause:</strong> Z-axis (height) value is too low or location is inside a building.</p>
+                    <p><strong>Solution:</strong> Increase Z value or move spawn point to open street. Test different coordinates.</p>
+                </div>
+                <div class="troubleshoot-item">
+                    <h3>Mission Won't Start at Custom Location</h3>
+                    <p><strong>Cause:</strong> Spawn point not properly linked to mission in XTBL or script files.</p>
+                    <p><strong>Solution:</strong> Check mission data files. May need to edit additional files beyond CTS data.</p>
+                </div>
+                <div class="troubleshoot-item">
+                    <h3>CTS Mapper Won't Load Map Data</h3>
+                    <p><strong>Cause:</strong> Extracted files are corrupted or in wrong location.</p>
+                    <p><strong>Solution:</strong> Re-extract fresh game files. Verify correct game version compatibility.</p>
+                </div>
+                <div class="troubleshoot-item">
+                    <h3>Markers Disappear After Repacking</h3>
+                    <p><strong>Cause:</strong> CTS data saved in incompatible format or incorrect version.</p>
+                    <p><strong>Solution:</strong> Check CTS Mapper export format settings. Ensure you're using correct file format.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GETTING STARTED -->
+        <section class="content-section getting-started-section">
+            <h2>Getting Started with CTS Mapper</h2>
+            <p>Ready to customize Stilwater's map? Here's what you need:</p>
+            
+            <div class="getting-started-box">
+                <div class="gs-step-1">
+                    <h3>Prerequisites</h3>
+                    <div class="gs-details">
+                        <div class="gs-detail-item">
+                            <span class="gs-icon">🗺️</span>
+                            <div>
+                                <strong>ThomasJepp Tools</strong>
+                                <p>Extract CTS map data first</p>
+                            </div>
+                        </div>
+                        <div class="gs-detail-item">
+                            <span class="gs-icon">📋</span>
+                            <div>
+                                <strong>Map Knowledge</strong>
+                                <p>Familiar with Stilwater layout</p>
+                            </div>
+                        </div>
+                        <div class="gs-detail-item">
+                            <span class="gs-icon">📐</span>
+                            <div>
+                                <strong>Coordinates</strong>
+                                <p>Plan your spawn/marker locations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gs-download-container">
+                    <div class="gs-download-inner">
+                        <h4>CTS Mapper v2.01</h4>
+                        <p class="gs-version">Map Viewer & Location Editor</p>
+                        <p class="gs-description">View the Stilwater map and edit mission spawn points, markers, and location properties for custom world modifications.</p>
+                        
+                        <div class="gs-specs">
+                            <div class="gs-spec">
+                                <span class="gs-spec-label">Size</span>
+                                <span class="gs-spec-value">1-3MB</span>
+                            </div>
+                            <div class="gs-spec">
+                                <span class="gs-spec-label">Format</span>
+                                <span class="gs-spec-value">ZIP Archive</span>
+                            </div>
+                            <div class="gs-spec">
+                                <span class="gs-spec-label">Platform</span>
+                                <span class="gs-spec-value">Windows</span>
+                            </div>
+                        </div>
+
+                        <a href="https://www.saintsrowmods.com/forum/attachments/sr2ctsmapper2-01-zip.25577" class="gs-download-btn">Download Now</a>
+                        
+                        <p class="gs-help-text">Study the map guide above before making major modifications!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-start-guide">
+                <h3>Quick Map Editing Workflow</h3>
+                <div class="quick-start-cards">
+                    <div class="qs-card">
+                        <div class="qs-number">1</div>
+                        <h4>Extract</h4>
+                        <p>Use ThomasJepp to get CTS files</p>
+                    </div>
+                    <div class="qs-card">
+                        <div class="qs-number">2</div>
+                        <h4>Open Mapper</h4>
+                        <p>Launch CTS Mapper application</p>
+                    </div>
+                    <div class="qs-card">
+                        <div class="qs-number">3</div>
+                        <h4>Load Map</h4>
+                        <p>Load Stilwater CTS data</p>
+                    </div>
+                    <div class="qs-card">
+                        <div class="qs-number">4</div>
+                        <h4>Explore</h4>
+                        <p>Find spawn points & markers</p>
+                    </div>
+                    <div class="qs-card">
+                        <div class="qs-number">5</div>
+                        <h4>Edit</h4>
+                        <p>Move/create new locations</p>
+                    </div>
+                    <div class="qs-card">
+                        <div class="qs-number">6</div>
+                        <h4>Test</h4>
+                        <p>Repack and test in-game</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEXT STEPS -->
+        <section class="content-section">
+            <h2>Complementary Tools & Resources</h2>
+            <p>CTS Mapper works best with other modding tools:</p>
+            <div class="next-tools-grid">
+                <div class="next-tool">
+                    <h3><a href="thomasjepp-tools.html">ThomasJepp Tools</a></h3>
+                    <p>Extract CTS data before editing with mapper.</p>
+                </div>
+                <div class="next-tool">
+                    <h3>XTBL Editor</h3>
+                    <p>Edit mission data to link with custom spawn locations.</p>
+                </div>
+                <div class="next-tool">
+                    <h3>LUA Script Editor</h3>
+                    <p>Create custom mission logic that uses your new spawn points.</p>
+                </div>
+                <div class="next-tool">
+                    <h3><a href="../sr2.html">Other SR2 Tools</a></h3>
+                    <p>Combine with texture, model, and audio tools for complete world overhauls.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>CTS Mapper v2.01 is maintained by the Saints Row modding community. For more resources, visit <a href="https://www.saintsrowmods.com" target="_blank">Saints Row Mods</a></p>
+    </footer>
+</body>
+</html>
