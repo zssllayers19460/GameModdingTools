@@ -1,18 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saint Row 2022 Page</title>
-    <link rel="stylesheet" href="sr.css" type="text/css">
+    <title>Saints Row (Original) Modding Tools</title>
+    <link rel="stylesheet" href="saintrow.css">
 </head>
+
 <body>
-    <div class="list1">
-        <h1><a href="https://www.saintsrowmods.com/forum/attachments/srrtextureutilities0-1-zip.33056/">Saints Row Reboot Texture Unpacker</a></h1>
-        <p><h3>This is a modified version of scanti's texture tool to work with .cvbm_pc and gvbm_pc textures extracted from the Saints Row Reboot</p></h3>
-    </div>
-    <div class="list2">
-        <h1><a href="https://www.saintsrowmods.com/forum/attachments/srreboottools0-2-0-zip.33259/">Saints Row Reboot Extraction Tool</a></h1>
-        <p><h3>This tool extracts all the files in the vpp_pc in a specified folder and extracts all the str2_pc files inside those</p></h3>
-    </div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a>
+                <span>/</span>
+                <a href="../saintrow.html">Saints Row</a>
+                <span>/</span>
+                <span>Original (2006)</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <section class="page-header">
+            <h1 class="page-title">Saints Row</h1>
+            <p class="page-subtitle">Modding tools for the original Saints Row game from 2006</p>
+        </section>
+
+        <!-- CATEGORY FILTER SECTION -->
+        <section class="filter-section">
+            <h3>Filter Tools by Type</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Tools</button>
+                <button class="filter-btn" data-filter="audio">🎵 Audio</button>
+                <button class="filter-btn" data-filter="texture">🎨 Textures</button>
+                <button class="filter-btn" data-filter="model">📦 Models</button>
+                <button class="filter-btn" data-filter="script">📜 Scripts</button>
+                <button class="filter-btn" data-filter="vehicle">🚗 Vehicles</button>
+                <button class="filter-btn" data-filter="utility">🛠️ Utilities</button>
+                <button class="filter-btn" data-filter="performance">⚡ Performance</button>
+                <button class="filter-btn" data-filter="overhaul">⭐ Overhaul</button>
+            </div>
+        </section>
+
+        <div class="tools-grid">
+            <!-- TOOL 1: TEXTURE UNPACKER -->
+            <section class="tool-card">
+                <div class="tool-header">
+                    <h2 class="tool-title">
+                        <a href="#">Texture Unpacker</a>
+                    </h2>
+                    <span class="tool-badge">Essential</span>
+                </div>
+                <div class="tool-content">
+                    <p class="tool-description">The primary tool for Saints Row modding. This texture unpacker allows
+                        you to extract and edit texture files from the original Saints Row.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">Texture Extraction</span>
+                        <span class="spec-tag">DDS Format</span>
+                        <span class="spec-tag">Batch Unpacking</span>
+                    </div>
+                    <p class="tool-details"><strong>Best For:</strong> Character skins, weapon textures, environment
+                        textures, UI modifications</p>
+                </div>
+                <div class="tool-footer">
+                    <span class="tool-info">Original SR modding</span>
+                    <a href="#" class="download-btn">Download</a>
+                </div>
+            </section>
+
+            <!-- TOOL 2: ARCHIVE EXTRACTOR -->
+            <section class="tool-card">
+                <div class="tool-header">
+                    <h2 class="tool-title">
+                        <a href="#">Saints Row Archive Extractor</a>
+                    </h2>
+                    <span class="tool-badge">Utility</span>
+                </div>
+                <div class="tool-content">
+                    <p class="tool-description">Extract game archives and access raw game files. This tool opens Saints
+                        Row's packed game data for deeper exploration and modification.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">Archive Extraction</span>
+                        <span class="spec-tag">File Access</span>
+                        <span class="spec-tag">Game Assets</span>
+                    </div>
+                    <p class="tool-details"><strong>Best For:</strong> Advanced modding, file exploration, custom asset
+                        integration</p>
+                </div>
+                <div class="tool-footer">
+                    <span class="tool-info">Asset exploration</span>
+                    <a href="#" class="download-btn">Download</a>
+                </div>
+            </section>
+        </div>
+
+        <!-- INFO SECTION -->
+        <section class="info-section">
+            <h3>About Original Saints Row Modding</h3>
+            <p>The original Saints Row (2006) has a smaller but dedicated modding community compared to later titles.
+                Most modding focuses on texture modifications and simple model swaps. The game's engine and file
+                structure are simpler than later games, making it a good starting point for beginners interested in
+                Saints Row modding.</p>
+            <p><strong>Note:</strong> The original game was released on Xbox 360 and later on PC. PC modding tools are
+                more readily available. For the best modding experience and community support, consider checking out <a
+                    href="https://www.saintsrowmods.com" target="_blank" class="info-link">Saints Row Mods</a> for
+                additional resources and tutorials.</p>
+        </section>
+
+        <!-- COMPARISON SECTION -->
+        <section class="comparison-section">
+            <h3>How It Compares to Later Titles</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>Original SR (2006)</h4>
+                    <ul>
+                        <li>✓ Simpler file structure</li>
+                        <li>✓ Easier for beginners</li>
+                        <li>✓ Fewer tools available</li>
+                        <li>✓ Limited community</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4>SR2 & Beyond</h4>
+                    <ul>
+                        <li>✓ More complex tools</li>
+                        <li>✓ Larger communities</li>
+                        <li>✓ More documentation</li>
+                        <li>✓ Advanced features</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub. All tools are community-created and maintained.</p>
+        <p>Made with 🖤 for the Saints Row modding community</p>
+    </footer>
+
+    <!-- FILTER SCRIPT -->
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const toolCards = document.querySelectorAll('.tool-card');
+
+        function filterTools(category) {
+            toolCards.forEach(card => {
+                const categories = card.getAttribute('data-categories');
+
+                if (category === 'all') {
+                    card.style.display = 'flex';
+                } else if (categories && categories.includes(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filterValue = button.getAttribute('data-filter');
+                filterTools(filterValue);
+            });
+        });
+    </script>
+
+    <!-- NAVBAR HIDE/SHOW ON SCROLL SCRIPT -->
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const scrollThreshold = 200; // Hide after scrolling 300px down
+        const showThreshold = 200;    // Show when within 200px of top
+
+        window.addEventListener('scroll', function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            // If near the top, always show
+            if (currentScroll < showThreshold) {
+                navbar.classList.remove('navbar-hidden');
+            }
+            // If scrolled past threshold, hide
+            else if (currentScroll > scrollThreshold) {
+                navbar.classList.add('navbar-hidden');
+            }
+        });
+    </script>
 </body>
+
 </html>

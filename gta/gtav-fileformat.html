@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA V File Formats - Modding Reference</title>
+    <link rel="stylesheet" href="gtav.css">
+    <style>
+        /* File format specific styles */
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .format-card {
+            background: rgba(20, 20, 30, 0.9);
+            border: 2px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .format-card:hover {
+            border-color: #ff6b00;
+            transform: translateY(-5px);
+        }
+        
+        .format-header {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            padding: 15px 20px;
+            border-bottom: 2px solid #ff6b00;
+        }
+        
+        .format-header h3 {
+            color: #ff6b00;
+            font-family: monospace;
+            font-size: 1.3rem;
+        }
+        
+        .format-content {
+            padding: 20px;
+        }
+        
+        .format-content p {
+            color: #ccc;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .format-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .format-tag {
+            background: rgba(255, 107, 0, 0.2);
+            border: 1px solid #ff6b00;
+            color: #ff8c2e;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+        }
+        
+        .format-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(20, 20, 30, 0.9);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .format-table th {
+            background: #2a2a2a;
+            color: #ff6b00;
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 2px solid #ff6b00;
+        }
+        
+        .format-table td {
+            padding: 10px 15px;
+            color: #ccc;
+            border-bottom: 1px solid #333;
+        }
+        
+        .format-table tr:hover td {
+            background: rgba(255, 107, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="gta.html">Grand Theft Auto</a>
+                <span>/</span>
+                <a href="gtav.html">GTA V</a>
+                <span>/</span>
+                <span>File Formats</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">GTA V File Formats</h1>
+        <p class="page-subtitle">Complete reference guide to GTA V's archive and asset formats</p>
+    </header>
+
+    <main class="container">
+
+        <div class="info-section" style="margin-bottom: 40px;">
+            <h3>Understanding GTA V File Structure</h3>
+            <p>GTA V uses the RAGE Engine, which organizes game assets in RPF archives. These archives contain all game data including models, textures, scripts, audio, and configuration files. Understanding these formats is essential for effective modding.</p>
+        </div>
+
+        <h2 style="color: #ff6b00; margin: 30px 0 20px;">📦 Archive Formats</h2>
+        <div class="format-grid">
+            <div class="format-card">
+                <div class="format-header"><h3>.RPF</h3></div>
+                <div class="format-content">
+                    <p><strong>Rockstar Package File</strong> — The main archive format for GTA V. Contains all game assets compressed and organized. RPF files can be encrypted or unencrypted.</p>
+                    <div class="format-tools"><span class="format-tag">OpenIV</span><span class="format-tag">RPF Explorer</span></div>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-header"><h3>.META / .YMT</h3></div>
+                <div class="format-content">
+                    <p><strong>XML-based Metadata Files</strong> — Contains game configuration data like vehicle handling, weapon stats, ped attributes, and gameplay settings.</p>
+                    <div class="format-tools"><span class="format-tag">Notepad++</span><span class="format-tag">VS Code</span></div>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-header"><h3>.PATCH</h3></div>
+                <div class="format-content">
+                    <p><strong>Game Update Archives</strong> — Contains DLC content and game updates. Used for adding custom content without replacing original files.</p>
+                    <div class="format-tools"><span class="format-tag">OpenIV</span></div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="color: #ff6b00; margin: 40px 0 20px;">🎨 Model & Mesh Formats</h2>
+        <div class="format-grid">
+            <div class="format-card">
+                <div class="format-header"><h3>.YDR / .YFT</h3></div>
+                <div class="format-content">
+                    <p><strong>Drawable Models</strong> — YDR for static props, YFT for vehicles. Contains 3D geometry, materials, and textures.</p>
+                    <div class="format-tools"><span class="format-tag">ZModeler 3</span><span class="format-tag">CodeWalker</span></div>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-header"><h3>.YDD</h3></div>
+                <div class="format-content">
+                    <p><strong>Drawable Dictionary</strong> — Collections of drawable models used for character parts, clothing, and props.</p>
+                    <div class="format-tools"><span class="format-tag">OpenIV</span><span class="format-tag">CodeWalker</span></div>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-header"><h3>.YMAP</h3></div>
+                <div class="format-content">
+                    <p><strong>Map Placement Data</strong> — Defines where objects, props, and entities are placed in the game world.</p>
+                    <div class="format-tools"><span class="format-tag">CodeWalker</span><span class="format-tag">OpenIV</span></div>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-header"><h3>.YCD</h3></div>
+                <div class="format-content">
+                    <p><strong>Collision Data</strong> — Defines physics boundaries for objects and environment interaction.</p>
+                    <div class="format-tools"><span class="format-tag">CodeWalker</span></div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="color: #ff6b00; margin: 40px 0 20px;">🎵 Texture & Audio Formats</h2>
+        <div class="format-grid">
+            <div class="format-card">
+                <div class="format-header"><h3>.YTD</h3></div>
+                <div class="format-content">
+                    <p><strong>Texture Dictionary</strong> — Contains DDS textures for models, vehicles, and environment.</p>
+                    <div class="format-tools"><span class="format-tag">OpenIV</span><span class="format-tag">Photoshop (DDS)</span></div>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-header"><h3>.AWC</h3></div>
+                <div class="format-content">
+                    <p><strong>Audio Wave Container</strong> — Contains sound effects, radio music, dialogue, and ambient audio.</p>
+                    <div class="format-tools"><span class="format-tag">Audacity</span><span class="format-tag">AWC Tool</span></div>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-header"><h3>.GFX</h3></div>
+                <div class="format-content">
+                    <p><strong>Scaleform GFX</strong> — Flash-based UI elements like menus, HUD, and in-game displays.</p>
+                    <div class="format-tools"><span class="format-tag">JPEXS Flash Decompiler</span></div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="color: #ff6b00; margin: 40px 0 20px;">📜 Script & Configuration Formats</h2>
+        <div class="format-grid">
+            <div class="format-card">
+                <div class="format-header"><h3>.YSC</h3></div>
+                <div class="format-content">
+                    <p><strong>Script Files</strong> — Compiled scripts for missions, gameplay logic, and AI behavior.</p>
+                    <div class="format-tools"><span class="format-tag">Script Hook V</span><span class="format-tag">Codewalker</span></div>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-header"><h3>.GXT2</h3></div>
+                <div class="format-content">
+                    <p><strong>Localization Files</strong> — Contains all text strings used in the game across different languages.</p>
+                    <div class="format-tools"><span class="format-tag">OpenIV</span></div>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-header"><h3>.DAT / .INI</h3></div>
+                <div class="format-content">
+                    <p><strong>Configuration Files</strong> — Plain text configuration for game settings and mod loaders.</p>
+                    <div class="format-tools"><span class="format-tag">Notepad++</span></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="info-section">
+            <h3>Important Configuration Files (.meta)</h3>
+            <table class="format-table">
+                <thead><tr><th>File</th><th>Purpose</th><th>Location</th></tr></thead>
+                <tbody>
+                    <tr><td style="color:#ff6b00;">handling.meta</td><td>Vehicle physics and performance</td><td>update/update.rpf/common/data</td></tr>
+                    <tr><td style="color:#ff6b00;">vehicles.meta</td><td>Vehicle definitions and flags</td><td>update/update.rpf/common/data</td></tr>
+                    <tr><td style="color:#ff6b00;">carcols.ymt</td><td>Vehicle colors and paint customization</td><td>update/update.rpf/common/data</td></tr>
+                    <tr><td style="color:#ff6b00;">weapons.meta</td><td>Weapon stats, damage, and behavior</td><td>update/update.rpf/common/data</td></tr>
+                    <tr><td style="color:#ff6b00;">popcycle.dat</td><td>Pedestrian and vehicle population density</td><td>common.rpf/data</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub. All tools are community-created and maintained.</p>
+        <p>GTA V File Formats Reference — Complete guide for modders</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) navbar.style.transform = 'translateY(-100%)';
+            else if (window.scrollY < 200) navbar.style.transform = 'translateY(0)';
+        });
+    </script>
+</body>
+</html>

@@ -1,73 +1,366 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{								/* background image + html body */
-	background-image: url("img/gta5bg.png");
-	background-repeat: no-repeat;   
-	background-size: unset;
-	background-size: contain;
-    background-size: cover;
+
+body {
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2a 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
 }
-h1{								/* Top of page Title Text */
-	position: absolute;
-	left: 10%;
-	top: 5%;
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #ff6b00;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-p{								/*  text below title  */
-	position: absolute;
-	left: 10%;
-	top: 15%;
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-/*tr{							/*  Table config  but idk doesnt seem to be anything
-	display: table-row;
-}*/
-table{
-	width: 100%;					/*  table  */
-	background-color: #4a8d10;
-	position: absolute;
-	top: 90%;
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ff6b00;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
-a{								/* Table Links */
-	text-decoration: none;
-	color: white;
+
+.logo-text:hover {
+    color: #ff8c2e;
+    text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
 }
-.title{							/* table title */
-	position: relative;
-	left: 44%;
-	border: none;
-	padding: .5em .5em .5em .5em;
+
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #cccccc;
+    font-size: 0.85rem;
 }
-img{							/* GTA logo in the table */
-	position: absolute;
-	left: 42%;
-	top: 91.5%;
+
+.breadcrumb a {
+    color: #ff6b00;
+    text-decoration: none;
 }
-.image{							/* GTA Disc Cover */
-	position: absolute;
-	left: 81%;
-	top: 5%;
-}								/* Quick Links */
-.rockstarwebsite{
-	position: absolute;
-	left: 10%;
-	top: 30%;
+
+.breadcrumb a:hover {
+    color: #ff8c2e;
 }
-.gta5modsdotcom{
-	position: absolute;
-	left: 10%;
-	top: 33%;
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    padding: 80px 20px 40px;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(255, 107, 0, 0.05) 100%);
+    border-bottom: 2px solid #ff6b00;
+    margin-top: 70px;
+    margin-bottom: 50px;
 }
-.gta5dotnet{
-	position: absolute;
-	left: 10%;
-	top: 36%;
+
+.page-title {
+    font-size: 2.8rem;
+    color: #ff6b00;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
 }
-.gtaforums{
-	position: absolute;
-	left: 10%;
-	top: 39%;
-}                            /* Color For quick links  */
-.rockstarwebsite a, .gta5modsdotcom a, .gta5dotnet a, .gtaforums a{
-	color: purple;
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #cccccc;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+}
+
+/* Game Info Section */
+.game-info {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+    background: rgba(20, 20, 30, 0.8);
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #333;
+}
+
+.game-details {
+    flex: 2;
+}
+
+.game-details h2 {
+    color: #ff6b00;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.game-details p {
+    color: #cccccc;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.game-cover {
+    flex: 1;
+    text-align: center;
+}
+
+.game-cover img {
+    max-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Quick Links */
+.quick-links {
+    background: rgba(20, 20, 30, 0.8);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 40px;
+    border: 1px solid #333;
+}
+
+.quick-links h3 {
+    color: #ff6b00;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.links-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+}
+
+.links-list li a {
+    color: #00ccff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.links-list li a:hover {
+    color: #ff6b00;
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.nav-card {
+    background: rgba(20, 20, 30, 0.9);
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.nav-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff6b00;
+    box-shadow: 0 12px 30px rgba(255, 107, 0, 0.3);
+}
+
+.nav-card h3 {
+    color: #ff6b00;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.nav-card p {
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+/* Tools Grid */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.tool-card {
+    background: rgba(20, 20, 30, 0.9);
+    border: 2px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff6b00;
+    box-shadow: 0 8px 20px rgba(255, 107, 0, 0.2);
+}
+
+.tool-header {
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    padding: 20px;
+    border-bottom: 2px solid #ff6b00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tool-header h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+
+.tool-badge {
+    background: #ff6b00;
+    color: #000;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.tool-content {
+    padding: 20px;
+}
+
+.tool-content p {
+    color: #cccccc;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.tool-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.spec-tag {
+    background: rgba(255, 107, 0, 0.2);
+    border: 1px solid #ff6b00;
+    color: #ff8c2e;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+}
+
+.tool-footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 20px;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.download-btn {
+    background: #ff6b00;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.download-btn:hover {
+    background: #ff8c2e;
+    transform: scale(1.05);
+}
+
+/* Info Section */
+.info-section {
+    background: rgba(255, 107, 0, 0.05);
+    border: 2px solid #ff6b00;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.info-section h3 {
+    color: #ff6b00;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.info-section p {
+    color: #cccccc;
+    line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+    background: rgba(10, 10, 15, 0.95);
+    border-top: 2px solid #ff6b00;
+    padding: 40px 20px;
+    text-align: center;
+    color: #cccccc;
+    margin-top: 60px;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.6rem;
+    }
+    
+    .breadcrumb {
+        font-size: 0.75rem;
+    }
 }

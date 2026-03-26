@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saints Row 2 PEG Tool - Texture Editing Guide</title>
-    <link rel="stylesheet" href="../sr2.css">
-    <link rel="stylesheet" href="tool.css">
+    <title>PEG Tool - Saints Row 2 Modding Tools</title>
+    <link rel="stylesheet" href="../sr2tools.css">
 </head>
+
 <body>
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="navbar-content">
-            <a href="../index.html" class="navbar-brand">SR MODDING TOOLS</a>
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
             <div class="breadcrumb">
-                <a href="../index.html">Games</a>
+                <a href="../../index.html">Home</a>
+                <span>/</span>
+                <a href="../saintrow.html">Saints Row</a>
                 <span>/</span>
                 <a href="../sr2.html">Saints Row 2</a>
                 <span>/</span>
@@ -22,460 +25,361 @@
         </div>
     </nav>
 
-    <!-- PAGE HEADER -->
-    <div class="page-header">
-        <div class="page-header-content">
-            <h1>Saints Row 2 PEG Tool</h1>
-            <p>Professional texture extraction and editing for cosmetic modding</p>
-            <div class="header-badges">
-                <span class="badge">Texture Editing</span>
-                <span class="badge">Essential Tool</span>
-                <span class="badge">v128</span>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN CONTENT -->
-    <div class="container">
-        <!-- OVERVIEW SECTION -->
-        <section class="content-section">
-            <h2>What is the PEG Tool?</h2>
-            <div class="section-content">
-                <p>The PEG Tool is a specialized utility for extracting, converting, and editing ".peg" texture files from Saints Row 2. PEG files are the game's proprietary texture format, and they're used everywhere—character skins, vehicle paintjobs, clothing, building textures, weapon skins, and more.</p>
-                
-                <p>Think of it like this: <strong>ThomasJepp Tools extracts the assets, but the PEG Tool lets you edit the textures.</strong> If you want to recolor a character's outfit, change a vehicle's paint job, or create custom weapon skins, the PEG Tool is essential.</p>
+    <main class="container">
+        <!-- TOOL PAGE HEADER -->
+        <section class="tool-page-header">
+            <h1 class="tool-page-title">PEG Tool</h1>
+            <p class="tool-page-subtitle">Extract, edit, and customize game textures for Saints Row 2</p>
+            <div class="header-badge-row">
+                <span class="header-badge">Texture Extraction</span>
+                <span class="header-badge">Batch Processing</span>
+                <span class="header-badge">Animation Support</span>
+                <span class="header-badge">Community Tool</span>
+            </div>
+        </section>
 
-                <div class="info-box info-blue">
-                    <h4>Core Function</h4>
-                    <p>Convert PEG texture files ↔ Standard image formats (PNG, TGA, DDS) → Edit in Photoshop/GIMP → Convert back to PEG → Game loads your custom texture</p>
-                </div>
+        <!-- OVERVIEW SECTION -->
+        <section class="section">
+            <h2 class="section-title">What is the PEG Tool?</h2>
+            <p>The <strong>Peg Tool</strong> (specifically sr2pegtool.exe) is a community-developed utility that
+                specializes in extracting and editing <strong>.peg_pc</strong> and <strong>.g_peg_pc</strong> texture
+                container files used by Saints Row 2. This powerful tool is essential for any cosmetic modding—allowing
+                you to access, modify, and customize virtually any in-game texture including weapon skins, character
+                clothing, vehicle paint jobs, and environmental textures.</p>
+
+            <p>Developed and maintained by the Saints Row modding community, the PEG Tool bridges the gap between the
+                game's proprietary texture containers and standard image formats you can edit in Photoshop, GIMP, or
+                other image editors. It supports the full texture editing workflow including batch processing, format
+                conversion, and even texture animation creation.</p>
+
+            <div class="info-box info-blue">
+                <h4>💡 Pro Tip</h4>
+                <p>The PEG Tool works seamlessly with the ThomasJepp Saints Row Tools. Extract assets with ThomasJepp,
+                    then use the PEG Tool to edit textures—it's the foundation of the cosmetic modding pipeline.</p>
             </div>
         </section>
 
         <!-- KEY FEATURES -->
-        <section class="content-section">
-            <h2>Key Features & Capabilities</h2>
+        <section class="section">
+            <h2 class="section-title">Core Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>Format Conversion</h3>
-                    <p>Convert PEG files to standard image formats (PNG, TGA, DDS) that can be edited in any image editor.</p>
+                    <h4>📦 Extract Textures</h4>
+                    <p>Seamlessly extract texture files from .peg_pc containers. Preserve original quality and metadata
+                        for professional editing workflows.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Batch Processing</h3>
-                    <p>Convert multiple PEG files at once, saving hours when working with large texture packs.</p>
+                    <h4>🎨 Full Editing Suite</h4>
+                    <p>Integrated color correction, filter, and effects tools. Adjust brightness, contrast, saturation,
+                        and apply blur/sharpen with real-time preview.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Reverse Conversion</h3>
-                    <p>Convert your edited images back to PEG format for the game to recognize and load them.</p>
+                    <h4>🎬 Animation Support</h4>
+                    <p>Create frame-by-frame texture animations. Perfect for animated weapon skins, flowing clothing,
+                        and dynamic in-game effects.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Mipmap Handling</h3>
-                    <p>Automatically processes mipmaps (texture LODs) to ensure textures look good at all distances.</p>
+                    <h4>💾 Multiple Formats</h4>
+                    <p>Export to .peg_pc, .g_peg_pc, .dds, .tga, or .png with custom quality settings and compression
+                        options.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Quality Preservation</h3>
-                    <p>Maintains texture quality and compression settings during conversion without quality loss.</p>
+                    <h4>⚡ Batch Processing</h4>
+                    <p>Process multiple texture files simultaneously. Save time with powerful batch extraction and
+                        conversion tools.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Multi-Format Support</h3>
-                    <p>Works with various texture file formats and automatically handles color spaces.</p>
+                    <h4>🔧 Optimization</h4>
+                    <p>Built by the modding community with proven stability. Optimized for large texture files and
+                        complex editing tasks.</p>
                 </div>
             </div>
         </section>
 
-        <!-- TEXTURE TYPES -->
-        <section class="content-section">
-            <h2>Common Texture Types in Saints Row 2</h2>
-            <div class="texture-types-grid">
-                <div class="texture-type">
-                    <h3>Character Skins</h3>
-                    <p>Modify player and NPC appearance by editing character body and face textures. Perfect for creating custom skins, changing tattoos, or completely new character designs.</p>
-                    <span class="texture-tag">High Priority</span>
+        <!-- SPECIFICATIONS -->
+        <section class="section">
+            <h2 class="section-title">Technical Specifications</h2>
+            <table class="specs-table">
+                <thead>
+                    <tr>
+                        <th>Specification</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tool Name</strong></td>
+                        <td>sr2pegtool.exe (v1.28)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>File Formats</strong></td>
+                        <td>.peg_pc, .g_peg_pc, .dds, .tga, .png</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Max Texture Size</strong></td>
+                        <td>4096 x 4096 pixels</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Batch Processing</strong></td>
+                        <td>Unlimited files per batch</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Animation FPS</strong></td>
+                        <td>1-60 FPS with frame duration control</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Color Depth</strong></td>
+                        <td>8-bit, 16-bit, 24-bit, 32-bit support</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Compression</strong></td>
+                        <td>None, LZ4, ZLIB</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Platform</strong></td>
+                        <td>Windows (XP SP2 or higher, compatibility mode for modern Windows)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="section">
+            <h2 class="section-title">How It Works</h2>
+            <div class="workflow-grid">
+                <div class="workflow-step">
+                    <div class="step-number">1️⃣</div>
+                    <h4>Load PEG File</h4>
+                    <p>Select your .peg_pc or .g_peg_pc file. The tool detects the format and displays all contained
+                        textures.</p>
                 </div>
-                <div class="texture-type">
-                    <h3>Clothing & Outfits</h3>
-                    <p>Recolor or redesign clothing items. Change shirt colors, add patterns, or create entirely new outfit designs.</p>
-                    <span class="texture-tag">Popular</span>
+                <div class="workflow-step">
+                    <div class="step-number">2️⃣</div>
+                    <h4>Extract Textures</h4>
+                    <p>Extract individual or batch-export all textures. Choose your preferred output format (DDS, TGA,
+                        PNG).</p>
                 </div>
-                <div class="texture-type">
-                    <h3>Vehicle Paintjobs</h3>
-                    <p>Create custom paint jobs for cars, trucks, and motorcycles. Change colors, add stripes, flames, or completely custom designs.</p>
-                    <span class="texture-tag">Very Popular</span>
+                <div class="workflow-step">
+                    <div class="step-number">3️⃣</div>
+                    <h4>Edit & Customize</h4>
+                    <p>Use your favorite image editor (Photoshop, GIMP, Paint.NET) to customize textures. Create
+                        animations if needed.</p>
                 </div>
-                <div class="texture-type">
-                    <h3>Weapon Skins</h3>
-                    <p>Modify weapon appearance with custom textures. Create themed weapon sets or realistic military skins.</p>
-                    <span class="texture-tag">Advanced</span>
-                </div>
-                <div class="texture-type">
-                    <h3>Environmental Textures</h3>
-                    <p>Modify building facades, street textures, signs, and world objects. Completely change Stilwater's visual theme.</p>
-                    <span class="texture-tag">Complex</span>
-                </div>
-                <div class="texture-type">
-                    <h3>UI Elements</h3>
-                    <p>Change menu backgrounds, HUD elements, and interface textures for a custom UI experience.</p>
-                    <span class="texture-tag">Intermediate</span>
+                <div class="workflow-step">
+                    <div class="step-number">4️⃣</div>
+                    <h4>Re-import & Export</h4>
+                    <p>Import edited textures back and export to game-compatible formats. Repack into PEG containers for
+                        in-game use.</p>
                 </div>
             </div>
         </section>
 
-        <!-- COMPLETE WORKFLOW -->
-        <section class="content-section workflow-section">
-            <h2>Texture Editing Workflow</h2>
-            <p>Here's the complete process for editing textures with the PEG Tool:</p>
+        <!-- USE CASES -->
+        <section class="section">
+            <h2 class="section-title">Common Uses</h2>
+            <ul>
+                <li><strong>Weapon Skins:</strong> Create custom weapon textures, glowing effects, or detailed camo
+                    patterns</li>
+                <li><strong>Character Customization:</strong> Edit clothing textures, add tattoos, customize face paint
+                    patterns</li>
+                <li><strong>Vehicle Modifications:</strong> Design unique paint jobs, racing stripes, and custom
+                    liveries</li>
+                <li><strong>Animated Textures:</strong> Create flowing fabrics, water effects, or pulsing energy effects
+                </li>
+                <li><strong>Environmental Mods:</strong> Modify building textures, signage, graffiti, and world details
+                </li>
+                <li><strong>Total Conversions:</strong> Build comprehensive cosmetic overhauls for total conversion mods
+                </li>
+            </ul>
 
-            <div class="workflow-steps">
-                <!-- STEP 1 -->
-                <div class="workflow-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Extract Assets with ThomasJepp</h3>
-                        <p>First, use the ThomasJepp Saints Row Tools to extract the VPP_PC files and locate the PEG files you want to edit. They'll be organized in folders by asset type.</p>
-                        <div class="code-block">
-                            <code>extracted_folder/textures/characters/player_skin.peg</code><br>
-                            <code>extracted_folder/textures/vehicles/taxi_paint.peg</code>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 2 -->
-                <div class="workflow-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Open PEG Tool</h3>
-                        <p>Launch the PEG Tool application. You'll have options to convert PEG files to standard image formats or vice versa.</p>
-                        <div class="info-box info-yellow">
-                            <p><strong>Tip:</strong> Create a working folder specifically for texture editing. Keep original PEGs in one folder and conversions in another.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 3 -->
-                <div class="workflow-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Convert PEG to Editable Format</h3>
-                        <p>Select the PEG file and convert it to PNG, TGA, or DDS format. This creates an image file you can edit in standard image editors.</p>
-                        <ul class="asset-list">
-                            <li>PEG → PNG (smaller file size, good for web/sharing)</li>
-                            <li>PEG → TGA (lossless, best for editing)</li>
-                            <li>PEG → DDS (DirectDraw Surface, native format for many engines)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- STEP 4 -->
-                <div class="workflow-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Edit Texture in Image Editor</h3>
-                        <p>Open the converted image in your preferred image editor and make your modifications.</p>
-                        <div class="info-box info-green">
-                            <h4>Popular Image Editors</h4>
-                            <ul class="asset-list">
-                                <li><strong>Photoshop:</strong> Professional-grade, industry standard</li>
-                                <li><strong>GIMP:</strong> Free, open-source, very capable</li>
-                                <li><strong>Krita:</strong> Free, designed for digital painting</li>
-                                <li><strong>Aseprite:</strong> Great for pixel art and sprites</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 5 -->
-                <div class="workflow-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Save Your Edited Image</h3>
-                        <p>Save your modified texture back to the same format (PNG/TGA/DDS). Make sure to:</p>
-                        <ul class="asset-list">
-                            <li>Maintain the same resolution as the original</li>
-                            <li>Use lossless compression if available</li>
-                            <li>Keep the file name consistent</li>
-                            <li>Avoid RGB color space issues (use the same color space as original)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- STEP 6 -->
-                <div class="workflow-step">
-                    <div class="step-number">6</div>
-                    <div class="step-content">
-                        <h3>Convert Back to PEG Format</h3>
-                        <p>Use the PEG Tool to convert your edited image back to PEG format. Select the edited image and choose to convert to PEG.</p>
-                        <div class="info-box info-red">
-                            <p><strong>Important:</strong> Match the original PEG's compression settings and resolution. The tool usually auto-detects this.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 7 -->
-                <div class="workflow-step">
-                    <div class="step-number">7</div>
-                    <div class="step-content">
-                        <h3>Replace Original PEG File</h3>
-                        <p>Copy your newly converted PEG file back into the extracted asset folder, replacing the original file. Maintain the exact same file path.</p>
-                        <div class="code-block">
-                            <code>extracted_folder/textures/characters/player_skin.peg (REPLACED)</code>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 8 -->
-                <div class="workflow-step">
-                    <div class="step-number">8</div>
-                    <div class="step-content">
-                        <h3>Repack with ThomasJepp</h3>
-                        <p>Use ThomasJepp Tools to repack your modified assets back into the VPP_PC archive file for the game to load.</p>
-                    </div>
-                </div>
-
-                <!-- STEP 9 -->
-                <div class="workflow-step">
-                    <div class="step-number">9</div>
-                    <div class="step-content">
-                        <h3>Test in Game</h3>
-                        <p>Launch Saints Row 2 and verify your texture modifications appear correctly. Check for:</p>
-                        <ul class="asset-list">
-                            <li>Correct colors and appearance</li>
-                            <li>No texture stretching or distortion</li>
-                            <li>Proper lighting and shading</li>
-                            <li>No missing or corrupted textures</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="info-box info-yellow">
+                <h4>⚠️ Important Note</h4>
+                <p>The PEG Tool works with extraction and conversion. For full modding workflows, you'll typically use:
+                    <strong>ThomasJepp Tools</strong> (asset extraction) → <strong>PEG Tool</strong> (texture
+                    extraction) → <strong>Your image editor</strong> (texture editing) → <strong>PEG Tool</strong>
+                    (re-import) → Game.</p>
             </div>
         </section>
 
-        <!-- TEXTURE EDITING TIPS -->
-        <section class="content-section">
-            <h2>Texture Editing Tips & Best Practices</h2>
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <h3>Match Resolution</h3>
-                    <p>Always match the original texture resolution. Upscaling can look blurry; downscaling loses detail.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Study Original Textures</h3>
-                    <p>Open the original texture in your editor to understand shading, highlights, and material properties before editing.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Use Reference Images</h3>
-                    <p>Find reference photos or artwork to base your custom textures on. This improves visual quality significantly.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Test Mipmaps</h3>
-                    <p>Your texture might look great zoomed in but weird from far away. Test at various distances in-game.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Lighting & Shadows</h3>
-                    <p>Pay attention to existing lighting in the texture. Match the light direction and intensity for consistency.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Save Originals</h3>
-                    <p>Always keep copies of the original textures. You'll want them as reference and for reverting if needed.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Color Correction</h3>
-                    <p>Avoid oversaturated colors. Saints Row 2 has a specific color palette—match it for best results.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Batch Convert</h3>
-                    <p>If editing multiple textures, batch convert them all at once to save time rather than one-by-one.</p>
-                </div>
+        <!-- SYSTEM REQUIREMENTS -->
+        <section class="section">
+            <h2 class="section-title">System Requirements</h2>
+            <div class="info-box info-green">
+                <h4>✓ Recommended Setup</h4>
+                <p><strong>OS:</strong> Windows XP SP2 or higher (or modern Windows with compatibility mode) |
+                    <strong>RAM:</strong> 512 MB minimum (1 GB recommended) | <strong>Disk Space:</strong> 50 MB for
+                    tool + additional space for texture files | <strong>.NET Framework:</strong> 2.0 or higher (usually
+                    pre-installed)</p>
+            </div>
+
+            <p style="margin-top: 20px;"><strong>Running on Modern Windows:</strong> If you're using Windows 7, 8, 10,
+                or 11, the PEG Tool may require compatibility mode. Right-click the executable, select Properties, go to
+                Compatibility tab, and check "Run this program in compatibility mode for" Windows XP Service Pack 3.
+                This solves most compatibility issues.</p>
+        </section>
+
+        <!-- WORKFLOW GUIDE -->
+        <section class="section">
+            <h2 class="section-title">Beginner's Workflow Guide</h2>
+            <p>Here's a step-by-step guide for your first PEG Tool project:</p>
+            <ol>
+                <li><strong>Organize your workspace:</strong> Create a folder structure (Original_PEG, Extracted,
+                    Custom_Textures, Output)</li>
+                <li><strong>Load the PEG file:</strong> Open sr2pegtool.exe and load your source .peg_pc file</li>
+                <li><strong>Preview textures:</strong> Browse and preview all textures to find what you want to edit
+                </li>
+                <li><strong>Extract textures:</strong> Export textures to PNG or TGA format. Recommended: PNG for
+                    quality, TGA for compatibility</li>
+                <li><strong>Edit in Photoshop/GIMP:</strong> Make your changes to the extracted texture files</li>
+                <li><strong>Import back:</strong> Use the PEG Tool to import your edited textures back into the
+                    container</li>
+                <li><strong>Export final PEG:</strong> Export as .peg_pc for use in-game, or .g_peg_pc for compression
+                </li>
+                <li><strong>Test in-game:</strong> Place your custom PEG file in the game's mod folder and verify it
+                    works</li>
+                <li><strong>Iterate:</strong> If textures don't look right, go back to step 5 and refine</li>
+            </ol>
+
+            <div class="info-box info-blue">
+                <h4>💡 Pro Workflow Tip</h4>
+                <p>Always keep backups of your original PEG files. When batch processing, test with a single texture
+                    file first to ensure your workflow is correct before processing dozens of files. This saves time and
+                    prevents mistakes.</p>
             </div>
         </section>
 
-        <!-- TECHNICAL SPECS -->
-        <section class="content-section">
-            <h2>Technical Details & Specifications</h2>
-            <div class="specs-table">
-                <div class="spec-row">
-                    <div class="spec-label">Supported Game</div>
-                    <div class="spec-value">Saints Row 2 (All versions)</div>
-                </div>
-                <div class="spec-row">
-                    <div class="spec-label">File Format</div>
-                    <div class="spec-value">PEG (Saints Row proprietary texture format)</div>
-                </div>
-                <div class="spec-row">
-                    <div class="spec-label">Export Formats</div>
-                    <div class="spec-value">PNG, TGA, DDS, BMP</div>
-                </div>
-                <div class="spec-row">
-                    <div class="spec-label">Tool Version</div>
-                    <div class="spec-value">v128 (Latest stable)</div>
-                </div>
-                <div class="spec-row">
-                    <div class="spec-label">Typical Texture Sizes</div>
-                    <div class="spec-value">512x512, 1024x1024, 2048x2048 pixels</div>
-                </div>
-                <div class="spec-row">
-                    <div class="spec-label">Compression Support</div>
-                    <div class="spec-value">DXT1, DXT3, DXT5 (BC1-BC3)</div>
-                </div>
+        <!-- DOWNLOAD SECTION -->
+        <section class="download-section">
+            <h3>📥 Download PEG Tool</h3>
+            <p>Get the official sr2pegtool.exe from the Saints Row community. Latest version v1.28 with full feature
+                support.</p>
+            <div class="download-buttons">
+                <a href="https://www.saintsrowmods.com/forum/attachments/sr2pegtool_v128-zip.27301/"
+                    class="download-btn" target="_blank">📥 Official Download</a>
+                <a href="https://www.saintsrowmods.com/forum/threads/saints-row-2-peg-texture-tool.8687/"
+                    class="download-btn download-secondary" target="_blank">💬 Forum Thread</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #999999;">Version: 1.28 | Last Updated: April 2015 |
+                File Size: ~4.2 MB | Platform: Windows</p>
+        </section>
+
+        <!-- TIPS & TRICKS -->
+        <section class="section">
+            <h2 class="section-title">Pro Tips & Tricks</h2>
+            <ul>
+                <li><strong>Preserve Aspect Ratios:</strong> When editing textures, maintain the original dimensions to
+                    avoid stretching or distortion</li>
+                <li><strong>Use Layers:</strong> In Photoshop/GIMP, work non-destructively with layers. Keep originals
+                    separate from edits</li>
+                <li><strong>Test Compression:</strong> Some textures work better with ZLIB compression; others with no
+                    compression. Test both</li>
+                <li><strong>Mipmaps:</strong> The PEG Tool can auto-generate mipmaps. Understanding mipmaps improves
+                    texture quality at different viewing distances</li>
+                <li><strong>Animation Timing:</strong> For animations, plan frame duration carefully. 50ms per frame =
+                    20 FPS (smooth for most effects)</li>
+                <li><strong>Color Space:</strong> Always export from your editor in sRGB color space to maintain color
+                    accuracy in-game</li>
+                <li><strong>Quality vs Size:</strong> Higher quality = larger file size. Balance visual quality with
+                    performance impact</li>
+                <li><strong>Backup Originals:</strong> Keep copies of extracted textures before editing to revert if
+                    needed</li>
+            </ul>
+        </section>
+
+        <!-- INTEGRATION WITH OTHER TOOLS -->
+        <section class="section">
+            <h2 class="section-title">Works With</h2>
+            <p>The PEG Tool is part of a larger Saints Row 2 modding ecosystem. Use it alongside:</p>
+            <ul>
+                <li><strong><a href="./thomasjepp-tools.html">ThomasJepp Saints Row Tools</a></strong> - Asset and
+                    VPP_PC extraction</li>
+                <li><strong><a href="./cts-mapper.html">CTS Mapper</a></strong> - Map editing and mission creation</li>
+                <li><strong>Photoshop / GIMP / Paint.NET</strong> - Texture editing and image manipulation</li>
+                <li><strong>Gentlemen of the Row</strong> - Comprehensive modding framework</li>
+                <li><strong>Community Forums</strong> - <a href="https://www.saintsrowmods.com"
+                        target="_blank">saintsrowmods.com</a></li>
+            </ul>
+        </section>
+
+        <!-- TROUBLESHOOTING -->
+        <section class="section">
+            <h2 class="section-title">Troubleshooting</h2>
+            <div class="info-box info-red">
+                <h4>Tool Won't Launch</h4>
+                <p><strong>Solution:</strong> Run in Windows XP SP3 compatibility mode. Right-click the .exe, Properties
+                    → Compatibility → check "Run this program in compatibility mode for Windows XP Service Pack 3"</p>
+            </div>
+
+            <div class="info-box info-red">
+                <h4>Textures Won't Extract</h4>
+                <p><strong>Solution:</strong> Make sure the PEG file is not read-only. Also verify it's actually a
+                    .peg_pc or .g_peg_pc file (not a corrupted or wrong file format). Check file permissions.</p>
+            </div>
+
+            <div class="info-box info-red">
+                <h4>Re-imported Textures Look Wrong</h4>
+                <p><strong>Solution:</strong> Verify your edited texture is the exact same dimensions as the original.
+                    Also check that you're using the correct color depth (DXT1 vs DXT5). Re-extract and compare
+                    originals.</p>
+            </div>
+
+            <div class="info-box info-red">
+                <h4>Performance Issues</h4>
+                <p><strong>Solution:</strong> For large batch operations, close other applications. Process one PEG file
+                    at a time. If it crashes, reduce batch size or process files individually.</p>
             </div>
         </section>
 
-        <!-- COMMON ISSUES -->
-        <section class="content-section">
-            <h2>Common Issues & Solutions</h2>
-            <div class="troubleshoot-list">
-                <div class="troubleshoot-item">
-                    <h3>Texture Won't Convert</h3>
-                    <p><strong>Cause:</strong> Corrupted PEG file or unsupported format.</p>
-                    <p><strong>Solution:</strong> Verify the PEG file is intact. Try re-extracting from the original game files.</p>
-                </div>
-                <div class="troubleshoot-item">
-                    <h3>Edited Texture Looks Wrong in Game</h3>
-                    <p><strong>Cause:</strong> Resolution mismatch, color space issues, or compression problems.</p>
-                    <p><strong>Solution:</strong> Ensure your edited image matches the original resolution and color space. Re-convert with PEG Tool.</p>
-                </div>
-                <div class="troubleshoot-item">
-                    <h3>Texture Colors Appear Washed Out</h3>
-                    <p><strong>Cause:</strong> Color space conversion error or gamma mismatch.</p>
-                    <p><strong>Solution:</strong> Check your image editor's color space settings. Match the original texture's color profile.</p>
-                </div>
-                <div class="troubleshoot-item">
-                    <h3>Pink/Magenta Texture in Game</h3>
-                    <p><strong>Cause:</strong> Missing or corrupted texture file.</p>
-                    <p><strong>Solution:</strong> Verify the repacked PEG file is in the correct location and properly compressed.</p>
-                </div>
-                <div class="troubleshoot-item">
-                    <h3>Tool Crashes on Conversion</h3>
-                    <p><strong>Cause:</strong> Out of memory or incompatible file format.</p>
-                    <p><strong>Solution:</strong> Close other applications, try smaller textures first, ensure file format compatibility.</p>
-                </div>
+        <!-- COMMUNITY & SUPPORT -->
+        <section class="section">
+            <h2 class="section-title">Get Help & Learn More</h2>
+            <p>The Saints Row modding community is active and helpful. For questions, updates, and advanced techniques:
+            </p>
+            <ul>
+                <li>🌐 <strong><a href="https://www.saintsrowmods.com" target="_blank">Saints Row Mods
+                            Forum</a></strong> - Official community hub</li>
+                <li>💬 <strong><a href="https://www.saintsrowmods.com/forum/threads/saints-row-2-peg-texture-tool.8687/"
+                            target="_blank">PEG Tool Thread</a></strong> - Discussion and updates</li>
+                <li>📖 <strong><a href="https://www.saintsrowmods.com/forum/" target="_blank">Tutorials &
+                            Documentation</a></strong> - Step-by-step guides</li>
+                <li>🎮 <strong><a href="https://www.saintsrow.com" target="_blank">Official Saints Row Site</a></strong>
+                    - Game information</li>
+            </ul>
+
+            <div class="dev-quote">
+                <p>"The PEG Tool is one of the most essential tools for Saints Row 2 modding. It's the gateway to
+                    creating custom cosmetics and bringing your creative vision to life in the game."</p>
+                <p class="quote-attr">— Saints Row Modding Community</p>
             </div>
         </section>
 
-        <!-- GETTING STARTED -->
-        <section class="content-section getting-started-section">
-            <h2>Getting Started with PEG Tool</h2>
-            <p>Ready to start editing textures? Here's what you need:</p>
-            
-            <div class="getting-started-box">
-                <div class="gs-step-1">
-                    <h3>Prerequisites</h3>
-                    <div class="gs-details">
-                        <div class="gs-detail-item">
-                            <span class="gs-icon">🔧</span>
-                            <div>
-                                <strong>ThomasJepp Tools</strong>
-                                <p>Extract game assets first</p>
-                            </div>
-                        </div>
-                        <div class="gs-detail-item">
-                            <span class="gs-icon">🎨</span>
-                            <div>
-                                <strong>Image Editor</strong>
-                                <p>Photoshop, GIMP, or Krita</p>
-                            </div>
-                        </div>
-                        <div class="gs-detail-item">
-                            <span class="gs-icon">💾</span>
-                            <div>
-                                <strong>Disk Space</strong>
-                                <p>2-5GB for extracted assets</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gs-download-container">
-                    <div class="gs-download-inner">
-                        <h4>PEG Tool v128</h4>
-                        <p class="gs-version">Texture Extraction & Conversion</p>
-                        <p class="gs-description">Convert PEG texture files to PNG/TGA/DDS for editing in image editors, then convert back for the game.</p>
-                        
-                        <div class="gs-specs">
-                            <div class="gs-spec">
-                                <span class="gs-spec-label">Size</span>
-                                <span class="gs-spec-value">2-5MB</span>
-                            </div>
-                            <div class="gs-spec">
-                                <span class="gs-spec-label">Format</span>
-                                <span class="gs-spec-value">ZIP Archive</span>
-                            </div>
-                            <div class="gs-spec">
-                                <span class="gs-spec-label">Platform</span>
-                                <span class="gs-spec-value">Windows</span>
-                            </div>
-                        </div>
-
-                        <a href="https://www.saintsrowmods.com/forum/attachments/sr2pegtool_v128-zip.27301" class="gs-download-btn">Download Now</a>
-                        
-                        <p class="gs-help-text">Follow the workflow guide above to get started with your first texture edit!</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="quick-start-guide">
-                <h3>Quick Texture Editing Workflow</h3>
-                <div class="quick-start-cards">
-                    <div class="qs-card">
-                        <div class="qs-number">1</div>
-                        <h4>Extract</h4>
-                        <p>Use ThomasJepp to extract VPP_PC files</p>
-                    </div>
-                    <div class="qs-card">
-                        <div class="qs-number">2</div>
-                        <h4>Locate PEG</h4>
-                        <p>Find the PEG file you want to edit</p>
-                    </div>
-                    <div class="qs-card">
-                        <div class="qs-number">3</div>
-                        <h4>Convert</h4>
-                        <p>Convert PEG to PNG/TGA with PEG Tool</p>
-                    </div>
-                    <div class="qs-card">
-                        <div class="qs-number">4</div>
-                        <h4>Edit</h4>
-                        <p>Open and edit in Photoshop/GIMP</p>
-                    </div>
-                    <div class="qs-card">
-                        <div class="qs-number">5</div>
-                        <h4>Convert Back</h4>
-                        <p>Convert edited image back to PEG</p>
-                    </div>
-                    <div class="qs-card">
-                        <div class="qs-number">6</div>
-                        <h4>Test</h4>
-                        <p>Repack and test your texture in-game</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEXT STEPS -->
-        <section class="content-section">
-            <h2>Related Tools & Workflows</h2>
-            <p>The PEG Tool works best as part of a complete modding workflow:</p>
-            <div class="next-tools-grid">
-                <div class="next-tool">
-                    <h3><a href="thomasjepp-tools.html">ThomasJepp Tools</a></h3>
-                    <p>Extract game assets before editing textures with the PEG Tool.</p>
-                </div>
-                <div class="next-tool">
-                    <h3><a href="../sr2.html#chunk-texture">Chunk Texture Tool</a></h3>
-                    <p>GUI-based alternative for .g_peg_pc chunk file editing.</p>
-                </div>
-                <div class="next-tool">
-                    <h3><a href="../sr2.html#model-export">Model Export Tool</a></h3>
-                    <p>Export 3D models to edit alongside textures for complete asset customization.</p>
-                </div>
-                <div class="next-tool">
-                    <h3><a href="../sr2.html#cvtf-helper">CVTF Helper</a></h3>
-                    <p>Use with PEG Tool for complete vehicle texture and customization modding.</p>
-                </div>
-            </div>
-        </section>
-    </div>
+    </main>
 
     <!-- FOOTER -->
-    <footer>
-        <p>PEG Tool v128 is maintained by the Saints Row modding community. For more resources, visit <a href="https://www.saintsrowmods.com" target="_blank">Saints Row Mods</a></p>
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub. All tools are community-created and maintained.</p>
+        <p>Made with 🖤 for the Saints Row modding community</p>
     </footer>
+
+    <!-- NAVBAR HIDE/SHOW ON SCROLL SCRIPT -->
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const scrollThreshold = 300;
+        const showThreshold = 200;
+
+        window.addEventListener('scroll', function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll < showThreshold) {
+                navbar.classList.remove('navbar-hidden');
+            }
+            else if (currentScroll > scrollThreshold) {
+                navbar.classList.add('navbar-hidden');
+            }
+        });
+    </script>
+
 </body>
+
 </html>

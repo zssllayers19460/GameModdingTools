@@ -1,79 +1,616 @@
-*{
+/* ========================================
+   GTA MASTER STYLESHEET
+   Unified styles for all Grand Theft Auto pages
+   GTA Themed Colors - Dark Urban / Orange Accent
+   ======================================== */
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{                    /* Background image + position */
-    background-image: url(img/gtabg.png);
-	background-repeat: no-repeat;
-	background-size: unset;
-	background-size: contain;
-    background-size: cover;
-	font-family: monospace;
+
+html {
+    scroll-behavior: smooth;
 }
-.gta5{                    /* Text Positioning */
-    position: relative;
-    top: 30px;
-    left: 150px;
-    height: 80px;
-    width: 400px;
-    text-align: center;
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a0f 0%, #121212 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
 }
-.gta4{
-    position: relative;
-    bottom: 50px;
-    left: 480px;
-    height: 80px;
-    width: 400px;
-    text-align: center;
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(10, 10, 15, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #ff6b00;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    transform: translateY(0);
 }
-.gtasa{
-    position: relative;
-    bottom: 130px;
-    left: 830px;
-    height: 80px;
-    width: 500px;
-    text-align: center;
+
+.navbar.navbar-hidden {
+    transform: translateY(-100%);
 }
-.gtavc{
-    position: relative;
-    bottom: 110px;
-    left: 580px;
-    height: 80px;
-    width: 500px;
-    text-align: center;
+
+body {
+    padding-top: 70px;
 }
-.gta5 ul, .gta4 ul, .gtasa ul, .gtavc ul{             /* removes bulletpoint(s) */
-    list-style: none
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.gta5 ul li a, .gta4 ul li a, .gtasa ul li a, .gtavc ul li a{     /* removes underline(s) */
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ff6b00;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
-.gta5 ul li a, .gta4 ul li a, .gtasa ul li a, .gtavc ul li a{       /* Hover Transition effect */
-    transition: 0.5s;
+
+.logo-text:hover {
+    color: #ff8c2e;
+    text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
 }
-.gta5 ul li a:hover, .gta4 ul li a:hover, .gtasa ul li a:hover, .gtavc ul li a:hover{    /* Hover Effect color */
-    color: rgb(255, 0, 0);
+
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #cccccc;
+    font-size: 0.85rem;
 }
-.gta5 ul li a, .gta4 ul li a, .gtasa ul li a, .gtavc ul li a{         /* Text color */
-    color: rgb(0, 255, 13);
-}
-.type{
-    position: relative;
-    top: 500px;
-}
-.awc a{
+
+.breadcrumb a {
+    color: #ff6b00;
     text-decoration: none;
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    list-style: square;
-    position: relative;
-    left: 290px;
-    top: 300px;
+    transition: color 0.3s ease;
 }
-span{
-    color: red;
-    font-size: 20px;
-    position: relative;
-    left: 800px;
-    top: 300px;
+
+.breadcrumb a:hover {
+    color: #ff8c2e;
+}
+
+.breadcrumb span {
+    color: #999999;
+}
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+.page-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(255, 107, 0, 0.05) 100%);
+    border-bottom: 2px solid #ff6b00;
+    margin-bottom: 50px;
+}
+
+.page-title {
+    font-size: 2.8rem;
+    color: #ff6b00;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+    font-weight: bold;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #cccccc;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px 20px;
+}
+
+/* ========================================
+   GAMES GRID (Hub Page)
+   ======================================== */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.game-card {
+    background-color: rgba(20, 20, 30, 0.9);
+    border: 2px solid #333333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff6b00;
+    box-shadow: 0 12px 30px rgba(255, 107, 0, 0.3);
+}
+
+.game-header {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    padding: 20px;
+    border-bottom: 2px solid #ff6b00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.game-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex: 1;
+}
+
+.game-header h2 a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.game-header h2 a:hover {
+    color: #ff6b00;
+}
+
+.game-badge {
+    background: linear-gradient(135deg, #ff6b00, #ff8c2e);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.game-content {
+    padding: 25px;
+    flex: 1;
+}
+
+.game-description {
+    margin: 0 0 15px 0;
+    font-style: italic;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.game-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.spec-tag {
+    background: rgba(255, 107, 0, 0.2);
+    border: 1px solid #ff6b00;
+    color: #ff8c2e;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.game-details {
+    margin: 15px 0 0 0;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.game-details strong {
+    color: #ff6b00;
+}
+
+.game-footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 20px;
+    border-top: 1px solid #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-info {
+    font-size: 0.9rem;
+    color: #cccccc;
+    font-style: italic;
+}
+
+.view-btn {
+    background-color: #ff6b00;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.view-btn:hover {
+    background-color: #ff8c2e;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+}
+
+/* ========================================
+   TOOLS GRID (Game Tool Pages)
+   ======================================== */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.tool-card {
+    background-color: rgba(20, 20, 30, 0.9);
+    border: 2px solid #333333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff6b00;
+    box-shadow: 0 12px 30px rgba(255, 107, 0, 0.3);
+}
+
+.tool-header {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    padding: 20px;
+    border-bottom: 2px solid #ff6b00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.tool-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex: 1;
+}
+
+.tool-title a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.tool-title a:hover {
+    color: #ff6b00;
+}
+
+.tool-badge {
+    background: linear-gradient(135deg, #ff6b00, #ff8c2e);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.tool-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-description {
+    margin: 0 0 15px 0;
+    font-style: italic;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.tool-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.tool-details {
+    margin: 15px 0 0 0;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.tool-details strong {
+    color: #ff6b00;
+}
+
+.tool-footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 20px;
+    border-top: 1px solid #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tool-info {
+    font-size: 0.9rem;
+    color: #cccccc;
+    font-style: italic;
+}
+
+.download-btn {
+    background-color: #ff6b00;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    background-color: #ff8c2e;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+}
+
+/* ========================================
+   INFO SECTION
+   ======================================== */
+.info-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(255, 107, 0, 0.05);
+    border: 2px solid #ff6b00;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.info-section h3 {
+    font-size: 1.8rem;
+    color: #ff6b00;
+    margin-bottom: 20px;
+}
+
+.info-section p {
+    font-size: 1rem;
+    color: #cccccc;
+    margin: 15px 0;
+    line-height: 1.8;
+}
+
+.info-link {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.info-link:hover {
+    color: #ff6b00;
+}
+
+/* ========================================
+   COMPARISON SECTION
+   ======================================== */
+.comparison-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.comparison-section h3 {
+    font-size: 2rem;
+    color: #ff6b00;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.comparison-card {
+    background: rgba(20, 20, 30, 0.9);
+    border: 2px solid #333333;
+    border-radius: 8px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.comparison-card:hover {
+    border-color: #ff6b00;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 107, 0, 0.2);
+}
+
+.comparison-card h4 {
+    font-size: 1.4rem;
+    color: #ff6b00;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comparison-card ul {
+    list-style: none;
+}
+
+.comparison-card li {
+    color: #cccccc;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-card li:last-child {
+    border-bottom: none;
+}
+
+.comparison-card li::before {
+    content: "▸";
+    color: #ff6b00;
+    margin-right: 10px;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background: rgba(10, 10, 15, 0.98);
+    border-top: 2px solid #ff6b00;
+    padding: 40px 20px;
+    text-align: center;
+    color: #cccccc;
+    margin-top: 60px;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .page-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .games-grid,
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .game-header,
+    .tool-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .game-badge,
+    .tool-badge {
+        align-self: flex-start;
+    }
+
+    .info-section {
+        padding: 30px 20px;
+        margin: 40px 20px;
+    }
+
+    .info-section h3 {
+        font-size: 1.4rem;
+    }
+
+    .comparison-section h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 40px 15px;
+    }
+
+    .page-title {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+
+    .breadcrumb {
+        font-size: 0.75rem;
+    }
+
+    .container {
+        padding: 0 15px 30px 15px;
+    }
+
+    .games-grid,
+    .tools-grid {
+        gap: 15px;
+    }
+
+    .game-header h2,
+    .tool-title {
+        font-size: 1.2rem;
+    }
+
+    .game-content,
+    .tool-content {
+        padding: 15px;
+    }
+
+    .spec-tag {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+
+    .info-section {
+        padding: 20px 15px;
+        margin: 30px 15px;
+    }
+
+    .info-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .info-section p {
+        font-size: 0.9rem;
+    }
+
+    .comparison-card {
+        padding: 20px;
+    }
+
+    .comparison-card h4 {
+        font-size: 1.1rem;
+    }
 }

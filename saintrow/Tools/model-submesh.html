@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Submesh Tool - Saints Row 2 Advanced Model Exporter</title>
+    <link rel="stylesheet" href="../sr2tools.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a>
+                <span>/</span>
+                <a href="../saintrow.html">Saints Row</a>
+                <span>/</span>
+                <a href="../sr2.html">Saints Row 2</a>
+                <span>/</span>
+                <span>Model Submesh Tool</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="tool-page-header">
+        <h1 class="tool-page-title">Model Submesh Tool</h1>
+        <p class="tool-page-subtitle">Advanced model export tool that splits complex Saints Row 2 models into individual submeshes for component-level editing</p>
+        <div class="header-badge-row">
+            <span class="header-badge">Submesh Splitting</span>
+            <span class="header-badge">Component Editing</span>
+            <span class="header-badge">Advanced</span>
+            <span class="header-badge">OBJ Export</span>
+            <span class="header-badge">v0.2</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section">
+            <h2 class="section-title">What is the Model Submesh Tool?</h2>
+            <p>The <strong>Model Submesh Tool</strong> (cmesh2obj_0-2_submeshes.exe) is an advanced version of the standard Model Export Tool that provides finer control over Saints Row 2 3D models. Created by <strong>Masamaru</strong>, this enhanced utility does everything the standard tool does — but with one critical addition: it splits complex models into individual submeshes.</p>
+            <p>Many Saints Row 2 models are composed of multiple submeshes — for example, a character model might have separate submeshes for the head, torso, arms, legs, and clothing items. This tool exports each submesh as a separate OBJ file, allowing you to edit specific components without affecting the whole model. This is essential for advanced modding tasks like removing specific clothing items, editing individual character parts, or isolating vehicle components.</p>
+            
+            <div class="dev-quote">
+                <p>"Updated version of the model export tool that can split complex models into individual submeshes. Allows finer control over model components and makes editing specific parts of characters, vehicles, or environments much easier."</p>
+                <p class="quote-attr">— Masamaru, Creator of Model Submesh Tool</p>
+            </div>
+
+            <div class="info-box info-blue">
+                <h4>🔧 What Are Submeshes?</h4>
+                <p>Submeshes are individual components that make up a larger model. For example, a character might have separate submeshes for the head, shirt, pants, shoes, and accessories. The Submesh Tool exports each as its own OBJ file for precise editing.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">When to Use the Submesh Tool</h2>
+            <p>The standard Model Export Tool exports a model as a single combined OBJ file. The Submesh Tool exports each component separately. Here's when to use each:</p>
+            
+            <div class="comparison-table">
+                <div class="comparison-row header">
+                    <div class="comparison-cell">Feature</div>
+                    <div class="comparison-cell">Standard Tool</div>
+                    <div class="comparison-cell">Submesh Tool</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Output</div>
+                    <div class="comparison-cell">Single combined OBJ</div>
+                    <div class="comparison-cell">Multiple OBJ files (one per submesh)</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Best For</div>
+                    <div class="comparison-cell">Whole model editing</div>
+                    <div class="comparison-cell">Component-level editing</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Complexity</div>
+                    <div class="comparison-cell">Simple, one file</div>
+                    <div class="comparison-cell">Advanced, multiple files</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Use Case</div>
+                    <div class="comparison-cell">Full character replacement</div>
+                    <div class="comparison-cell">Removing clothing, editing parts</div>
+                </div>
+            </div>
+            
+            <div class="info-box info-yellow">
+                <h4>🎯 Perfect For:</h4>
+                <p>Editing specific clothing items, removing accessories, swapping individual character parts, isolating vehicle components, and any mod that requires component-level precision.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Supported Model Formats</h2>
+            <div class="model-types-grid">
+                <div class="model-type">
+                    <h3>👤 CMESH_PC (Submesh Split)</h3>
+                    <p><strong>Character Meshes</strong> — Player models, NPCs, gang members. Exports separate submeshes for head, torso, arms, legs, clothing, and accessories.</p>
+                    <span class="format-tag">Character Components</span>
+                </div>
+                <div class="model-type">
+                    <h3>🏙️ SMESH_PC (Submesh Split)</h3>
+                    <p><strong>Static Meshes</strong> — Buildings, props, weapons. Exports individual parts of complex objects.</p>
+                    <span class="format-tag">Object Components</span>
+                </div>
+                <div class="model-type">
+                    <h3>🚗 CAR_PC (Submesh Split)</h3>
+                    <p><strong>Vehicle Meshes</strong> — Cars, motorcycles, boats. Exports separate submeshes for body, wheels, windows, and accessories.</p>
+                    <span class="format-tag">Vehicle Parts</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card"><h3>🔧 Submesh Splitting</h3><p>Automatically detects and separates submeshes from complex models — each component becomes its own OBJ file.</p></div>
+                <div class="feature-card"><h3>👕 Component-Level Editing</h3><p>Edit individual clothing items, character parts, vehicle components, or object sections independently.</p></div>
+                <div class="feature-card"><h3>🖱️ Drag & Drop Simplicity</h3><p>Same easy drag-and-drop interface as the standard tool — just drag your model file onto the executable.</p></div>
+                <div class="feature-card"><h3>📁 Organized Output</h3><p>Submesh files are clearly named to indicate which component they represent (e.g., modelname_head.obj, modelname_torso.obj).</p></div>
+                <div class="feature-card"><h3>🎯 Precision Editing</h3><p>Modify specific parts without affecting the rest of the model — perfect for removing clothing, changing accessories, or swapping components.</p></div>
+                <div class="feature-card"><h3>🔄 Compatible with Workflow</h3><p>Works seamlessly with the standard Model Export Tool and other modding utilities.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">How to Use the Model Submesh Tool</h2>
+            <div class="workflow-grid">
+                <div class="workflow-step"><div class="step-number">1</div><h4>Extract Game Archives</h4><p>Use ThomasJepp Saints Row Tools to extract model files from VPP_PC archives.</p></div>
+                <div class="workflow-step"><div class="step-number">2</div><h4>Find Your Model</h4><p>Locate the .cmesh_pc, .smesh_pc, or .car_pc file you want to edit.</p></div>
+                <div class="workflow-step"><div class="step-number">3</div><h4>Drag & Drop</h4><p>Drag the model file onto cmesh2obj_0-2_submeshes.exe.</p></div>
+                <div class="workflow-step"><div class="step-number">4</div><h4>Get Submesh Files</h4><p>Multiple OBJ files appear in the same folder, each named after its component.</p></div>
+                <div class="workflow-step"><div class="step-number">5</div><h4>Edit Components</h4><p>Import individual submesh OBJs into Blender/3DS Max for component-level editing.</p></div>
+                <div class="workflow-step"><div class="step-number">6</div><h4>Reassemble & Test</h4><p>After editing, you'll need to reassemble components and convert back to game format.</p></div>
+            </div>
+            
+            <div class="code-block">
+                <h4 style="color: #ffcc00; margin-bottom: 10px;">📝 Example: Editing a Character's Shirt</h4>
+                <code>1. Drag player_female.cmesh_pc onto submesh tool</code>
+                <code>2. Gets: player_female_head.obj, player_female_torso.obj, </code>
+                <code>   player_female_arms.obj, player_female_shirt.obj, etc.</code>
+                <code>3. Import only player_female_shirt.obj into Blender</code>
+                <code>4. Edit the shirt design without touching other parts</code>
+                <code>5. Save and recombine components for the game</code>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Common Submesh Modding Projects</h2>
+            <ul>
+                <li><strong>Removing Clothing:</strong> Isolate and remove specific clothing items from character models.</li>
+                <li><strong>Custom Outfits:</strong> Create custom clothing by editing individual garment submeshes.</li>
+                <li><strong>Vehicle Customization:</strong> Edit individual vehicle parts — body, wheels, windows separately.</li>
+                <li><strong>Character Accessories:</strong> Add or remove hats, glasses, jewelry, and accessories.</li>
+                <li><strong>Component Swapping:</strong> Swap submeshes between different models (e.g., different shirt on same character).</li>
+                <li><strong>Weapon Mods:</strong> Edit individual weapon parts for modular weapon designs.</li>
+                <li><strong>Environment Props:</strong> Modify specific parts of complex environmental objects.</li>
+            </ul>
+        </section>
+
+        <section class="download-section">
+            <h3>📥 Download Model Submesh Tool</h3>
+            <p>Advanced model extraction with submesh splitting — edit specific components of Saints Row 2 models.</p>
+            <div class="download-buttons">
+                <a href="https://www.saintsrowmods.com/forum/attachments/cmesh2obj_0-2_submeshes-rar.27310" class="download-btn" target="_blank">⬇️ Download Submesh Tool v0.2</a>
+                <a href="https://www.saintsrowmods.com/forum/threads/saints-row-2-models-export-tool-cmesh-smesh-car.18600/" class="download-btn download-secondary" target="_blank">💬 Forum Thread</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #999999;">File size: ~500 KB | Version: 0.2 (Submesh version) | Platform: Windows | Created by Masamaru</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Understanding Submesh Naming</h2>
+            <p>When you export a model with the Submesh Tool, you'll receive multiple OBJ files with names that indicate what part of the model they represent. Common submesh names include:</p>
+            <ul>
+                <li><strong>Character Models:</strong> head, torso, arms, legs, hands, feet, hair, eyes, mouth, shirt, pants, shoes, jacket, hat, glasses, accessories</li>
+                <li><strong>Vehicle Models:</strong> body, chassis, wheels, tires, windows, doors, hood, trunk, spoiler, lights, interior, engine</li>
+                <li><strong>Weapon Models:</strong> barrel, grip, stock, magazine, scope, sights, body, accessories</li>
+                <li><strong>Environment Models:</strong> base, roof, walls, windows, doors, details, decorations</li>
+            </ul>
+            <div class="info-box info-blue">
+                <h4>🔍 Not Sure What a Submesh Is?</h4>
+                <p>Open the OBJ file in Blender or a text editor to see what it contains. The geometry will give you clues about which part of the model it represents.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Advanced Editing Techniques</h2>
+            <div class="tips-grid">
+                <div class="tip-card"><h3>👕 Removing Clothing</h3><p>Isolate clothing submeshes (shirt, pants, jacket) and delete or replace them to create different outfit variations.</p></div>
+                <div class="tip-card"><h3>🎨 Component Swapping</h3><p>Export submeshes from different models and combine them — for example, take a shirt from one character and put it on another.</p></div>
+                <div class="tip-card"><h3>🚗 Vehicle Part Customization</h3><p>Edit wheel submeshes separately to create custom rims, or modify body panels for unique vehicle designs.</p></div>
+                <div class="tip-card"><h3>🧩 Preserve Rigging</h3><p>When editing character submeshes, maintain the original vertex order and weight maps to preserve animation rigging.</p></div>
+                <div class="tip-card"><h3>📐 Scale Consistency</h3><p>Keep edited submeshes at the same scale as the original to ensure proper fit when reassembling.</p></div>
+                <div class="tip-card"><h3>🔧 Test Component by Component</h3><p>Edit one submesh at a time and test in-game to identify issues before making many changes.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Complete Advanced Model Workflow</h2>
+            <div class="workflow-grid">
+                <div class="workflow-step"><div class="step-number">1</div><h4>Extract</h4><p>Use ThomasJepp Tools to extract models from VPP_PC archives.</p></div>
+                <div class="workflow-step"><div class="step-number">2</div><h4>Split Submeshes</h4><p>Use Submesh Tool to separate components into individual OBJ files.</p></div>
+                <div class="workflow-step"><div class="step-number">3</div><h4>Edit Components</h4><p>Import specific submeshes into Blender/3DS Max for targeted editing.</p></div>
+                <div class="workflow-step"><div class="step-number">4</div><h4>Export Edited Parts</h4><p>Export each edited submesh back to OBJ format.</p></div>
+                <div class="workflow-step"><div class="step-number">5</div><h4>Reassemble Model</h4><p>Recombine edited submeshes into a complete model (requires advanced tools).</p></div>
+                <div class="workflow-step"><div class="step-number">6</div><h4>Convert & Repack</h4><p>Convert back to game format and repack into VPP_PC for testing.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Submesh Tool vs Standard Tool</h2>
+            <div class="comparison-table">
+                <div class="comparison-row header">
+                    <div class="comparison-cell">Aspect</div>
+                    <div class="comparison-cell">Standard Tool</div>
+                    <div class="comparison-cell">Submesh Tool</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">File Output</div>
+                    <div class="comparison-cell">1 OBJ file</div>
+                    <div class="comparison-cell">Multiple OBJ files</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Editing Precision</div>
+                    <div class="comparison-cell">Whole model only</div>
+                    <div class="comparison-cell">Component-level control</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Difficulty</div>
+                    <div class="comparison-cell">Beginner-friendly</div>
+                    <div class="comparison-cell">Advanced users</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Best Use</div>
+                    <div class="comparison-cell">Full model replacement</div>
+                    <div class="comparison-cell">Partial edits, clothing removal</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">File Size</div>
+                    <div class="comparison-cell">Single manageable file</div>
+                    <div class="comparison-cell">Multiple files to track</div>
+                </div>
+            </div>
+            <div class="info-box info-yellow">
+                <h4>💡 Which Tool Should You Use?</h4>
+                <p>Use the <strong>standard Model Export Tool</strong> for simple whole-model edits or when you're just starting with 3D modding. Use the <strong>Submesh Tool</strong> when you need component-level precision — like removing a specific piece of clothing or editing vehicle wheels separately.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Troubleshooting</h2>
+            <div class="trouble-list">
+                <div class="trouble-item"><h3>Tool creates many OBJ files — which one do I edit?</h3><p><strong>Tip:</strong> Open OBJ files in a 3D viewer or import them one by one to identify which submesh corresponds to which part. Name them or make notes for reference.</p></div>
+                <div class="trouble-item"><h3>Edited submesh doesn't fit with other parts after reassembly</h3><p><strong>Fix:</strong> Maintain the original scale and pivot point when editing. Import a reference submesh to ensure alignment.</p></div>
+                <div class="trouble-item"><h3>Submesh names aren't descriptive</h3><p><strong>Tip:</strong> Some models have generic submesh names. Import them into Blender to see the geometry and rename files yourself for easier reference.</p></div>
+                <div class="trouble-item"><h3>Game crashes with custom model after reassembly</h3><p><strong>Fix:</strong> Ensure all submeshes are present and properly reassembled. Test with a single edited submesh first before making multiple changes.</p></div>
+                <div class="trouble-item"><h3>Can't find submesh files after export</h3><p><strong>Fix:</strong> Check the same folder as the source model file. Submesh files are saved there with descriptive names.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">3D Software Recommendations</h2>
+            <ul>
+                <li><strong>Blender:</strong> Free, powerful, excellent for component-level editing. Supports multiple OBJ imports/layers.</li>
+                <li><strong>3DS Max:</strong> Industry standard with robust submesh handling and animation tools.</li>
+                <li><strong>Maya:</strong> Professional-grade with advanced component editing features.</li>
+                <li><strong>ZBrush:</strong> Perfect for detailed sculpting of individual submeshes.</li>
+            </ul>
+            <div class="info-box info-blue">
+                <h4>🎨 Working with Multiple Submeshes in Blender</h4>
+                <p>Import each submesh on a separate layer in Blender. This allows you to edit them individually while keeping them aligned and visible for reference. Use the Outliner to toggle visibility of different components.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Related Tools</h2>
+            <div class="related-grid">
+                <div class="related-card"><h3><a href="./model-export.html">Model Export Tool</a></h3><p>Standard version — export entire models as single OBJ files for simpler editing.</p></div>
+                <div class="related-card"><h3><a href="./thomasjepp-tools.html">ThomasJepp Saints Row Tools</a></h3><p>Extract model files from VPP_PC archives.</p></div>
+                <div class="related-card"><h3><a href="./peg-tool.html">PEG Tool</a></h3><p>Edit textures for your custom model components.</p></div>
+                <div class="related-card"><h3><a href="./gotr.html">Gentlemen of the Row</a></h3><p>Essential mod with model improvements and fixes.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Community Resources</h2>
+            <p>For more help with advanced 3D modeling and component-level editing:</p>
+            <ul>
+                <li>🌐 <strong><a href="https://www.saintsrowmods.com" target="_blank">Saints Row Mods Forum</a></strong> - Official community hub with advanced modding discussions</li>
+                <li>💬 <strong><a href="https://www.saintsrowmods.com/forum/threads/saints-row-2-models-export-tool-cmesh-smesh-car.18600/" target="_blank">Model Tools Thread</a></strong> - Discussion and advanced techniques</li>
+                <li>📖 <strong><a href="https://www.saintsrowmods.com/forum/forums/tutorials.46/" target="_blank">Tutorials Section</a></strong> - Step-by-step guides for submesh editing</li>
+                <li>🎨 <strong><a href="https://www.blender.org" target="_blank">Blender</a></strong> - Free 3D modeling software perfect for submesh editing</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub. All tools are community-created and maintained.</p>
+        <p>Model Submesh Tool by Masamaru — Component-level 3D model editing for Saints Row 2</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const scrollThreshold = 300;
+        const showThreshold = 200;
+        window.addEventListener('scroll', function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll < showThreshold) navbar.classList.remove('navbar-hidden');
+            else if (currentScroll > scrollThreshold) navbar.classList.add('navbar-hidden');
+        });
+    </script>
+</body>
+</html>

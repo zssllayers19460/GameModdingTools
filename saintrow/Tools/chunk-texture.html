@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chunk Texture Tool - Saints Row 2 Batch Texture Editor</title>
+    <link rel="stylesheet" href="../sr2tools.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a>
+                <span>/</span>
+                <a href="../saintrow.html">Saints Row</a>
+                <span>/</span>
+                <a href="../sr2.html">Saints Row 2</a>
+                <span>/</span>
+                <span>Chunk Texture Tool</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="tool-page-header">
+        <h1 class="tool-page-title">Chunk Texture Tool</h1>
+        <p class="tool-page-subtitle">Batch process and replace textures within Saints Row 2 chunk data — collective management of internal texture resources</p>
+        <div class="header-badge-row">
+            <span class="header-badge">Batch Processing</span>
+            <span class="header-badge">Texture Replacement</span>
+            <span class="header-badge">Chunk Data</span>
+            <span class="header-badge">GUI Tool</span>
+            <span class="header-badge">v1.28</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section">
+            <h2 class="section-title">What is the Chunk Texture Tool?</h2>
+            <p>The <strong>Chunks Texture Tool</strong> (SR2ChunksTextureTool.exe) is a specialized GUI utility developed by <strong>Masamaru</strong> to address a major limitation in Saints Row 2 texture modding. While the standard PEG Tool can edit individual <strong>.g_peg_pc</strong> files, Saints Row 2 distributes its textures across hundreds of chunk files, making it nearly impossible to edit them individually.</p>
+            <p>This tool solves that problem by providing batch processing capabilities for chunk data resources. It allows you to collectively manage and replace textures within internal chunk data, making large-scale texture modding projects feasible and efficient. Now you can easily replace textures across multiple chunk files with a single operation.</p>
+            
+            <div class="dev-quote">
+                <p>"Saints Row 2 has a large amount of texture in the chunk data that divided hundreds, it was impossible to edit it in sr2pegtool. I developed SR2ChunksTextureTool to collectively manage the texture of internal chunk data. Now you can easily replace the textures within each chunk data."</p>
+                <p class="quote-attr">— Masamaru, Creator of Chunk Texture Tool</p>
+            </div>
+
+            <div class="info-box info-blue">
+                <h4>🖼️ What are Chunk Textures?</h4>
+                <p>Saints Row 2 stores many textures across numerous .g_peg_pc chunk files. Instead of editing each file individually, the Chunk Texture Tool processes all chunks at once, allowing for efficient bulk texture replacement.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Why You Need This Tool</h2>
+            <p>The standard PEG Tool (sr2pegtool.exe) is excellent for editing individual texture files, but Saints Row 2's architecture presents a unique challenge:</p>
+            <ul>
+                <li><strong>Hundreds of Chunk Files:</strong> The game distributes textures across hundreds of .g_peg_pc files</li>
+                <li><strong>Manual Editing Impossible:</strong> Opening and editing each file individually would take hundreds of hours</li>
+                <li><strong>Batch Processing Required:</strong> Large-scale texture mods need to replace textures across multiple files simultaneously</li>
+                <li><strong>Collective Management:</strong> The Chunk Texture Tool enables you to manage all textures as a collective resource</li>
+            </ul>
+            <div class="info-box info-yellow">
+                <h4>💡 Perfect For</h4>
+                <p>Complete texture overhauls, HD texture packs, total conversion mods, and any project that requires replacing dozens or hundreds of textures at once.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card"><h3>📦 Batch Texture Processing</h3><p>Process hundreds of chunk files simultaneously — replace textures across the entire game in one operation.</p></div>
+                <div class="feature-card"><h3>🖼️ Chunk Data Management</h3><p>Collectively manage textures within internal chunk data resources with an intuitive interface.</p></div>
+                <div class="feature-card"><h3>🎨 Easy Texture Replacement</h3><p>Replace textures within each chunk data file using a simple GUI workflow.</p></div>
+                <div class="feature-card"><h3>🔄 Multiple Format Support</h3><p>Works with .g_peg_pc chunk files and standard texture formats.</p></div>
+                <div class="feature-card"><h3>💻 User-Friendly GUI</h3><p>No command-line knowledge required — a clean graphical interface makes texture modding accessible.</p></div>
+                <div class="feature-card"><h3>⚡ Efficient Workflow</h3><p>Dramatically reduces the time needed for large-scale texture modding projects.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">How to Use the Chunk Texture Tool</h2>
+            <div class="workflow-grid">
+                <div class="workflow-step"><div class="step-number">1</div><h4>Extract Game Archives</h4><p>Use ThomasJepp Tools to extract the chunk texture files (.g_peg_pc) from the game's VPP_PC archives.</p></div>
+                <div class="workflow-step"><div class="step-number">2</div><h4>Launch Chunk Texture Tool</h4><p>Open SR2ChunksTextureTool.exe and load your extracted chunk files folder.</p></div>
+                <div class="workflow-step"><div class="step-number">3</div><h4>Browse Textures</h4><p>The tool will display all textures found across your chunk files in a unified interface.</p></div>
+                <div class="workflow-step"><div class="step-number">4</div><h4>Select & Replace</h4><p>Choose textures to replace and select your custom texture files for batch replacement.</p></div>
+                <div class="workflow-step"><div class="step-number">5</div><h4>Process & Save</h4><p>Run the batch process to replace all selected textures across multiple chunk files automatically.</p></div>
+                <div class="workflow-step"><div class="step-number">6</div><h4>Repack & Test</h4><p>Repack the modified chunk files back into VPP_PC archives and test in-game.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Common Use Cases</h2>
+            <ul>
+                <li><strong>HD Texture Packs:</strong> Replace low-resolution textures with high-quality versions across the entire game.</li>
+                <li><strong>Complete Visual Overhauls:</strong> Change the art style or visual theme of Stilwater.</li>
+                <li><strong>Character/Vehicle Reskins:</strong> Replace textures for all characters or vehicles in one batch.</li>
+                <li><strong>Environment Texture Mods:</strong> Update building textures, road surfaces, and environmental details.</li>
+                <li><strong>UI/HUD Overhauls:</strong> Replace interface textures and icons across all UI elements.</li>
+                <li><strong>Total Conversion Mods:</strong> Completely transform the game's visual identity for total conversion projects.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Chunk Texture Tool vs PEG Tool</h2>
+            <div class="comparison-table">
+                <div class="comparison-row header">
+                    <div class="comparison-cell">Feature</div>
+                    <div class="comparison-cell">PEG Tool</div>
+                    <div class="comparison-cell">Chunk Texture Tool</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Primary Use</div>
+                    <div class="comparison-cell">Individual file editing</div>
+                    <div class="comparison-cell">Batch chunk processing</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">File Scope</div>
+                    <div class="comparison-cell">Single .peg_pc file</div>
+                    <div class="comparison-cell">Hundreds of .g_peg_pc files</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Best For</div>
+                    <div class="comparison-cell">Detailed single texture edits</div>
+                    <div class="comparison-cell">Large-scale texture packs</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Workflow</div>
+                    <div class="comparison-cell">Manual, one file at a time</div>
+                    <div class="comparison-cell">Batch, automated processing</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Complexity</div>
+                    <div class="comparison-cell">Simple for individual files</div>
+                    <div class="comparison-cell">Efficient for bulk operations</div>
+                </div>
+            </div>
+            <div class="info-box info-blue">
+                <h4>🔄 Complementary Tools</h4>
+                <p>Use PEG Tool for detailed edits on individual textures, and Chunk Texture Tool for large-scale batch replacements across the entire game.</p>
+            </div>
+        </section>
+
+        <section class="download-section">
+            <h3>📥 Download Chunk Texture Tool</h3>
+            <p>Batch process and replace textures across hundreds of chunk files — the essential tool for large-scale texture modding.</p>
+            <div class="download-buttons">
+                <a href="https://www.saintsrowmods.com/forum/attachments/sr2chunkstexturetool_v1-28-zip.27300" class="download-btn" target="_blank">⬇️ Download v1.28</a>
+                <a href="https://www.saintsrowmods.com/forum/threads/saints-row-2-chunks-texture-tool.12877/" class="download-btn download-secondary" target="_blank">💬 Forum Thread</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #999999;">File size: ~1.5 MB | Version: 1.28 | Platform: Windows | Created by Masamaru</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Texture Replacement Workflow</h2>
+            <ol style="margin-top: 15px;">
+                <li><strong>Prepare Your Textures:</strong> Create or edit your custom textures using Photoshop, GIMP, or Paint.NET. Save them in the same format as the originals (usually DDS or PNG).</li>
+                <li><strong>Organize Files:</strong> Keep your custom textures in a dedicated folder with names that match the originals or a mapping file.</li>
+                <li><strong>Load Chunks:</strong> Point the Chunk Texture Tool to your extracted chunk files folder.</li>
+                <li><strong>Map Textures:</strong> The tool will display all textures found. Match your custom textures to the ones you want to replace.</li>
+                <li><strong>Execute Batch Replace:</strong> Run the batch replacement operation — the tool will automatically update all relevant chunk files.</li>
+                <li><strong>Verify Changes:</strong> Check a few files to ensure replacements worked correctly before repacking.</li>
+                <li><strong>Repack and Test:</strong> Use ThomasJepp Tools to repack the modified chunk files into VPP_PC archives and test in-game.</li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Texture Format Requirements</h2>
+            <div class="specs-table">
+                <div class="spec-row"><div class="spec-label">Input Formats</div><div class="spec-value">.g_peg_pc (chunk files), .dds, .png, .tga</div></div>
+                <div class="spec-row"><div class="spec-label">Output Format</div><div class="spec-value">.g_peg_pc (modified chunks)</div></div>
+                <div class="spec-row"><div class="spec-label">Texture Size</div><div class="spec-value">Match original dimensions (check with reference)</div></div>
+                <div class="spec-row"><div class="spec-label">Color Depth</div><div class="spec-value">24-bit or 32-bit recommended</div></div>
+                <div class="spec-row"><div class="spec-label">Compression</div><div class="spec-value">DXT1, DXT3, DXT5 (match original)</div></div>
+            </div>
+            <div class="info-box info-yellow">
+                <h4>🎨 Important: Match Original Formats</h4>
+                <p>When replacing textures, ensure your custom textures match the original's dimensions and compression format. Using mismatched formats can cause visual artifacts or game crashes. Extract a reference texture first to check the original specifications.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Pro Tips for Texture Modding</h2>
+            <div class="tips-grid">
+                <div class="tip-card"><h3>📊 Start Small</h3><p>Test your workflow with a few textures first before processing hundreds of files. This helps identify any issues early.</p></div>
+                <div class="tip-card"><h3>💾 Always Backup</h3><p>Keep backups of your original chunk files. You'll need them to revert changes if something goes wrong.</p></div>
+                <div class="tip-card"><h3>📁 Organize by Category</h3><p>Group textures by category (characters, vehicles, environment) to make batch replacements easier to manage.</p></div>
+                <div class="tip-card"><h3>🎨 Use Mipmaps</h3><p>Generate mipmaps for your textures to ensure they look good at all distances. The Chunk Texture Tool can auto-generate them.</p></div>
+                <div class="tip-card"><h3>🔍 Reference Originals</h3><p>Always keep an extracted reference texture to compare dimensions, format, and color depth before replacement.</p></div>
+                <div class="tip-card"><h3>⚡ Batch in Stages</h3><p>Process textures in batches by category rather than all at once. This makes troubleshooting easier.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Troubleshooting</h2>
+            <div class="trouble-list">
+                <div class="trouble-item"><h3>Textures don't appear in-game after replacement</h3><p><strong>Fix:</strong> Verify your custom textures match the original dimensions and format. Check that the chunk files were correctly repacked into VPP_PC archives.</p></div>
+                <div class="trouble-item"><h3>Game crashes when loading modified chunks</h3><p><strong>Fix:</strong> Ensure your textures use the correct compression format (DXT1, DXT3, or DXT5). Extract a reference texture to check the original specs.</p></div>
+                <div class="trouble-item"><h3>Tool can't find chunk files</h3><p><strong>Fix:</strong> Make sure you've extracted the chunk files from VPP_PC archives first using ThomasJepp Tools. Point the tool to the extracted folder containing .g_peg_pc files.</p></div>
+                <div class="trouble-item"><h3>Textures look corrupted or pixelated</h3><p><strong>Fix:</strong> Your custom texture may have mismatched dimensions or mipmaps. Ensure dimensions are powers of two (64, 128, 256, 512, 1024, etc.).</p></div>
+                <div class="trouble-item"><h3>Batch replacement takes too long</h3><p><strong>Fix:</strong> Process textures in smaller batches. The tool is processing hundreds of files — large projects will naturally take time.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Recommended Texture Editing Tools</h2>
+            <ul>
+                <li><strong>Photoshop with NVIDIA DDS Plugin:</strong> Industry standard for texture editing with DDS support</li>
+                <li><strong>GIMP with DDS Plugin:</strong> Free, open-source alternative with excellent texture editing capabilities</li>
+                <li><strong>Paint.NET:</strong> Lightweight and user-friendly for quick texture edits</li>
+                <li><strong>TexturePacker:</strong> For managing texture atlases and sprite sheets</li>
+                <li><strong>Intel Texture Works Plugin:</strong> Advanced DDS compression options</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Related Tools</h2>
+            <div class="related-grid">
+                <div class="related-card"><h3><a href="./peg-tool.html">PEG Tool</a></h3><p>Edit individual .peg_pc texture files for detailed work on specific textures.</p></div>
+                <div class="related-card"><h3><a href="./thomasjepp-tools.html">ThomasJepp Saints Row Tools</a></h3><p>Extract chunk files from VPP_PC archives and repack after editing.</p></div>
+                <div class="related-card"><h3><a href="./model-export.html">Model Export Tool</a></h3><p>Export 3D models to see how textures map to game objects.</p></div>
+                <div class="related-card"><h3><a href="./gotr.html">Gentlemen of the Row</a></h3><p>Essential mod that includes texture improvements and fixes.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Community Resources</h2>
+            <p>For more help with texture modding, check out these community resources:</p>
+            <ul>
+                <li>🌐 <strong><a href="https://www.saintsrowmods.com" target="_blank">Saints Row Mods Forum</a></strong> - Official community hub with texture mod showcases</li>
+                <li>💬 <strong><a href="https://www.saintsrowmods.com/forum/threads/saints-row-2-chunks-texture-tool.12877/" target="_blank">Chunk Texture Tool Thread</a></strong> - Discussion and updates</li>
+                <li>📖 <strong><a href="https://www.saintsrowmods.com/forum/forums/tutorials.46/" target="_blank">Tutorials Section</a></strong> - Step-by-step guides for texture editing</li>
+                <li>🎨 <strong><a href="https://www.saintsrowmods.com/forum/forums/texture-mods.70/" target="_blank">Texture Mod Releases</a></strong> - See what other modders have created</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub. All tools are community-created and maintained.</p>
+        <p>Chunk Texture Tool by Masamaru — Batch texture replacement for Saints Row 2 chunk data</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const scrollThreshold = 300;
+        const showThreshold = 200;
+        window.addEventListener('scroll', function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll < showThreshold) navbar.classList.remove('navbar-hidden');
+            else if (currentScroll > scrollThreshold) navbar.classList.add('navbar-hidden');
+        });
+    </script>
+</body>
+</html>

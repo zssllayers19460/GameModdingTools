@@ -1,0 +1,1280 @@
+/* ========================================
+   SR2 TOOLS MASTER STYLESHEET
+   Unified styles for all Saints Row 2 tool pages
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-top: 70px;
+}
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(26, 26, 46, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #ff0000;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    transform: translateY(0);
+}
+
+.navbar.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #00ff00;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logo-text:hover {
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #cccccc;
+    font-size: 0.85rem;
+}
+
+.breadcrumb a {
+    color: #00ccff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #00ffff;
+}
+
+.breadcrumb span {
+    color: #999999;
+}
+
+/* ========================================
+   TOOL PAGE HEADER (Common)
+   ======================================== */
+.tool-page-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
+    border-bottom: 2px solid #ff0000;
+    margin-bottom: 50px;
+}
+
+.tool-page-title {
+    font-size: 2.8rem;
+    color: #ff00ff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    font-weight: bold;
+}
+
+.tool-page-subtitle {
+    font-size: 1.1rem;
+    color: #cccccc;
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.header-badge-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.header-badge {
+    background: rgba(144, 12, 144, 0.3);
+    border: 1px solid #ff00ff;
+    color: #ffcc00;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px 20px;
+}
+
+/* ========================================
+   SECTIONS (Common)
+   ======================================== */
+.section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #ff00ff;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ff0000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section p {
+    color: #cccccc;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 0.98rem;
+}
+
+.section strong {
+    color: #ffd700;
+}
+
+.section a {
+    color: #00ccff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.section a:hover {
+    color: #ff00ff;
+}
+
+.section ul,
+.section ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.section li {
+    color: #cccccc;
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.section ul li::marker {
+    color: #ff00ff;
+}
+
+/* ========================================
+   QUOTE BLOCK
+   ======================================== */
+.dev-quote {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid #ff00ff;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 25px;
+    margin: 20px 0;
+}
+
+.dev-quote p {
+    font-style: italic;
+    color: #dddddd;
+    margin: 0 0 8px 0;
+    line-height: 1.7;
+}
+
+.dev-quote .quote-attr {
+    font-size: 0.85rem;
+    color: #ff00ff;
+    font-style: normal;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* ========================================
+   INFO BOXES
+   ======================================== */
+.info-box {
+    padding: 18px 22px;
+    border-radius: 8px;
+    border-left: 4px solid;
+    margin: 20px 0;
+}
+
+.info-box h4 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.info-box p {
+    margin: 0 !important;
+    font-size: 0.9rem;
+}
+
+.info-blue {
+    background: rgba(0, 153, 255, 0.07);
+    border-left-color: #00ccff;
+}
+
+.info-blue h4 {
+    color: #00ccff;
+}
+
+.info-yellow {
+    background: rgba(255, 204, 0, 0.07);
+    border-left-color: #ffcc00;
+}
+
+.info-yellow h4 {
+    color: #ffcc00;
+}
+
+.info-green {
+    background: rgba(0, 255, 0, 0.07);
+    border-left-color: #00ff00;
+}
+
+.info-green h4 {
+    color: #00ff00;
+}
+
+.info-red {
+    background: rgba(255, 0, 0, 0.07);
+    border-left-color: #ff6600;
+}
+
+.info-red h4 {
+    color: #ff6600;
+}
+
+/* ========================================
+   FEATURE GRID (Common)
+   ======================================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.feature-card {
+    background: rgba(66, 66, 66, 0.5);
+    border: 1px solid #666666;
+    border-radius: 8px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: #ff00ff;
+    background: rgba(66, 66, 66, 0.7);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 0, 255, 0.2);
+}
+
+.feature-card h3 {
+    font-size: 1.2rem;
+    color: #ff00ff;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #cccccc;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ========================================
+   WORKFLOW GRID (Common)
+   ======================================== */
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.workflow-step {
+    background: rgba(66, 66, 66, 0.5);
+    border: 2px solid #ff00ff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.step-number {
+    font-size: 2rem;
+    color: #ff00ff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.workflow-step h4 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.workflow-step p {
+    color: #cccccc;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ========================================
+   SPECS TABLE (Common)
+   ======================================== */
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: rgba(66, 66, 66, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.specs-table th {
+    background: rgba(50, 50, 50, 0.95);
+    color: #ff00ff;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #ff0000;
+}
+
+.specs-table td {
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 0, 255, 0.1);
+    color: #cccccc;
+}
+
+.specs-table tr:hover {
+    background: rgba(100, 50, 100, 0.2);
+}
+
+/* Alternate spec-row style for grid-based tables */
+.spec-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    border-bottom: 1px solid rgba(255, 0, 255, 0.1);
+    padding: 12px 15px;
+}
+
+.spec-row:last-child {
+    border-bottom: none;
+}
+
+.spec-label {
+    font-weight: bold;
+    color: #ff00ff;
+}
+
+.spec-value {
+    color: #cccccc;
+}
+
+/* ========================================
+   CODE BLOCK
+   ======================================== */
+.code-block {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #444444;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+}
+
+.code-block code {
+    color: #00dd00;
+    font-size: 0.85rem;
+    display: block;
+    line-height: 1.6;
+}
+
+/* ========================================
+   DOWNLOAD SECTION (Common)
+   ======================================== */
+.download-section {
+    background: rgba(66, 66, 66, 0.6);
+    border: 2px solid #ff6600;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.download-section h3 {
+    font-size: 1.6rem;
+    color: #ff00ff;
+    margin-bottom: 15px;
+}
+
+.download-section p {
+    color: #cccccc;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #ff0000, #ff00ff);
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 0, 255, 0.4);
+}
+
+.download-secondary {
+    background: transparent;
+    border: 2px solid #00ccff;
+    color: #00ccff;
+}
+
+.download-secondary:hover {
+    background: #00ccff;
+    color: #000000;
+}
+
+/* ========================================
+   TIPS GRID (Common)
+   ======================================== */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.tip-card {
+    background: rgba(66, 66, 66, 0.5);
+    border: 1px solid #666666;
+    border-radius: 8px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    border-color: #ff00ff;
+    background: rgba(66, 66, 66, 0.7);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 0, 255, 0.2);
+}
+
+.tip-card h3 {
+    font-size: 1.2rem;
+    color: #ff00ff;
+    margin-bottom: 10px;
+}
+
+.tip-card p {
+    color: #cccccc;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ========================================
+   TROUBLESHOOTING (Common)
+   ======================================== */
+.trouble-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.trouble-item {
+    background: rgba(50, 50, 50, 0.6);
+    border: 1px solid #444444;
+    border-left: 4px solid #ff0000;
+    border-radius: 0 8px 8px 0;
+    padding: 20px;
+}
+
+.trouble-item h3 {
+    font-size: 1rem;
+    color: #ff4444;
+    margin-bottom: 8px;
+}
+
+.trouble-item p {
+    font-size: 0.88rem;
+    color: #cccccc;
+    margin: 4px 0 0 0;
+    line-height: 1.6;
+}
+
+/* ========================================
+   RELATED TOOLS GRID (Common)
+   ======================================== */
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.related-card {
+    background: rgba(66, 66, 66, 0.5);
+    border: 1px solid #444444;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.related-card:hover {
+    border-color: #ff6600;
+    background: rgba(255, 102, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.related-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.related-card h3 a {
+    color: #ff6600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.related-card h3 a:hover {
+    color: #ff00ff;
+}
+
+.related-card p {
+    font-size: 0.85rem;
+    color: #aaaaaa;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background: rgba(26, 26, 46, 0.98);
+    border-top: 2px solid #ff0000;
+    padding: 40px 20px;
+    text-align: center;
+    color: #cccccc;
+    margin-top: 60px;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    .tool-page-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .features-grid,
+    .workflow-grid,
+    .related-grid,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-step {
+        padding: 15px;
+    }
+
+    .spec-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tool-page-title {
+        font-size: 1.6rem;
+    }
+
+    .download-section {
+        padding: 25px;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+    }
+
+    .download-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .breadcrumb {
+        font-size: 0.75rem;
+    }
+}
+
+/* ========================================
+   SPECIAL STYLES (CTS MAPPER & PEG TOOL)
+   These styles are unique to specific tools
+   ======================================== */
+
+/* CTS Mapper Specific Styles */
+.tool-page-header.cts-header {
+    /* Any CTS-specific header styles */
+}
+
+.cts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    font-size: 0.9rem;
+}
+
+.cts-table thead tr {
+    background: rgba(144, 12, 144, 0.4);
+    border-bottom: 2px solid #ff00ff;
+}
+
+.cts-table th {
+    padding: 12px 16px;
+    text-align: left;
+    color: #ffcc00;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.cts-table td {
+    padding: 12px 16px;
+    color: #cccccc;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cts-table tbody tr {
+    background: rgba(50, 50, 50, 0.4);
+    transition: background 0.2s ease;
+}
+
+.cts-table tbody tr:hover {
+    background: rgba(144, 12, 144, 0.1);
+}
+
+.cts-table td:first-child {
+    color: #00ccff;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+/* PEG Tool Specific Styles */
+.texture-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.texture-type {
+    background: rgba(66, 66, 66, 0.5);
+    border: 2px solid #444444;
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.texture-type:hover {
+    border-color: #ff00ff;
+    background: rgba(255, 0, 85, 0.03);
+    transform: translateY(-5px);
+}
+
+.texture-type h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+}
+
+.texture-type p {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+}
+
+.texture-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(255, 0, 85, 0.2);
+    border: 1px solid #ff00ff;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #ff00ff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Getting Started Section (for PEG Tool) */
+.getting-started-section {
+    background: linear-gradient(135deg, rgba(255, 0, 85, 0.12) 0%, rgba(255, 102, 0, 0.06) 100%);
+    padding: 50px;
+    border-radius: 16px;
+    border: 3px solid #ff00ff;
+}
+
+.getting-started-section h2 {
+    border-bottom-color: #ff00ff;
+    margin-bottom: 20px;
+}
+
+.getting-started-section>p {
+    font-size: 16px;
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.getting-started-box {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.gs-step-1 {
+    background: rgba(26, 26, 46, 0.6);
+    border: 2px solid #444444;
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.gs-step-1:hover {
+    border-color: #ff00ff;
+    background: rgba(255, 0, 85, 0.03);
+}
+
+.gs-step-1 h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ff00ff;
+    margin: 0 0 15px 0;
+}
+
+.gs-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.gs-detail-item {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 1px solid #444444;
+    transition: all 0.3s ease;
+}
+
+.gs-detail-item:hover {
+    border-color: #ff00ff;
+    background: rgba(255, 0, 85, 0.05);
+}
+
+.gs-icon {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    background: rgba(255, 0, 85, 0.1);
+    border-radius: 8px;
+}
+
+.gs-detail-item strong {
+    display: block;
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.gs-detail-item p {
+    color: #aaaaaa;
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.gs-download-container {
+    background: linear-gradient(135deg, rgba(255, 0, 85, 0.15) 0%, rgba(255, 102, 0, 0.08) 100%);
+    border: 3px solid #ff00ff;
+    border-radius: 16px;
+    padding: 2px;
+    margin: 30px 0;
+}
+
+.gs-download-inner {
+    background: rgba(26, 26, 46, 0.8);
+    border-radius: 14px;
+    padding: 40px;
+    text-align: center;
+}
+
+.gs-download-inner h4 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff00ff;
+    margin: 0 0 10px 0;
+}
+
+.gs-version {
+    font-size: 13px;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 20px 0;
+}
+
+.gs-description {
+    font-size: 15px;
+    color: #cccccc;
+    margin: 0 0 30px 0;
+    line-height: 1.7;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gs-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+    padding: 25px 0;
+    border-top: 2px solid #444444;
+    border-bottom: 2px solid #444444;
+}
+
+.gs-spec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gs-spec-label {
+    font-size: 12px;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+}
+
+.gs-spec-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff00ff;
+}
+
+.gs-download-btn {
+    display: inline-block;
+    padding: 18px 50px;
+    background: linear-gradient(135deg, #ff00ff, #ff0000);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(255, 0, 85, 0.3);
+    margin: 20px 0;
+}
+
+.gs-download-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 0, 85, 0.5);
+}
+
+.gs-help-text {
+    font-size: 13px;
+    color: #aaaaaa;
+    margin-top: 20px;
+}
+
+.gs-help-text a {
+    color: #ff00ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.gs-help-text a:hover {
+    color: #ff6600;
+}
+
+.quick-start-guide {
+    background: rgba(26, 26, 46, 0.6);
+    border: 2px solid #444444;
+    border-radius: 16px;
+    padding: 40px;
+    margin-top: 30px;
+}
+
+.quick-start-guide h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ff00ff;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.quick-start-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.qs-card {
+    background: linear-gradient(135deg, rgba(255, 0, 85, 0.1) 0%, rgba(255, 102, 0, 0.05) 100%);
+    border: 2px solid #444444;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qs-card:hover {
+    border-color: #ff00ff;
+    background: rgba(255, 0, 85, 0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 0, 85, 0.15);
+}
+
+.qs-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff00ff, #ff0000);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.qs-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.qs-card p {
+    font-size: 13px;
+    color: #cccccc;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Map Elements Grid (for CTS Mapper) */
+.map-elements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.map-element {
+    background: rgba(66, 66, 66, 0.5);
+    border: 2px solid #444444;
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.map-element:hover {
+    border-color: #ff6600;
+    background: rgba(255, 102, 0, 0.03);
+    transform: translateY(-5px);
+}
+
+.map-element h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ff6600;
+    margin: 0 0 12px 0;
+}
+
+.map-element p {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+}
+
+.element-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(255, 102, 0, 0.2);
+    border: 1px solid #ff6600;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #ff6600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Coordinates Explanation (for CTS Mapper) */
+.coords-explanation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.coord-axis {
+    background: rgba(66, 66, 66, 0.5);
+    border: 2px solid #444444;
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.coord-axis:hover {
+    border-color: #ff00ff;
+    background: rgba(255, 0, 85, 0.03);
+}
+
+.coord-axis h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ff00ff;
+    margin: 0 0 12px 0;
+}
+
+.coord-axis p {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Comparison Table (for general use) */
+.comparison-table {
+    width: 100%;
+    margin: 20px 0;
+    background: rgba(66, 66, 66, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #444444;
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-row.header {
+    background: rgba(50, 50, 50, 0.95);
+    font-weight: bold;
+    border-bottom: 2px solid #ff0000;
+}
+
+.comparison-row.header .comparison-cell {
+    color: #ff00ff;
+}
+
+.comparison-cell {
+    padding: 12px 15px;
+    color: #cccccc;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-cell:last-child {
+    border-right: none;
+}
+
+@media (max-width: 768px) {
+    .comparison-row {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-row.header {
+        display: none;
+    }
+
+    .comparison-cell {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 10px 15px;
+    }
+
+    .comparison-cell:last-child {
+        border-bottom: none;
+    }
+
+    .texture-types-grid,
+    .map-elements-grid,
+    .coords-explanation {
+        grid-template-columns: 1fr;
+    }
+
+    .getting-started-section {
+        padding: 30px;
+    }
+
+    .gs-download-inner {
+        padding: 30px;
+    }
+
+    .gs-download-inner h4 {
+        font-size: 24px;
+    }
+
+    .gs-specs {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .quick-start-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gs-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-start-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .qs-card {
+        padding: 20px;
+    }
+
+    .qs-number {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .qs-card h4 {
+        font-size: 14px;
+    }
+
+    .qs-card p {
+        font-size: 12px;
+    }
+
+    .getting-started-section {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .gs-step-1 {
+        padding: 20px;
+    }
+
+    .gs-step-1 h3 {
+        font-size: 18px;
+    }
+
+    .gs-download-inner {
+        padding: 20px;
+    }
+
+    .gs-download-inner h4 {
+        font-size: 20px;
+    }
+
+    .gs-download-btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+
+    .quick-start-guide {
+        padding: 20px;
+    }
+}

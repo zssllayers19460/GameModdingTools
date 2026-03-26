@@ -5,256 +5,493 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saints Row 2 Modding Tools</title>
-    <link rel="stylesheet" href="sr2.css">
+    <link rel="stylesheet" href="saintrow.css">
 </head>
 
 <body>
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="navbar-content">
-            <a href="index.html" class="navbar-brand">SR MODDING TOOLS</a>
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
             <div class="breadcrumb">
-                <a href="sr2.html">Games</a>
+                <a href="../../index.html">Home</a>
+                <span>/</span>
+                <a href="../saintrow.html">Saints Row</a>
                 <span>/</span>
                 <span>Saints Row 2</span>
             </div>
         </div>
     </nav>
 
-    <!-- PAGE HEADER -->
-    <div class="page-header">
-        <div class="page-header-content">
-            <h1>Saints Row 2 Modding Tools</h1>
-            <p>Complete suite of extraction, editing, and asset tools for comprehensive game modification</p>
-            <div class="header-stats">
-                <div class="stat">
-                    <div class="stat-number">8+</div>
-                    <div class="stat-label">Tools</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">Full</div>
-                    <div class="stat-label">Asset Support</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">Active</div>
-                    <div class="stat-label">Community</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN CONTENT -->
-    <div class="container">
-        <div class="tools-grid">
-            <!-- TOOL 1: VPP TOOL -->
-            <div class="tool-card">
+    <main class="container">
+        <section class="page-header">
+            <h1 class="page-title">Saints Row 2</h1>
+            <p class="page-subtitle">Complete suite of extraction, editing, and asset tools for comprehensive game
+                modification</p>
+        </section>
+
+        <!-- CATEGORY FILTER SECTION -->
+        <section class="filter-section">
+            <h3>Filter Tools by Type</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Tools</button>
+                <button class="filter-btn" data-filter="audio">🎵 Audio</button>
+                <button class="filter-btn" data-filter="texture">🎨 Textures</button>
+                <button class="filter-btn" data-filter="model">📦 Models</button>
+                <button class="filter-btn" data-filter="script">📜 Scripts</button>
+                <button class="filter-btn" data-filter="vehicle">🚗 Vehicles</button>
+                <button class="filter-btn" data-filter="utility">🛠️ Utilities</button>
+                <button class="filter-btn" data-filter="performance">⚡ Performance</button>
+                <button class="filter-btn" data-filter="overhaul">⭐ Overhaul</button>
+            </div>
+        </section>
+
+        <div class="tools-grid" id="toolsGrid">
+            <!-- TOOL 1: GENTLEMEN OF THE ROW -->
+            <section class="tool-card" data-categories="overhaul,script,vehicle,utility">
                 <div class="tool-header">
-                    <h2><a href="sr2/thomasjepp-tools.html">ThomasJepp Saints Row Tools</a></h2>
-                    <span class="tool-type">Asset Extraction</span>
+                    <h2 class="tool-title">
+                        <a href="./Tools/gotr.html">Gentlemen of the Row</a>
+                    </h2>
+                    <span class="tool-badge">Essential</span>
                 </div>
-                <div class="tool-body">
-                    <p>A specialized utility that unpacks Saints Row's VPP_PC archive files, allowing modders to access
-                        and extract individual game assets like character models, textures, animations, and audio. This
-                        tool is the foundation for all asset-based modding in Saints Row 2—it bridges the gap between
-                        the game's compressed file format and usable asset files that creators can modify and repack.
-                    </p>
-                    <div class="tool-features">
-                        <span class="feature">VPP_PC extraction</span>
-                        <span class="feature">Asset repacking</span>
-                        <span class="feature">Batch processing</span>
-                        <span class="feature">Rev 128</span>
+                <div class="tool-content">
+                    <p class="tool-description">The definitive super-mod for Saints Row 2. Created by IdolNinja, this
+                        massive compilation fixes hundreds of bugs, restores cut content, adds new clothing, weapons,
+                        vehicles, missions, and gameplay tweaks. It's considered mandatory for the best saint row experience
+                        on PC and includes the community patch.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">Bug fixes</span>
+                        <span class="spec-tag">Restored content</span>
+                        <span class="spec-tag">New missions</span>
+                        <span class="spec-tag">Gameplay tweaks</span>
+                        <span class="spec-tag">Community patch</span>
                     </div>
+                    <p class="tool-details"><strong>Best For:</strong> Complete game overhaul, bug fixes, new content,
+                        enhanced stability, essential first install</p>
+                </div>
+                <div class="tool-footer">
+                    <span class="tool-info">All-in-one super mod v1.9.2</span>
+                    <a href="https://users.saintsrowmods.com/idolninja/sr2/gentlemen_of_the_row/Gentlemen_of_the_Row_Saints_Row_2_Super_Mod_v1.9.2.rar"
+                        class="download-btn">Download</a>
+                </div>
+            </section>
+
+            <!-- TOOL 2: VPP TOOL -->
+            <section class="tool-card" data-categories="utility">
+                <div class="tool-header">
+                    <h2 class="tool-title">
+                        <a href="./Tools/thomasjepp-tools.html">ThomasJepp Saints Row Tools</a>
+                    </h2>
+                    <span class="tool-badge">Essential</span>
+                </div>
+                <div class="tool-content">
+                    <p class="tool-description">A specialized utility that unpacks Saints Row's VPP_PC archive files,
+                        allowing modders to access and extract individual game assets like character models, textures,
+                        animations, and audio. This tool is the foundation for all asset-based modding in Saints Row
+                        2—it bridges the gap between the game's compressed file format and usable asset files that
+                        creators can modify and repack.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">VPP_PC extraction</span>
+                        <span class="spec-tag">Asset repacking</span>
+                        <span class="spec-tag">Batch processing</span>
+                        <span class="spec-tag">Rev 128</span>
+                    </div>
+                    <p class="tool-details"><strong>Best For:</strong> Asset extraction, file management, general
+                        modding</p>
                 </div>
                 <div class="tool-footer">
                     <span class="tool-info">Most essential tool</span>
                     <a href="https://minimaul.saintsrowmods.com/files/tools/releases/ThomasJepp.SaintsRow-rev121.zip"
                         class="download-btn">Download</a>
                 </div>
-            </div>
+            </section>
 
-            <!-- TOOL 2: PEG TOOL -->
-            <div class="tool-card">
+            <!-- TOOL 3: PEG TOOL -->
+            <section class="tool-card" data-categories="texture">
                 <div class="tool-header">
-                    <h2><a href="Tools/peg-tool.html">PEG Tool</a></h2>
-                    <span class="tool-type">Texture Editing</span>
+                    <h2 class="tool-title">
+                        <a href="./Tools/peg-tool.html">PEG Tool</a>
+                    </h2>
+                    <span class="tool-badge">Utility</span>
                 </div>
-                <div class="tool-body">
-                    <p>Specialized tool for extracting and editing ".peg" texture files. This is essential for any
-                        cosmetic modding, allowing you to replace in-game textures with custom versions. Works with
-                        character skins, vehicle paintjobs, clothing, and environmental textures.</p>
-                    <div class="tool-features">
-                        <span class="feature">Texture extraction</span>
-                        <span class="feature">PEG conversion</span>
-                        <span class="feature">Batch conversion</span>
-                        <span class="feature">v128</span>
+                <div class="tool-content">
+                    <p class="tool-description">Specialized tool for extracting and editing ".peg" texture files. This
+                        is essential for any cosmetic modding, allowing you to replace in-game textures with custom
+                        versions. Works with character skins, vehicle paintjobs, clothing, and environmental textures.
+                    </p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">Texture extraction</span>
+                        <span class="spec-tag">PEG conversion</span>
+                        <span class="spec-tag">Batch conversion</span>
+                        <span class="spec-tag">v128</span>
                     </div>
+                    <p class="tool-details"><strong>Best For:</strong> Texture modding, cosmetic mods, visual
+                        customization</p>
                 </div>
                 <div class="tool-footer">
                     <span class="tool-info">Texture skinning</span>
                     <a href="https://www.saintsrowmods.com/forum/attachments/sr2pegtool_v128-zip.27301"
                         class="download-btn">Download</a>
                 </div>
-            </div>
+            </section>
 
-            <!-- TOOL 3: CTS MAPPER -->
-            <div class="tool-card">
+            <!-- TOOL 4: CTS MAPPER -->
+            <section class="tool-card" data-categories="script">
                 <div class="tool-header">
-                    <h2><a href="Tools/cts-mapper.html">CTS Mapper Tool</a></h2>
-                    <span class="tool-type">Map Editing</span>
+                    <h2 class="tool-title">
+                        <a href="./Tools/cts-mapper.html">CTS Mapper Tool</a>
+                    </h2>
+                    <span class="tool-badge">Utility</span>
                 </div>
-                <div class="tool-body">
-                    <p>A map viewer and location editor for Saints Row 2. Edit map images and adjust spawn locations,
-                        mission markers, and points of interest. Essential for creating custom missions or modifying the
-                        game's world layout.</p>
-                    <div class="tool-features">
-                        <span class="feature">Map viewing</span>
-                        <span class="feature">Location editing</span>
-                        <span class="feature">Marker placement</span>
-                        <span class="feature">v2.01</span>
+                <div class="tool-content">
+                    <p class="tool-description">A map viewer and location editor for Saints Row 2. Edit map images and
+                        adjust spawn locations, mission markers, and points of interest. Essential for creating custom
+                        missions or modifying the game's world layout.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">Map viewing</span>
+                        <span class="spec-tag">Location editing</span>
+                        <span class="spec-tag">Marker placement</span>
+                        <span class="spec-tag">v2.01</span>
                     </div>
+                    <p class="tool-details"><strong>Best For:</strong> World customization, mission editing, map
+                        modifications</p>
                 </div>
                 <div class="tool-footer">
                     <span class="tool-info">World customization</span>
                     <a href="https://www.saintsrowmods.com/forum/attachments/sr2ctsmapper2-01-zip.25577"
                         class="download-btn">Download</a>
                 </div>
-            </div>
+            </section>
 
-            <!-- TOOL 4: CHUNK TEXTURE TOOL -->
-            <div class="tool-card">
+            <!-- TOOL 5: CHUNK TEXTURE TOOL -->
+            <section class="tool-card" data-categories="texture">
                 <div class="tool-header">
-                    <h2><a href="Tools/chunk-texture.html">Chunk Texture Tool</a></h2>
-                    <span class="tool-type">Texture Modding</span>
+                    <h2 class="tool-title">
+                        <a href="./Tools/chunk-texture.html">Chunk Texture Tool</a>
+                    </h2>
+                    <span class="tool-badge">Utility</span>
                 </div>
-                <div class="tool-body">
-                    <p>GUI-based tool for editing individual ".g_peg_pc" chunk files. Provides a user-friendly interface
-                        for texture modding without command-line knowledge. Perfect for beginners looking to customize
-                        in-game visuals.</p>
-                    <div class="tool-features">
-                        <span class="feature">GUI interface</span>
-                        <span class="feature">G_PEG editing</span>
-                        <span class="feature">Real-time preview</span>
-                        <span class="feature">v1.28</span>
+                <div class="tool-content">
+                    <p class="tool-description">GUI-based tool for editing individual ".g_peg_pc" chunk files. Provides
+                        a user-friendly interface for texture modding without command-line knowledge. Perfect for
+                        beginners looking to customize in-game visuals.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">GUI interface</span>
+                        <span class="spec-tag">G_PEG editing</span>
+                        <span class="spec-tag">Real-time preview</span>
+                        <span class="spec-tag">v1.28</span>
                     </div>
+                    <p class="tool-details"><strong>Best For:</strong> Beginner-friendly texture modding, easy visual
+                        customization</p>
                 </div>
                 <div class="tool-footer">
                     <span class="tool-info">Beginner-friendly</span>
                     <a href="https://www.saintsrowmods.com/forum/attachments/sr2chunkstexturetool_v1-28-zip.27300"
                         class="download-btn">Download</a>
                 </div>
-            </div>
+            </section>
 
-            <!-- TOOL 5: MODEL EXPORT -->
-            <div class="tool-card">
+            <!-- TOOL 6: MODEL EXPORT -->
+            <section class="tool-card" data-categories="model">
                 <div class="tool-header">
-                    <h2><a href="Tools/model-export.html">Model Export Tool</a></h2>
-                    <span class="tool-type">Model Extraction</span>
+                    <h2 class="tool-title">
+                        <a href="./Tools/model-export.html">Model Export Tool</a>
+                    </h2>
+                    <span class="tool-badge">Advanced</span>
                 </div>
-                <div class="tool-body">
-                    <p>Extracts Saints Row 2's 3D models (.cmesh_pc, .smesh_pc, .car_pc) and converts them to
-                        industry-standard ".obj" format for editing in external 3D applications like Blender, 3DS Max,
-                        or Maya.</p>
-                    <div class="tool-features">
-                        <span class="feature">Model extraction</span>
-                        <span class="feature">OBJ conversion</span>
-                        <span class="feature">Multi-format support</span>
-                        <span class="feature">3D editing</span>
+                <div class="tool-content">
+                    <p class="tool-description">Extracts Saints Row 2's 3D models (.cmesh_pc, .smesh_pc, .car_pc) and
+                        converts them to industry-standard ".obj" format for editing in external 3D applications like
+                        Blender, 3DS Max, or Maya.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">Model extraction</span>
+                        <span class="spec-tag">OBJ conversion</span>
+                        <span class="spec-tag">Multi-format support</span>
+                        <span class="spec-tag">3D editing</span>
                     </div>
+                    <p class="tool-details"><strong>Best For:</strong> 3D modelers, custom character models, vehicle
+                        modifications</p>
                 </div>
                 <div class="tool-footer">
                     <span class="tool-info">3D modders</span>
                     <a href="https://www.saintsrowmods.com/forum/attachments/cmesh2obj_0-2-rar.27311"
                         class="download-btn">Download</a>
                 </div>
-            </div>
+            </section>
 
-            <!-- TOOL 6: MODEL SUBMESH -->
-            <div class="tool-card">
+            <!-- TOOL 7: MODEL SUBMESH -->
+            <section class="tool-card" data-categories="model">
                 <div class="tool-header">
-                    <h2><a href="Tools/model-submesh.html">Model Submesh Tool</a></h2>
-                    <span class="tool-type">Model Extraction</span>
+                    <h2 class="tool-title">
+                        <a href="./Tools/model-submesh.html">Model Submesh Tool</a>
+                    </h2>
+                    <span class="tool-badge">Advanced</span>
                 </div>
-                <div class="tool-body">
-                    <p>Updated version of the model export tool that can split complex models into individual submeshes.
-                        Allows finer control over model components and makes editing specific parts of characters,
-                        vehicles, or environments much easier.</p>
-                    <div class="tool-features">
-                        <span class="feature">Submesh splitting</span>
-                        <span class="feature">Component editing</span>
-                        <span class="feature">OBJ export</span>
-                        <span class="feature">Advanced</span>
+                <div class="tool-content">
+                    <p class="tool-description">Updated version of the model export tool that can split complex models
+                        into individual submeshes. Allows finer control over model components and makes editing specific
+                        parts of characters, vehicles, or environments much easier.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">Submesh splitting</span>
+                        <span class="spec-tag">Component editing</span>
+                        <span class="spec-tag">OBJ export</span>
+                        <span class="spec-tag">Advanced</span>
                     </div>
+                    <p class="tool-details"><strong>Best For:</strong> Advanced 3D modding, detailed model editing,
+                        component-level changes</p>
                 </div>
                 <div class="tool-footer">
                     <span class="tool-info">Advanced modding</span>
                     <a href="https://www.saintsrowmods.com/forum/attachments/cmesh2obj_0-2_submeshes-rar.27310"
                         class="download-btn">Download</a>
                 </div>
-            </div>
+            </section>
 
-            <!-- TOOL 7: FPS UNLOCKER -->
-            <div class="tool-card">
+            <!-- TOOL 8: FPS UNLOCKER -->
+            <section class="tool-card" data-categories="performance">
                 <div class="tool-header">
-                    <h2><a href="Tools/fps-unlocker.html">FPS Unlocker</a></h2>
-                    <span class="tool-type">Performance</span>
+                    <h2 class="tool-title">
+                        <a href="./Tools/fps-unlocker.html">FPS Unlocker</a>
+                    </h2>
+                    <span class="tool-badge">Utility</span>
                 </div>
-                <div class="tool-body">
-                    <p>Removes the frame rate cap from the GOG version of Saints Row 2, allowing your game to run at
-                        full potential on modern hardware. Essential for smoothing gameplay on high refresh rate
-                        monitors.</p>
-                    <div class="tool-features">
-                        <span class="feature">FPS unlock</span>
-                        <span class="feature">GOG version</span>
-                        <span class="feature">No performance hit</span>
-                        <span class="feature">Modern systems</span>
+                <div class="tool-content">
+                    <p class="tool-description">Removes the frame rate cap from the GOG version of Saints Row 2,
+                        allowing your game to run at full potential on modern hardware. Essential for smoothing gameplay
+                        on high refresh rate monitors.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">FPS unlock</span>
+                        <span class="spec-tag">GOG version</span>
+                        <span class="spec-tag">No performance hit</span>
+                        <span class="spec-tag">Modern systems</span>
                     </div>
+                    <p class="tool-details"><strong>Best For:</strong> Performance boost, high refresh rate gaming,
+                        smoother gameplay</p>
                 </div>
                 <div class="tool-footer">
                     <span class="tool-info">Performance boost</span>
                     <a href="https://www.saintsrowmods.com/forum/attachments/gog_sr2_fps_unlocker-zip.26084"
                         class="download-btn">Download</a>
                 </div>
-            </div>
+            </section>
 
-            <!-- TOOL 8: CVTF HELPER -->
-            <div class="tool-card">
+            <!-- TOOL 9: CVTF HELPER -->
+            <section class="tool-card" data-categories="vehicle">
                 <div class="tool-header">
-                    <h2><a href="Tools/cvtf-helper.html">CVTF Helper</a></h2>
-                    <span class="tool-type">Vehicle Modding</span>
+                    <h2 class="tool-title">
+                        <a href="./Tools/cvtf-helper.html">CVTF Helper</a>
+                    </h2>
+                    <span class="tool-badge">Utility</span>
                 </div>
-                <div class="tool-body">
-                    <p>Utility for handling Saints Row 2's vehicle customization files. Streamlines the process of
-                        creating custom vehicle mods and editing vehicle behavior, appearance, and performance
-                        attributes.</p>
-                    <div class="tool-features">
-                        <span class="feature">Vehicle customization</span>
-                        <span class="feature">CVTF handling</span>
-                        <span class="feature">Easy editing</span>
-                        <span class="feature">Vehicle modding</span>
+                <div class="tool-content">
+                    <p class="tool-description">Utility for handling Saints Row 2's vehicle customization files.
+                        Streamlines the process of creating custom vehicle mods and editing vehicle behavior,
+                        appearance, and performance attributes.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">Vehicle customization</span>
+                        <span class="spec-tag">CVTF handling</span>
+                        <span class="spec-tag">Easy editing</span>
+                        <span class="spec-tag">Vehicle modding</span>
                     </div>
+                    <p class="tool-details"><strong>Best For:</strong> Vehicle creators, car mods, vehicle performance
+                        tuning</p>
                 </div>
                 <div class="tool-footer">
                     <span class="tool-info">Vehicle creators</span>
                     <a href="https://www.saintsrowmods.com/forum/attachments/sr2_cvtf_helper_v1-00-rar.10602/"
                         class="download-btn">Download</a>
                 </div>
-            </div>
+            </section>
+
+            <!-- TOOL 10: AUDIO TOOL SUITE -->
+            <section class="tool-card" data-categories="audio">
+                <div class="tool-header">
+                    <h2 class="tool-title">
+                        <a href="./Tools/sr2soundtools.html">Audio Tool Suite</a>
+                    </h2>
+                    <span class="tool-badge">Essential</span>
+                </div>
+                <div class="tool-content">
+                    <p class="tool-description">The complete audio modding toolkit for Saints Row 2. Includes UnXWB and
+                        UnWAV for
+                        extracting XWB audio archives aswell as XactExtract for command-line (or using batch scripts)
+                        XWB extraction, and XactTool for building xwb files. Together, these tools provide
+                        everything needed to fully customize saint row's audio—extract, edit, and repack sound effects, radio
+                        music, voice lines, and ambient audio with a complete workflow from extraction to final
+                        repacking.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">UnXWB - XWB extraction</span>
+                        <span class="spec-tag">UnWAV - XWB extraction</span>
+                        <span class="spec-tag">XactExtract - XWB extraction</span>
+                        <span class="spec-tag">XactTool - XWB Building</span>
+                        <span class="spec-tag">Complete audio workflow</span>
+                    </div>
+                    <p class="tool-details"><strong>Best For:</strong> Full audio modding, custom radio stations, voice
+                        replacement, sound effect editing, ambient audio changes, complete sound overhaul</p>
+                </div>
+                <div class="tool-footer">
+                    <span class="tool-info">Complete audio modding suite</span>
+                    <a href="https://www.saintsrowmods.com/forum/attachments/sr2soundtools-with-unxwb-zip.46948/"
+                        class="download-btn">Download</a>
+                </div>
+            </section>
+
+            <!-- TOOL 11: XACTEXTRACT -->
+            <section class="tool-card" data-categories="audio">
+                <div class="tool-header">
+                    <h2 class="tool-title">
+                        <a href="./Tools/xactextract.html">XactExtract</a>
+                    </h2>
+                    <span class="tool-badge">Utility</span>
+                </div>
+                <div class="tool-content">
+                    <p class="tool-description">A powerful command-line tool specifically designed for extracting audio
+                        from XWB (XACT Wave Bank) files. Converts XWB audio banks into individual WAV files, allowing
+                        you to access and modify in-game sounds, radio music, voice lines, and sound effects from Saints
+                        Row 2 and other XACT-based games.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">XWB extraction</span>
+                        <span class="spec-tag">WAV conversion</span>
+                        <span class="spec-tag">Batch processing</span>
+                        <span class="spec-tag">Command-line</span>
+                        <span class="spec-tag">Audio extraction</span>
+                    </div>
+                    <p class="tool-details"><strong>Best For:</strong> Extracting game audio, sound effect editing,
+                        voice line extraction, radio music modding</p>
+                </div>
+                <div class="tool-footer">
+                    <span class="tool-info">Audio unpacking utility</span>
+                    <a href="https://idolninja.saintsrowmods.com/sr2/tools/xactextract.rar" class="download-btn"
+                        target="_blank">Download</a>
+                </div>
+            </section>
+
+            <!-- TOOL 12: UNWAV -->
+            <section class="tool-card" data-categories="audio">
+                <div class="tool-header">
+                    <h2 class="tool-title">
+                        <a href="./Tools/unwav.html">UnWAV</a>
+                    </h2>
+                    <span class="tool-badge">Utility</span>
+                </div>
+                <div class="tool-content">
+                    <p class="tool-description">A specialized tool for converting and repacking audio files back into
+                        game-compatible formats. Works alongside XactExtract to allow full audio modding
+                        workflow—extract, edit, and repack custom sound files for Saints Row 2. Essential for creating
+                        custom radio stations, replacing character voices, and adding new sound effects.</p>
+                    <div class="tool-specs">
+                        <span class="spec-tag">Audio repacking</span>
+                        <span class="spec-tag">WAV conversion</span>
+                        <span class="spec-tag">XWB rebuilding</span>
+                        <span class="spec-tag">Custom sounds</span>
+                        <span class="spec-tag">Radio modding</span>
+                    </div>
+                    <p class="tool-details"><strong>Best For:</strong> Repacking edited audio, custom radio stations,
+                        voice replacement, sound effect modding</p>
+                </div>
+                <div class="tool-footer">
+                    <span class="tool-info">Audio unpacking utility</span>
+                    <a href="http://www.ctpax-x.org/?goto=files&show=24" class="download-btn">Download</a>
+                </div>
+            </section>
         </div>
 
-        <!-- SECTION DIVIDER -->
-        <div class="section-divider">
-            <h3>Getting Started</h3>
-            <p>New to modding? Start with the ThomasJepp tool to extract assets, then use the PEG tool for texture
-                editing.</p>
-        </div>
-    </div>
+        <!-- INFO SECTION -->
+        <section class="info-section">
+            <h3>About Saints Row 2 Modding</h3>
+            <p>Saints Row 2 has a dedicated and passionate modding community with extensive tools and documentation. The
+                game's engine supports comprehensive modifications including asset extraction, texture editing, model
+                replacement, and even performance tweaks like FPS unlocking. It's an excellent title for both beginners
+                and advanced modders looking to dive deep into game modification.</p>
+            <p><strong>Getting Started:</strong> New to modding? Start with the ThomasJepp tool to extract assets, then
+                use the PEG tool for texture editing. For 3D modeling, begin with the Model Export Tool to learn the
+                asset structure before moving to advanced submesh editing. For the latest tools and community support,
+                visit the <a href="https://www.saintsrowmods.com" target="_blank" class="info-link">Saints Row Mods
+                    community</a> to find tutorials, tool updates, and collaborate with other modders.</p>
+        </section>
+
+        <!-- COMPARISON SECTION -->
+        <section class="comparison-section">
+            <h3>How saint row 2 Compares to Other Titles</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>Saints Row 2 Strengths</h4>
+                    <ul>
+                        <li>✓ Mature modding community</li>
+                        <li>✓ Extensive documentation</li>
+                        <li>✓ Wide range of tools</li>
+                        <li>✓ Active support forums</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4>Compared to Original SR</h4>
+                    <ul>
+                        <li>✓ More complex tools</li>
+                        <li>✓ Better model support</li>
+                        <li>✓ Larger mod library</li>
+                        <li>✓ Advanced features</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- FOOTER -->
-    <footer>
-        <p>All tools are community-created and maintained by the Saints Row modding community.</p>
-        <p>For more resources and support, visit <a href="https://www.saintsrowmods.com" target="_blank">Saints Row
-                Mods</a></p>
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub. All tools are community-created and maintained.</p>
+        <p>Made with 🖤 for the Saints Row modding community</p>
     </footer>
+
+    <!-- FILTER SCRIPT -->
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const toolCards = document.querySelectorAll('.tool-card');
+
+        function filterTools(category) {
+            toolCards.forEach(card => {
+                const categories = card.getAttribute('data-categories');
+
+                if (category === 'all') {
+                    card.style.display = 'flex';
+                } else if (categories && categories.includes(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filterValue = button.getAttribute('data-filter');
+                filterTools(filterValue);
+            });
+        });
+    </script>
+
+    <!-- NAVBAR HIDE/SHOW ON SCROLL SCRIPT -->
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const scrollThreshold = 300; // Hide after scrolling 300px down
+        const showThreshold = 200;    // Show when within 200px of top
+
+        window.addEventListener('scroll', function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            // If near the top, always show
+            if (currentScroll < showThreshold) {
+                navbar.classList.remove('navbar-hidden');
+            }
+            // If scrolled past threshold, hide
+            else if (currentScroll > scrollThreshold) {
+                navbar.classList.add('navbar-hidden');
+            }
+        });
+    </script>
 </body>
 
 </html>

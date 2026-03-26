@@ -1,19 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saints Row 2 CTS Mapper - Map Editing Guide</title>
-    <link rel="stylesheet" href="../sr2.css">
-    <link rel="stylesheet" href="tool.css">
+    <title>CTS Mapper - Saints Row 2 Modding Tools</title>
+    <link rel="stylesheet" href="../sr2tools.css">
+    <style>
+        /* ========================================
+           TOOL PAGE SPECIFIC STYLES
+        ======================================== */
+
+        .tool-page-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
+            border-bottom: 2px solid #ff0000;
+            margin-bottom: 50px;
+        }
+
+        .tool-page-title {
+            font-size: 2.8rem;
+            color: #ff00ff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+            font-weight: bold;
+        }
+
+        .tool-page-subtitle {
+            font-size: 1.1rem;
+            color: #cccccc;
+            max-width: 650px;
+            margin: 0 auto 20px;
+        }
+
+        .header-badge-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .header-badge {
+            background: rgba(144, 12, 144, 0.3);
+            border: 1px solid #ff00ff;
+            color: #ffcc00;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ========================================
+           CONTENT SECTIONS
+        ======================================== */
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #ff00ff;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #ff0000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section p {
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 0.98rem;
+        }
+
+        .section strong {
+            color: #ffd700;
+        }
+
+        /* ========================================
+           QUOTE BLOCK
+        ======================================== */
+
+        .dev-quote {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #ff00ff;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .dev-quote p {
+            font-style: italic;
+            color: #dddddd;
+            margin: 0 0 8px 0;
+            line-height: 1.7;
+        }
+
+        .dev-quote .quote-attr {
+            font-size: 0.85rem;
+            color: #ff00ff;
+            font-style: normal;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* ========================================
+           INFO BOXES
+        ======================================== */
+
+        .info-box {
+            padding: 18px 22px;
+            border-radius: 8px;
+            border-left: 4px solid;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            margin: 0 0 8px 0;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .info-box p {
+            margin: 0 !important;
+            font-size: 0.9rem;
+        }
+
+        .info-blue {
+            background: rgba(0, 153, 255, 0.07);
+            border-left-color: #00ccff;
+        }
+
+        .info-blue h4 {
+            color: #00ccff;
+        }
+
+        .info-yellow {
+            background: rgba(255, 204, 0, 0.07);
+            border-left-color: #ffcc00;
+        }
+
+        .info-yellow h4 {
+            color: #ffcc00;
+        }
+
+        .info-red {
+            background: rgba(255, 0, 0, 0.07);
+            border-left-color: #ff0000;
+        }
+
+        .info-red h4 {
+            color: #ff4444;
+        }
+
+        /* ========================================
+           FEATURE GRID
+        ======================================== */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .feature-card {
+            background: rgba(66, 66, 66, 0.5);
+            border: 1px solid #444444;
+            border-radius: 8px;
+            padding: 22px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #ff00ff;
+            background: rgba(144, 12, 144, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(255, 0, 255, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            color: #ff00ff;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 0.88rem;
+            color: #cccccc;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           CTS FILE TABLE
+        ======================================== */
+
+        .cts-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            font-size: 0.9rem;
+        }
+
+        .cts-table thead tr {
+            background: rgba(144, 12, 144, 0.4);
+            border-bottom: 2px solid #ff00ff;
+        }
+
+        .cts-table th {
+            padding: 12px 16px;
+            text-align: left;
+            color: #ffcc00;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .cts-table td {
+            padding: 12px 16px;
+            color: #cccccc;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .cts-table tbody tr {
+            background: rgba(50, 50, 50, 0.4);
+            transition: background 0.2s ease;
+        }
+
+        .cts-table tbody tr:hover {
+            background: rgba(144, 12, 144, 0.1);
+        }
+
+        .cts-table td:first-child {
+            color: #00ccff;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        /* ========================================
+           WORKFLOW STEPS
+        ======================================== */
+
+        .workflow-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .workflow-step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: rgba(66, 66, 66, 0.5);
+            border: 1px solid #444444;
+            border-radius: 8px;
+            padding: 22px;
+            transition: all 0.3s ease;
+        }
+
+        .workflow-step:hover {
+            border-color: #ff00ff;
+            background: rgba(144, 12, 144, 0.1);
+        }
+
+        .step-num {
+            min-width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #ff00ff, #ff0000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .step-body h3 {
+            font-size: 1.05rem;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .step-body p {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           TROUBLESHOOTING
+        ======================================== */
+
+        .trouble-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 25px;
+        }
+
+        .trouble-item {
+            background: rgba(50, 50, 50, 0.6);
+            border: 1px solid #444444;
+            border-left: 4px solid #ff0000;
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+        }
+
+        .trouble-item h3 {
+            font-size: 1rem;
+            color: #ff4444;
+            margin-bottom: 8px;
+        }
+
+        .trouble-item p {
+            font-size: 0.88rem;
+            color: #cccccc;
+            margin: 4px 0 0 0;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           DOWNLOAD BOX
+        ======================================== */
+
+        .download-box {
+            background: rgba(66, 66, 66, 0.6);
+            border: 2px solid #ff00ff;
+            border-radius: 8px;
+            padding: 35px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .download-box h3 {
+            font-size: 1.6rem;
+            color: #ff00ff;
+            margin-bottom: 8px;
+        }
+
+        .download-box .dl-version {
+            font-size: 0.85rem;
+            color: #999999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .download-box p {
+            color: #cccccc;
+            max-width: 500px;
+            margin: 0 auto 25px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .download-box-specs {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #444444;
+            border-bottom: 1px solid #444444;
+            margin-bottom: 25px;
+        }
+
+        .dl-spec {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dl-spec-label {
+            font-size: 0.75rem;
+            color: #999999;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .dl-spec-value {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #ff00ff;
+        }
+
+        .big-download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff00ff, #ff0000);
+            color: #ffffff;
+            padding: 14px 45px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 0, 255, 0.3);
+        }
+
+        .big-download-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(255, 0, 255, 0.5);
+        }
+
+        /* ========================================
+           RELATED TOOLS
+        ======================================== */
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .related-card {
+            background: rgba(66, 66, 66, 0.5);
+            border: 1px solid #444444;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            border-color: #ff6600;
+            background: rgba(255, 102, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .related-card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .related-card h3 a {
+            color: #ff6600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .related-card h3 a:hover {
+            color: #ff00ff;
+        }
+
+        .related-card h3 span {
+            color: #ff6600;
+        }
+
+        .related-card p {
+            font-size: 0.85rem;
+            color: #aaaaaa;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+
+        @media (max-width: 768px) {
+            .tool-page-title {
+                font-size: 2rem;
+            }
+
+            .download-box-specs {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tool-page-title {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
+            .workflow-step {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .download-box {
+                padding: 22px;
+            }
+
+            .big-download-btn {
+                padding: 12px 28px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="navbar-content">
-            <a href="../index.html" class="navbar-brand">SR MODDING TOOLS</a>
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
             <div class="breadcrumb">
-                <a href="../index.html">Games</a>
+                <a href="../../index.html">Home</a>
                 <span>/</span>
                 <a href="../sr2.html">Saints Row 2</a>
                 <span>/</span>
@@ -23,480 +520,305 @@
     </nav>
 
     <!-- PAGE HEADER -->
-    <div class="page-header">
-        <div class="page-header-content">
-            <h1>Saints Row 2 CTS Mapper Tool</h1>
-            <p>Map viewing and location editing for world customization</p>
-            <div class="header-badges">
-                <span class="badge">Map Editing</span>
-                <span class="badge">World Customization</span>
-                <span class="badge">v2.01</span>
-            </div>
+    <header class="tool-page-header">
+        <h1 class="tool-page-title">CTS Mapper</h1>
+        <p class="tool-page-subtitle">Visualise position data from Saints Row 2's CTS files directly on the game map —
+            see exactly where CD locations, tagging spots, and other world objects are placed.</p>
+        <div class="header-badge-row">
+            <span class="header-badge">Map Viewing</span>
+            <span class="header-badge">CTS Files</span>
+            <span class="header-badge">Position Data</span>
+            <span class="header-badge">v2.01</span>
         </div>
-    </div>
+    </header>
 
     <!-- MAIN CONTENT -->
-    <div class="container">
-        <!-- OVERVIEW SECTION -->
-        <section class="content-section">
-            <h2>What is CTS Mapper?</h2>
-            <div class="section-content">
-                <p>CTS Mapper is a specialized tool for viewing and editing Saints Row 2's world map. CTS stands for "Common Terrain Streamer" - it's the system Saints Row 2 uses to manage the game world, locations, spawn points, mission markers, and other world entities.</p>
-                
-                <p>The CTS Mapper gives you a bird's-eye view of Stilwater (the game's city) and allows you to:</p>
-                <ul class="asset-list" style="margin: 15px 0;">
-                    <li>View the complete game map with all buildings and streets</li>
-                    <li>Edit spawn locations for custom missions</li>
-                    <li>Place and modify mission markers and objectives</li>
-                    <li>Adjust trigger zones and world properties</li>
-                    <li>Create custom world modifications</li>
-                </ul>
+    <main class="container">
 
-                <div class="info-box info-blue">
-                    <h4>Core Function</h4>
-                    <p>View 2D map of Stilwater → Locate mission spawn points and markers → Edit positions and properties → Create custom world layouts and mission starts</p>
-                </div>
+        <!-- OVERVIEW -->
+        <section class="section">
+            <h2 class="section-title">What is CTS Mapper?</h2>
+
+            <p>CTS Mapper is a visualisation tool created by <strong>Masamaru</strong> that reads Saints Row 2's
+                <strong>.cts</strong> (Common Terrain Streamer) files and draws the position data they contain directly
+                onto the game map. Rather than trying to interpret raw coordinate values from a text editor, you can see
+                every tagged location plotted visually in its real in-world position.
+            </p>
+
+            <div class="dev-quote">
+                <p>"This tool draws on the map the position information described in the cts file. For example, in
+                    cds_sr2_city.cts it contains the position which is located CD. Position of the tag has been stored
+                    in the tagging_spots.cts as well."</p>
+                <p class="quote-attr">— Masamaru, Saints Row Mods forum</p>
+            </div>
+
+            <p>CTS files act as data tables that tell the game where to place a wide range of world objects — from
+                collectible CD locations to graffiti tagging spots and beyond. CTS Mapper makes that hidden position
+                data visible, which is essential for modders who want to understand, edit, or add to the game world.</p>
+
+            <div class="info-box info-blue">
+                <h4>Core Concept</h4>
+                <p>Load a .cts file → CTS Mapper reads the position tags inside it → each position is plotted as a point
+                    on the Stilwater overhead map → you can see every object's exact real-world location at a glance.
+                </p>
+            </div>
+        </section>
+
+        <!-- WHAT ARE CTS FILES -->
+        <section class="section">
+            <h2 class="section-title">Understanding CTS Files</h2>
+
+            <p>CTS files are found throughout Saints Row 2's data archives and each one stores position data for a
+                specific category of world object. Here are some key examples the tool works with:</p>
+
+            <table class="cts-table">
+                <thead>
+                    <tr>
+                        <th>File</th>
+                        <th>Contains</th>
+                        <th>Used For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>cds_sr2_city.cts</td>
+                        <td>CD collectible positions</td>
+                        <td>Finding/modding all CD disc locations across Stilwater</td>
+                    </tr>
+                    <tr>
+                        <td>tagging_spots.cts</td>
+                        <td>Graffiti tag positions</td>
+                        <td>Viewing and repositioning gang tag spray locations</td>
+                    </tr>
+                    <tr>
+                        <td>mission spawns</td>
+                        <td>Player/NPC spawn coords</td>
+                        <td>Editing where missions start and characters appear</td>
+                    </tr>
+                    <tr>
+                        <td>activity_spots.cts</td>
+                        <td>Activity trigger locations</td>
+                        <td>Placing or relocating side activities and mini-games</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box info-yellow">
+                <h4>Before You Start</h4>
+                <p>You'll need to extract the relevant .cts files from the game's VPP_PC archives first. Use <a
+                        href="./Tools/thomasjepp-tools.html"><strong>ThomasJepp Saints Row Tools</strong></a> to unpack
+                    the archives before loading files into CTS Mapper.</p>
             </div>
         </section>
 
         <!-- KEY FEATURES -->
-        <section class="content-section">
-            <h2>Key Features & Capabilities</h2>
-            <div class="features-grid">
+        <section class="section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="feature-grid">
                 <div class="feature-card">
-                    <h3>Map Visualization</h3>
-                    <p>Get a complete 2D overhead view of Stilwater showing all terrain, buildings, streets, and landmarks.</p>
+                    <h3>🗺️ Map Overlay Visualisation</h3>
+                    <p>Plots every position entry from a .cts file as a visible marker on an overhead view of Stilwater,
+                        giving you instant spatial context for raw coordinate data.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Location Viewing</h3>
-                    <p>Identify exact coordinates of important locations, spawn points, and mission markers on the map.</p>
+                    <h3>📍 Positional Tag Reading</h3>
+                    <p>Reads the internal position tags from CTS files exactly as the game engine does, so what you see
+                        in the tool matches what the game uses at runtime.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Spawn Point Editing</h3>
-                    <p>Move and modify player spawn locations for custom missions, cheats, or gameplay modifications.</p>
+                    <h3>🎯 CD Location Mapping</h3>
+                    <p>Load cds_sr2_city.cts to see all collectible CD disc positions plotted on the map — invaluable
+                        for building collection guides or relocating pickups.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Marker Placement</h3>
-                    <p>Add, move, or remove mission markers, activity locations, and point-of-interest indicators.</p>
+                    <h3>🖊️ Tagging Spot Support</h3>
+                    <p>Supports tagging_spots.cts to visualise every graffiti tag location across Stilwater's districts,
+                        useful for gang territory and activity modding.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Coordinate System</h3>
-                    <p>Use precise X/Y/Z coordinates to place objects exactly where you want them in the world.</p>
+                    <h3>📂 Multi-file Compatible</h3>
+                    <p>Works with any CTS file that stores positional data, not just the two examples above — experiment
+                        with other .cts files from the game's archives.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Trigger Zone Editing</h3>
-                    <p>Create or modify invisible trigger zones that activate missions, events, or special gameplay moments.</p>
+                    <h3>🔍 Coordinate Reference</h3>
+                    <p>Helps you identify the X/Y/Z coordinates of specific locations visually, so you can copy accurate
+                        values into other modding tools or script files.</p>
                 </div>
             </div>
         </section>
 
-        <!-- MAP ELEMENTS GUIDE -->
-        <section class="content-section">
-            <h2>Understanding Stilwater's Map Elements</h2>
-            <div class="map-elements-grid">
-                <div class="map-element">
-                    <h3>Mission Spawns</h3>
-                    <p>Locations where the player starts a mission. These are crucial reference points for custom mission creation.</p>
-                    <span class="element-tag">Critical</span>
-                </div>
-                <div class="map-element">
-                    <h3>Objective Markers</h3>
-                    <p>Waypoints and target locations that guide players through missions and activities.</p>
-                    <span class="element-tag">Important</span>
-                </div>
-                <div class="map-element">
-                    <h3>Safe Houses</h3>
-                    <p>Player home locations and gang hideouts. Edit these to create new safe zones or modify existing ones.</p>
-                    <span class="element-tag">Key Locations</span>
-                </div>
-                <div class="map-element">
-                    <h3>Activity Locations</h3>
-                    <p>Places where optional activities (side missions, mini-games) occur throughout Stilwater.</p>
-                    <span class="element-tag">Gameplay</span>
-                </div>
-                <div class="map-element">
-                    <h3>Trigger Zones</h3>
-                    <p>Invisible boundaries that trigger events when the player enters. Essential for scripted moments.</p>
-                    <span class="element-tag">Advanced</span>
-                </div>
-                <div class="map-element">
-                    <h3>Enemy Spawn Points</h3>
-                    <p>Locations where enemies appear during combat. Modify for custom battle scenarios.</p>
-                    <span class="element-tag">Combat</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- COMPLETE WORKFLOW -->
-        <section class="content-section workflow-section">
-            <h2>CTS Mapper Workflow</h2>
-            <p>Here's how to use CTS Mapper to create and modify world locations:</p>
-
+        <!-- WORKFLOW -->
+        <section class="section">
+            <h2 class="section-title">How to Use CTS Mapper</h2>
             <div class="workflow-steps">
-                <!-- STEP 1 -->
                 <div class="workflow-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Extract Game Files</h3>
-                        <p>Use ThomasJepp Saints Row Tools to extract the game's VPP_PC files. You need to access the CTS data files to edit them with CTS Mapper.</p>
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <h3>Extract Game Archives</h3>
+                        <p>Use <a href="./Tools/thomasjepp-tools.html"><strong>ThomasJepp Saints Row Tools</strong></a>
+                            to unpack the game's VPP_PC files. The CTS
+                            files you need are stored inside these archives — you must extract them before CTS Mapper
+                            can read them.</p>
                     </div>
                 </div>
-
-                <!-- STEP 2 -->
                 <div class="workflow-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Launch CTS Mapper</h3>
-                        <p>Open the CTS Mapper application. It will present you with options to load map data from your extracted game files.</p>
-                        <div class="info-box info-yellow">
-                            <p><strong>Tip:</strong> Make sure your extracted files are from a clean, unmodified copy of Saints Row 2.</p>
-                        </div>
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <h3>Locate Your Target CTS File</h3>
+                        <p>Browse the extracted files and find the .cts file you want to inspect — for example
+                            <strong>cds_sr2_city.cts</strong> for CD locations or <strong>tagging_spots.cts</strong> for
+                            graffiti tags.
+                        </p>
                     </div>
                 </div>
-
-                <!-- STEP 3 -->
                 <div class="workflow-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Load the Stilwater Map</h3>
-                        <p>Load the CTS map data for Stilwater. The tool will display a 2D overhead view of the entire game world.</p>
-                        <div class="info-box info-blue">
-                            <p><strong>Understanding the View:</strong> The map shows the entire city from above. Darker areas are streets/water, lighter areas are buildings and terrain.</p>
-                        </div>
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <h3>Open CTS Mapper &amp; Load the File</h3>
+                        <p>Launch CTS Mapper and open your chosen .cts file. The tool will parse the position data and
+                            draw each entry as a point on the Stilwater map overlay.</p>
                     </div>
                 </div>
-
-                <!-- STEP 4 -->
                 <div class="workflow-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Locate Spawn Points & Markers</h3>
-                        <p>Use the tool to find mission spawn points, objective markers, and other important locations. The tool shows these as icons or highlights on the map.</p>
-                        <ul class="asset-list">
-                            <li>Red dots = Mission spawns</li>
-                            <li>Yellow flags = Objective markers</li>
-                            <li>Green circles = Safe houses</li>
-                            <li>Blue squares = Activity locations</li>
-                        </ul>
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                        <h3>Read &amp; Record Positions</h3>
+                        <p>Use the map view to identify where objects are placed. Note down specific X/Y/Z coordinates
+                            that you want to use or modify in other tools or XML/Lua script files.</p>
                     </div>
                 </div>
-
-                <!-- STEP 5 -->
                 <div class="workflow-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Select Location to Edit</h3>
-                        <p>Click on a marker, spawn point, or location you want to edit. The tool will show you its current properties including coordinates, rotation, and type.</p>
-                        <div class="code-block">
-                            <code>X: 150.5 | Y: 200.3 | Z: 15.0 | Rotation: 45°</code>
-                        </div>
+                    <div class="step-num">5</div>
+                    <div class="step-body">
+                        <h3>Edit the CTS File &amp; Repack</h3>
+                        <p>Make your changes to the .cts file in a text or hex editor using the coordinates you've
+                            gathered. Repack the VPP_PC archive with ThomasJepp Tools and test in-game.</p>
                     </div>
-                </div>
-
-                <!-- STEP 6 -->
-                <div class="workflow-step">
-                    <div class="step-number">6</div>
-                    <div class="step-content">
-                        <h3>Modify Location Properties</h3>
-                        <p>Edit the location's properties in the properties panel. You can change:</p>
-                        <ul class="asset-list">
-                            <li><strong>Position (X, Y, Z):</strong> Move the location to a new spot</li>
-                            <li><strong>Rotation:</strong> Change facing direction</li>
-                            <li><strong>Type:</strong> Change what kind of location it is</li>
-                            <li><strong>Name:</strong> Give it a custom label</li>
-                            <li><strong>Linked Events:</strong> Attach mission triggers</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- STEP 7 -->
-                <div class="workflow-step">
-                    <div class="step-number">7</div>
-                    <div class="step-content">
-                        <h3>Create New Locations (Optional)</h3>
-                        <p>Add entirely new markers, spawn points, or zones to create custom mission locations. Right-click on the map and select "Add Location".</p>
-                        <div class="info-box info-green">
-                            <p><strong>Pro Tip:</strong> Place locations on streets or open areas, not inside buildings, to avoid clipping issues.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 8 -->
-                <div class="workflow-step">
-                    <div class="step-number">8</div>
-                    <div class="step-content">
-                        <h3>Save Your Changes</h3>
-                        <p>Save the modified CTS data back to your working directory. CTS Mapper will export the modified map file.</p>
-                    </div>
-                </div>
-
-                <!-- STEP 9 -->
-                <div class="workflow-step">
-                    <div class="step-number">9</div>
-                    <div class="step-content">
-                        <h3>Repack and Test</h3>
-                        <p>Use ThomasJepp Tools to repack your modified CTS data back into the game's VPP_PC files. Launch the game to test your map changes.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- COMMON USE CASES -->
-        <section class="content-section">
-            <h2>Common Uses for CTS Mapper</h2>
-            <div class="use-cases-grid">
-                <div class="use-case">
-                    <h3>Custom Mission Spawn Points</h3>
-                    <p>Create custom mission locations by moving or creating new spawn points anywhere in Stilwater. Perfect for fan-created missions and scenarios.</p>
-                </div>
-                <div class="use-case">
-                    <h3>Safe House Relocation</h3>
-                    <p>Move player safe houses and gang hideouts to different neighborhoods. Create a completely different territory control system.</p>
-                </div>
-                <div class="use-case">
-                    <h3>Activity Repositioning</h3>
-                    <p>Move existing side missions, mini-games, and activities to new locations for a fresh gameplay experience.</p>
-                </div>
-                <div class="use-case">
-                    <h3>Custom Trigger Zones</h3>
-                    <p>Create invisible boundaries that trigger scripted events, cutscenes, or gameplay moments when the player enters.</p>
-                </div>
-                <div class="use-case">
-                    <h3>Enemy Spawn Customization</h3>
-                    <p>Modify where enemies appear during combat situations. Create new ambush locations or danger zones.</p>
-                </div>
-                <div class="use-case">
-                    <h3>World Redesign</h3>
-                    <p>Completely restructure Stilwater's mission and activity layout for total conversion mods.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- TECHNICAL GUIDE -->
-        <section class="content-section">
-            <h2>Understanding Coordinates & Properties</h2>
-            <div class="section-content">
-                <p>CTS Mapper uses a 3D coordinate system to place objects in Stilwater. Understanding this is crucial for accurate placement:</p>
-                
-                <div class="coords-explanation">
-                    <div class="coord-axis">
-                        <h3>X-Axis (Horizontal)</h3>
-                        <p>Left-to-right on the map. Negative values = west side, Positive values = east side of Stilwater.</p>
-                    </div>
-                    <div class="coord-axis">
-                        <h3>Y-Axis (Depth)</h3>
-                        <p>Front-to-back on the map. Negative values = south, Positive values = north of the city.</p>
-                    </div>
-                    <div class="coord-axis">
-                        <h3>Z-Axis (Vertical)</h3>
-                        <p>Height above ground. Typically 0-100+. Higher values = higher elevation (rooftops, elevated areas).</p>
-                    </div>
-                </div>
-
-                <div class="info-box info-blue" style="margin-top: 20px;">
-                    <h4>Rotation Values</h4>
-                    <p>0° = Facing East | 90° = Facing South | 180° = Facing West | 270° = Facing North. Use these to control which direction spawns or markers face.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- TIPS & BEST PRACTICES -->
-        <section class="content-section">
-            <h2>Tips & Best Practices</h2>
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <h3>Study the Map First</h3>
-                    <p>Spend time exploring the existing locations before making changes. Understand the layout and how locations relate to each other.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Use Landmarks</h3>
-                    <p>Reference major landmarks (bridges, water, district boundaries) when placing new locations to maintain logical world design.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Avoid Clipping</h3>
-                    <p>Don't place spawn points or markers inside buildings or underwater. Test in-game to verify good placement.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Backup Before Changes</h3>
-                    <p>Always backup your original CTS files before making extensive edits. Easy to revert if something breaks.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Test Incrementally</h3>
-                    <p>Test each location change in-game before making more edits. Easier to identify which change caused problems.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Document Coordinates</h3>
-                    <p>Keep notes of important coordinates you create. Useful for reference and sharing with other modders.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Respect District Boundaries</h3>
-                    <p>Saint's Row 2 has distinct districts. Maintain logical placement within appropriate neighborhoods.</p>
-                </div>
-                <div class="tip-card">
-                    <h3>Check Z-Axis Carefully</h3>
-                    <p>Height placement is crucial. Too low = underground, too high = floating in air. Match surrounding terrain.</p>
                 </div>
             </div>
         </section>
 
         <!-- TROUBLESHOOTING -->
-        <section class="content-section">
-            <h2>Common Issues & Solutions</h2>
-            <div class="troubleshoot-list">
-                <div class="troubleshoot-item">
-                    <h3>Spawn Points Don't Appear in Game</h3>
-                    <p><strong>Cause:</strong> CTS data not properly repacked or incorrect file location.</p>
-                    <p><strong>Solution:</strong> Verify CTS files are in correct folder structure. Re-repack with ThomasJepp Tools.</p>
+        <section class="section">
+            <h2 class="section-title">Common Issues</h2>
+            <div class="trouble-list">
+                <div class="trouble-item">
+                    <h3>CTS Mapper won't load the file</h3>
+                    <p><strong>Cause:</strong> File wasn't fully extracted, is corrupted, or is the wrong CTS version.
+                    </p>
+                    <p><strong>Fix:</strong> Re-extract the file from a clean copy of the game. Make sure you're using a
+                        PC version archive, not a console rip.</p>
                 </div>
-                <div class="troubleshoot-item">
-                    <h3>Player Spawns Underground or in Building</h3>
-                    <p><strong>Cause:</strong> Z-axis (height) value is too low or location is inside a building.</p>
-                    <p><strong>Solution:</strong> Increase Z value or move spawn point to open street. Test different coordinates.</p>
+                <div class="trouble-item">
+                    <h3>Map shows no markers / blank map</h3>
+                    <p><strong>Cause:</strong> The loaded CTS file may not contain positional tags, or they're in a
+                        format the tool doesn't recognise.</p>
+                    <p><strong>Fix:</strong> Try a known-good file like cds_sr2_city.cts first to confirm the tool is
+                        working, then test other files.</p>
                 </div>
-                <div class="troubleshoot-item">
-                    <h3>Mission Won't Start at Custom Location</h3>
-                    <p><strong>Cause:</strong> Spawn point not properly linked to mission in XTBL or script files.</p>
-                    <p><strong>Solution:</strong> Check mission data files. May need to edit additional files beyond CTS data.</p>
+                <div class="trouble-item">
+                    <h3>Positions look offset or wrong in-game after editing</h3>
+                    <p><strong>Cause:</strong> Z-axis value may be incorrect, causing spawns to appear underground or
+                        floating.</p>
+                    <p><strong>Fix:</strong> Cross-reference Z values with known working positions from nearby entries
+                        in the same CTS file.</p>
                 </div>
-                <div class="troubleshoot-item">
-                    <h3>CTS Mapper Won't Load Map Data</h3>
-                    <p><strong>Cause:</strong> Extracted files are corrupted or in wrong location.</p>
-                    <p><strong>Solution:</strong> Re-extract fresh game files. Verify correct game version compatibility.</p>
-                </div>
-                <div class="troubleshoot-item">
-                    <h3>Markers Disappear After Repacking</h3>
-                    <p><strong>Cause:</strong> CTS data saved in incompatible format or incorrect version.</p>
-                    <p><strong>Solution:</strong> Check CTS Mapper export format settings. Ensure you're using correct file format.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- GETTING STARTED -->
-        <section class="content-section getting-started-section">
-            <h2>Getting Started with CTS Mapper</h2>
-            <p>Ready to customize Stilwater's map? Here's what you need:</p>
-            
-            <div class="getting-started-box">
-                <div class="gs-step-1">
-                    <h3>Prerequisites</h3>
-                    <div class="gs-details">
-                        <div class="gs-detail-item">
-                            <span class="gs-icon">🗺️</span>
-                            <div>
-                                <strong>ThomasJepp Tools</strong>
-                                <p>Extract CTS map data first</p>
-                            </div>
-                        </div>
-                        <div class="gs-detail-item">
-                            <span class="gs-icon">📋</span>
-                            <div>
-                                <strong>Map Knowledge</strong>
-                                <p>Familiar with Stilwater layout</p>
-                            </div>
-                        </div>
-                        <div class="gs-detail-item">
-                            <span class="gs-icon">📐</span>
-                            <div>
-                                <strong>Coordinates</strong>
-                                <p>Plan your spawn/marker locations</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gs-download-container">
-                    <div class="gs-download-inner">
-                        <h4>CTS Mapper v2.01</h4>
-                        <p class="gs-version">Map Viewer & Location Editor</p>
-                        <p class="gs-description">View the Stilwater map and edit mission spawn points, markers, and location properties for custom world modifications.</p>
-                        
-                        <div class="gs-specs">
-                            <div class="gs-spec">
-                                <span class="gs-spec-label">Size</span>
-                                <span class="gs-spec-value">1-3MB</span>
-                            </div>
-                            <div class="gs-spec">
-                                <span class="gs-spec-label">Format</span>
-                                <span class="gs-spec-value">ZIP Archive</span>
-                            </div>
-                            <div class="gs-spec">
-                                <span class="gs-spec-label">Platform</span>
-                                <span class="gs-spec-value">Windows</span>
-                            </div>
-                        </div>
-
-                        <a href="https://www.saintsrowmods.com/forum/attachments/sr2ctsmapper2-01-zip.25577" class="gs-download-btn">Download Now</a>
-                        
-                        <p class="gs-help-text">Study the map guide above before making major modifications!</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="quick-start-guide">
-                <h3>Quick Map Editing Workflow</h3>
-                <div class="quick-start-cards">
-                    <div class="qs-card">
-                        <div class="qs-number">1</div>
-                        <h4>Extract</h4>
-                        <p>Use ThomasJepp to get CTS files</p>
-                    </div>
-                    <div class="qs-card">
-                        <div class="qs-number">2</div>
-                        <h4>Open Mapper</h4>
-                        <p>Launch CTS Mapper application</p>
-                    </div>
-                    <div class="qs-card">
-                        <div class="qs-number">3</div>
-                        <h4>Load Map</h4>
-                        <p>Load Stilwater CTS data</p>
-                    </div>
-                    <div class="qs-card">
-                        <div class="qs-number">4</div>
-                        <h4>Explore</h4>
-                        <p>Find spawn points & markers</p>
-                    </div>
-                    <div class="qs-card">
-                        <div class="qs-number">5</div>
-                        <h4>Edit</h4>
-                        <p>Move/create new locations</p>
-                    </div>
-                    <div class="qs-card">
-                        <div class="qs-number">6</div>
-                        <h4>Test</h4>
-                        <p>Repack and test in-game</p>
-                    </div>
+                <div class="trouble-item">
+                    <h3>Changes don't appear after repacking</h3>
+                    <p><strong>Cause:</strong> The edited file wasn't saved correctly before repacking, or the wrong VPP
+                        archive was updated.</p>
+                    <p><strong>Fix:</strong> Verify the modified .cts file was saved, then repack using ThomasJepp Tools
+                        and confirm the output archive is in the correct game directory.</p>
                 </div>
             </div>
         </section>
 
-        <!-- NEXT STEPS -->
-        <section class="content-section">
-            <h2>Complementary Tools & Resources</h2>
-            <p>CTS Mapper works best with other modding tools:</p>
-            <div class="next-tools-grid">
-                <div class="next-tool">
-                    <h3><a href="thomasjepp-tools.html">ThomasJepp Tools</a></h3>
-                    <p>Extract CTS data before editing with mapper.</p>
+        <!-- DOWNLOAD -->
+        <section class="section">
+            <h2 class="section-title">Download CTS Mapper</h2>
+            <div class="download-box">
+                <h3>CTS Mapper v2.01</h3>
+                <p class="dl-version">Map Viewer &amp; Position Visualiser — by Masamaru</p>
+                <p>Visualise position data from any Saints Row 2 CTS file on an overhead map of Stilwater. Essential for
+                    understanding and editing the placement of collectibles, tags, spawns, and other world objects.</p>
+                <div class="download-box-specs">
+                    <div class="dl-spec">
+                        <span class="dl-spec-label">Format</span>
+                        <span class="dl-spec-value">ZIP</span>
+                    </div>
+                    <div class="dl-spec">
+                        <span class="dl-spec-label">Platform</span>
+                        <span class="dl-spec-value">Windows</span>
+                    </div>
+                    <div class="dl-spec">
+                        <span class="dl-spec-label">Version</span>
+                        <span class="dl-spec-value">v2.01</span>
+                    </div>
                 </div>
-                <div class="next-tool">
-                    <h3>XTBL Editor</h3>
-                    <p>Edit mission data to link with custom spawn locations.</p>
+                <a href="https://www.saintsrowmods.com/forum/attachments/sr2ctsmapper2-01-zip.25577"
+                    class="big-download-btn" target="_blank">Download Now</a>
+            </div>
+
+            <div class="info-box info-red" style="margin-top: 20px;">
+                <h4>Forum Thread</h4>
+                <p>For the original release post, discussion, and any updates visit the <a
+                        href="https://www.saintsrowmods.com/forum/threads/saints-row-2-cts-mapper.9868/" target="_blank"
+                        style="color:#00ccff; font-weight:bold;">Saints Row 2 CTS Mapper thread</a> on
+                    saintsrowmods.com.</p>
+            </div>
+        </section>
+
+        <!-- RELATED TOOLS -->
+        <section class="section">
+            <h2 class="section-title">Related Tools</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <h3><a href="../sr2/thomasjepp-tools.html">ThomasJepp Saints Row Tools</a></h3>
+                    <p>Required prerequisite — extract the VPP_PC archives to access CTS files before using this tool.
+                    </p>
                 </div>
-                <div class="next-tool">
-                    <h3>LUA Script Editor</h3>
-                    <p>Create custom mission logic that uses your new spawn points.</p>
+                <div class="related-card">
+                    <h3><span>XTBL Editor</span></h3>
+                    <p>Edit mission and gameplay data files to go alongside positional changes made via CTS Mapper.</p>
                 </div>
-                <div class="next-tool">
-                    <h3><a href="../sr2.html">Other SR2 Tools</a></h3>
-                    <p>Combine with texture, model, and audio tools for complete world overhauls.</p>
+                <div class="related-card">
+                    <h3><span>Lua / Script Editor</span></h3>
+                    <p>Use coordinates identified in CTS Mapper to write custom mission logic and spawn scripts.</p>
+                </div>
+                <div class="related-card">
+                    <h3><a href="../sr2.html">All Tools</a></h3>
+                    <p>Browse the full Saints Row 2 modding toolkit — textures, models, audio, performance, and more.
+                    </p>
                 </div>
             </div>
         </section>
-    </div>
+
+    </main>
 
     <!-- FOOTER -->
-    <footer>
-        <p>CTS Mapper v2.01 is maintained by the Saints Row modding community. For more resources, visit <a href="https://www.saintsrowmods.com" target="_blank">Saints Row Mods</a></p>
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub. All tools are community-created and maintained.</p>
+        <p>CTS Mapper by Masamaru — hosted at <a href="https://www.saintsrowmods.com" target="_blank"
+                style="color:#00ccff;">saintsrowmods.com</a></p>
     </footer>
+
+    <!-- NAVBAR HIDE/SHOW ON SCROLL -->
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const scrollThreshold = 300;
+        const showThreshold = 200;
+
+        window.addEventListener('scroll', function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll < showThreshold) {
+                navbar.classList.remove('navbar-hidden');
+            } else if (currentScroll > scrollThreshold) {
+                navbar.classList.add('navbar-hidden');
+            }
+        });
+    </script>
+
 </body>
+
 </html>

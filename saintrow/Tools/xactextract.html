@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XactExtract - Saints Row 2 Audio Extraction Tool</title>
+    <link rel="stylesheet" href="../sr2tools.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a>
+                <span>/</span>
+                <a href="../saintrow.html">Saints Row</a>
+                <span>/</span>
+                <a href="../sr2.html">Saints Row 2</a>
+                <span>/</span>
+                <span>XactExtract</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="tool-page-header">
+        <h1 class="tool-page-title">XactExtract</h1>
+        <p class="tool-page-subtitle">Powerful command-line tool for extracting audio from XWB (XACT Wave Bank) files in
+            Saints Row 2</p>
+        <div class="header-badge-row">
+            <span class="header-badge">Audio Extraction</span>
+            <span class="header-badge">XWB Files</span>
+            <span class="header-badge">Command Line</span>
+            <span class="header-badge">Batch Processing</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section">
+            <h2 class="section-title">What is XactExtract?</h2>
+            <p><strong>XactExtract</strong> is a powerful command-line utility designed specifically for extracting
+                audio from XWB (XACT Wave Bank) files used by Saints Row 2 and other XACT-based games. This tool
+                converts XWB audio banks into individual WAV files, giving you access to all in-game sounds — from radio
+                music and character voice lines to weapon sounds, vehicle noises, and ambient audio effects.</p>
+            <p>Created by <strong>IdolNinja</strong>, XactExtract is an essential part of the Saints Row 2 audio modding
+                pipeline. It provides the first step in creating custom audio mods, allowing you to extract, edit, and
+                eventually repack your own sound files back into the game.</p>
+
+            <div class="dev-quote">
+                <p>"XactExtract is the gateway to Saints Row 2 audio modding. Extract every sound from the game, edit to
+                    your heart's content, and build your own custom audio experience."</p>
+                <p class="quote-attr">— Saints Row Modding Community</p>
+            </div>
+
+            <div class="info-box info-blue">
+                <h4>🎵 Audio Extraction Workflow</h4>
+                <p>XWB Files → XactExtract → Individual WAV Files → Edit in DAW → UnWAV/XactTool → Custom Audio Mod</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>📀 XWB Extraction</h3>
+                    <p>Extract audio from XACT Wave Bank files with full preservation of original audio quality.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎵 WAV Conversion</h3>
+                    <p>Convert extracted audio to standard WAV format for editing in any audio software.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Batch Processing</h3>
+                    <p>Process multiple XWB files at once using batch scripts for efficient extraction.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💻 Command-Line Interface</h3>
+                    <p>Lightweight and scriptable — perfect for integration into modding workflows.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎮 Full Game Support</h3>
+                    <p>Extract audio from all Saints Row 2 XWB files including radio, voices, effects, and ambient
+                        sounds.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔄 Complete Audio Pipeline</h3>
+                    <p>Works seamlessly with UnWAV and other audio tools for full modding capability.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Audio Types You Can Extract</h2>
+            <ul>
+                <li><strong>Radio Music:</strong> All radio station tracks from KRhyme, The Mix, Generation X, and more.
+                </li>
+                <li><strong>Character Voice Lines:</strong> Dialogue from the protagonist, NPCs, gang members, and
+                    mission characters.</li>
+                <li><strong>Weapon Sounds:</strong> Gunfire, reloads, explosions, and combat audio.</li>
+                <li><strong>Vehicle Audio:</strong> Engine sounds, tire screeches, car horns, and vehicle effects.</li>
+                <li><strong>Ambient Audio:</strong> City sounds, weather effects, environmental ambiance.</li>
+                <li><strong>UI Sounds:</strong> Menu navigation, notifications, and interface audio.</li>
+                <li><strong>Mission Audio:</strong> Cutscene dialogue, mission-specific sound effects.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">How to Use XactExtract</h2>
+            <div class="workflow-grid">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h4>Extract Game Archives</h4>
+                    <p>Use ThomasJepp Tools to extract the XWB audio files from the game's VPP_PC archives.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h4>Open Command Prompt</h4>
+                    <p>Navigate to the folder containing XactExtract and your XWB files using Command Prompt or
+                        PowerShell.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h4>Run Extraction</h4>
+                    <p>Type <code>xactextract.exe yourfile.xwb</code> to extract all audio from a single XWB file.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <h4>Batch Process</h4>
+                    <p>Create a batch file to extract multiple XWB files automatically.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <h4>Edit Your Audio</h4>
+                    <p>Use Audacity, Adobe Audition, or your preferred DAW to edit the extracted WAV files.</p>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <h4 style="color: #ffcc00; margin-bottom: 10px;">📝 Example Usage:</h4>
+                <code>xactextract.exe radio_music.xwb</code>
+                <code
+                    style="display: block; margin-top: 8px;">xactextract.exe --output "C:\AudioExtracts" voices.xwb</code>
+                <code style="display: block; margin-top: 8px;">for %f in (*.xwb) do xactextract.exe "%f"</code>
+                <p style="font-size: 0.75rem; color: #999999; margin-top: 8px;">The extracted WAV files will be saved in
+                    the same folder as the source XWB file by default.</p>
+            </div>
+
+            <div class="info-box info-yellow">
+                <h4>💡 Batch Processing Tip</h4>
+                <p>Create a batch file (.bat) with <code>for %%f in (*.xwb) do xactextract.exe "%%f"</code> to extract
+                    all XWB files in a folder automatically.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Finding XWB Files in Saints Row 2</h2>
+            <p>Saints Row 2 stores its audio in XWB (XACT Wave Bank) files, which are contained within the game's VPP_PC
+                archives. Here's where to find them:</p>
+            <ul>
+                <li><strong>Radio Music:</strong> Located in radio related VPP_PC files (e.g.,
+                    <code>radio_music.vpp_pc</code>)</li>
+                <li><strong>Voice Lines:</strong> Found in character-specific VPP files
+                    (<code>player_voices.vpp_pc</code>, etc.)</li>
+                <li><strong>Sound Effects:</strong> Stored in <code>sound_effects.vpp_pc</code> and similar archives
+                </li>
+                <li><strong>Mission Audio:</strong> Located in mission-specific VPP archives</li>
+            </ul>
+            <div class="code-block">
+                <code>XactExtract requires XWB files extracted from VPP_PC archives using ThomasJepp Saints Row Tools first.</code>
+            </div>
+        </section>
+
+        <section class="download-section">
+            <h3>📥 Download XactExtract</h3>
+            <p>The essential command-line audio extraction tool for Saints Row 2 modding — extract every sound from the
+                game.</p>
+            <div class="download-buttons">
+                <a href="https://idolninja.saintsrowmods.com/sr2/tools/xactextract.rar" class="download-btn"
+                    target="_blank">⬇️ Download XactExtract</a>
+                <a href="https://www.saintsrowmods.com/forum/threads/saints-row-2-audio-tools.1379/"
+                    class="download-btn download-secondary" target="_blank">💬 Forum Thread</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #999999;">File size: ~500 KB | Platform: Windows |
+                Command-line utility</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Audio Editing After Extraction</h2>
+            <p>Once you've extracted your audio with XactExtract, you'll have standard WAV files ready for editing.
+                Recommended tools:</p>
+            <ul>
+                <li><strong>Audacity:</strong> Free, open-source audio editor — perfect for beginners</li>
+                <li><strong>Adobe Audition:</strong> Professional-grade audio editing software</li>
+                <li><strong>Reaper:</strong> Affordable DAW with powerful audio editing features</li>
+                <li><strong>FL Studio / Ableton:</strong> For music production and complex audio manipulation</li>
+            </ul>
+            <div class="info-box info-blue">
+                <h4>🎧 Audio Editing Tips</h4>
+                <p>When editing audio for Saints Row 2, maintain the original sample rate (usually 22,050 Hz or 44,100
+                    Hz) and bit depth (16-bit) to ensure compatibility. Always keep a backup of the original extracted
+                    files before editing.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Troubleshooting</h2>
+            <div class="trouble-list">
+                <div class="trouble-item">
+                    <h3>XactExtract won't process the XWB file</h3>
+                    <p><strong>Fix:</strong> Ensure the XWB file is not corrupted and was properly extracted from the
+                        VPP_PC archive. Try re-extracting with ThomasJepp Tools.</p>
+                </div>
+                <div class="trouble-item">
+                    <h3>Extracted WAV files are silent or distorted</h3>
+                    <p><strong>Fix:</strong> Some XWB files use different audio formats. The file may still be playable
+                        — test in a media player. If issues persist, the file may be encrypted or in a different format.
+                    </p>
+                </div>
+                <div class="trouble-item">
+                    <h3>Command line closes immediately</h3>
+                    <p><strong>Fix:</strong> Run Command Prompt first, then navigate to the XactExtract folder. Don't
+                        double-click the EXE directly — it's a command-line tool.</p>
+                </div>
+                <div class="trouble-item">
+                    <h3>Extraction produces no files</h3>
+                    <p><strong>Fix:</strong> Check that you have write permissions in the folder. Try running Command
+                        Prompt as Administrator.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Pro Tips for Audio Modding</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>🎧 Organize Your Extracts</h3>
+                    <p>Create separate folders for different audio types (Radio, Voices, Effects) to keep your modding
+                        project organized.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>📝 Document File Names</h3>
+                    <p>Keep a spreadsheet of which audio files correspond to which in-game sounds — this makes editing
+                        much easier.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>🔊 Volume Matching</h3>
+                    <p>When creating custom audio, match the volume levels of the original game files for a seamless
+                        experience.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>💾 Backup Originals</h3>
+                    <p>Always keep copies of the original extracted WAV files before editing. You'll need them if
+                        something goes wrong.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>⚡ Test Incrementally</h3>
+                    <p>Replace one audio file at a time and test in-game to identify issues quickly.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>🎵 Custom Radio Stations</h3>
+                    <p>Radio tracks are the easiest to mod — extract, replace with your own music, repack with UnWAV.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Complete Audio Modding Workflow</h2>
+            <div class="workflow-grid">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h4>ThomasJepp Tools</h4>
+                    <p>Extract XWB files from VPP_PC archives.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h4>XactExtract</h4>
+                    <p>Extract WAV files from XWB audio banks.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h4>Audio Editor</h4>
+                    <p>Edit and create your custom audio files.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <h4>UnWAV / XactTool</h4>
+                    <p>Repack edited audio back into XWB format.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <h4>ThomasJepp Tools</h4>
+                    <p>Repack into VPP_PC and test in-game.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Related Tools</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <h3><a href="./unwav.html">UnWAV</a></h3>
+                    <p>Repack edited audio back into XWB format — the essential partner to XactExtract.</p>
+                </div>
+                <div class="related-card">
+                    <h3><a href="./sr2soundtools.html">Audio Tool Suite</a></h3>
+                    <p>Complete audio toolkit including UnXWB and XactTool.</p>
+                </div>
+                <div class="related-card">
+                    <h3><a href="./thomasjepp-tools.html">ThomasJepp Tools</a></h3>
+                    <p>Extract XWB files from VPP_PC archives.</p>
+                </div>
+                <div class="related-card">
+                    <h3><a href="./gotr.html">Gentlemen of the Row</a></h3>
+                    <p>Essential mod with audio fixes and improvements.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub. All tools are community-created and maintained.</p>
+        <p>XactExtract by IdolNinja — Extract every sound from Saints Row 2</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const scrollThreshold = 300;
+        const showThreshold = 200;
+        window.addEventListener('scroll', function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll < showThreshold) navbar.classList.remove('navbar-hidden');
+            else if (currentScroll > scrollThreshold) navbar.classList.add('navbar-hidden');
+        });
+    </script>
+</body>
+
+</html>

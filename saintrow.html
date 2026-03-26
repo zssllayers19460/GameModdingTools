@@ -1,76 +1,207 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saint Row List</title>
-    <link rel="stylesheet" href="saintrowstyle.css" type="text/css">
+    <title>Saints Row Modding Tools</title>
+    <link rel="stylesheet" href="saintrowstyle.css">
 </head>
+
 <body>
-    <div class="sr2">
-        <ul>
-            <li>
-                <h1><a href="saintrow/sr2.html">Saint Row 2</a></h1>
-            </li>
-        </ul>
-    </div>
-    <div class="sr2content">
-        <h3>Tools Included are for texture editing, audio editing, LUA code editing, XTBL editing aswell as any modding you can think of<br>
-            (Tools: PegTool, ThomasJeppSRTools, sr2ctsmapper, SR2SOUNDTOOLS  and more)</h3>
-    </div>
-    <div class="sr3">
-        <ul>
-            <li>
-                <h1><a href="saintrow/sr3.html">Saint Row The Third</a></h1>
-            </li>
-        </ul>
-    </div>
-    <div class="sr3content">
-        <h3>Various tools for texture editing, audio editing, mesh editing, Language editing, XTBL editing and ASM 			modding<br>
-            (Tools: Gibbed Tools[Thomasjepptools also works], Mesh Importer, Striung Editor, Texture utilities more tools Included)</h3>
-    </div>
-    <div class="sr4">
-        <ul>
-            <li>
-                <h1><a href="saintrow/sr4.html">Saint Row IV</a></h1>
-            </li>
-        </ul>
-    </div>
-    <div class="sr4content">
-        <h3>Tools for moddding textures, audio, FOV, Meshes, Peg Assemblers<br>
-            (Tools: Peg Assembler, Mesh Viewer, Weapon Clone Tool, Minimauls Tools, Wwise and SDK)</h3>
-    </div>
-    <div class="sr5">
-        <ul>
-            <li>
-                <h1><a href="saintrow/sr5.html">Saint Row Gat Out Of Hell</a></h1>
-            </li>
-        </ul>
-    </div>
-    <div class="sr5content">
-        <h3>Fov Editing, Mod Manager, File Modding Tools[Not as many tools as others]<br>
-            (Tools: FOV Tool, Simple Mod Manager, Minimauls Tools)</h3>
-    </div>
-    <div class="sr6">
-        <ul>
-            <li>
-                <h1><a href="saintrow/sr6.html">Saint Row The Third Remastered</a></h1>
-            </li>
-        </ul>
-    </div>
-    <div class="sr6content">
-        <h3>Modding Tools For File Editing, Textures<br>
-            (Tools: Menthe SR-Tools, SRTTR extaction Tools and a fix for Menthe Tools)</h3>
-    </div>
-    <div class="sr">
-        <ul>
-            <li>
-                <h1><a href="saintrow/sr.html">Saint Row</a></h1>
-            </li>
-        </ul>
-    </div>
-    <div class="srcontent">
-        <h3>Tool for Texture Editor and that's it for now<br>
-            (Tools: Texture Unpacker)</h3>
-    </div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Saints Row</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <section class="page-header">
+            <h1 class="page-title">Saints Row Modding Tools</h1>
+            <p class="page-subtitle">Complete suite of tools and resources for modding Saints Row across all titles</p>
+        </section>
+
+        <div class="games-grid">
+            <section class="game-section" data-game="sr-original">
+                <div class="game-header">
+                    <h2 class="game-title">
+                        <a href="saintrow/sr.html">Saints Row</a>
+                    </h2>
+                    <span class="game-badge">Classic</span>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Essential tools for the original Saints Row game from 2006.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">Texture Editing</span>
+                        <span class="tool-tag">Archive Extraction</span>
+                        <span class="tool-tag">Beginner Friendly</span>
+                    </div>
+                    <p class="tools-info"><strong>Featured Tools:</strong> Texture Unpacker, Archive Extractor</p>
+                </div>
+            </section>
+
+            <section class="game-section" data-game="sr2">
+                <div class="game-header">
+                    <h2 class="game-title">
+                        <a href="saintrow/sr2.html">Saints Row 2</a>
+                    </h2>
+                    <span class="game-badge">Classic</span>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Comprehensive modding toolkit with multiple specialized tools for
+                        various file types.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">Texture Editing</span>
+                        <span class="tool-tag">Audio Editing</span>
+                        <span class="tool-tag">LUA Scripting</span>
+                        <span class="tool-tag">Model Extraction</span>
+                    </div>
+                    <p class="tools-info"><strong>Featured Tools:</strong> PegTool, ThomasJeppSRTools, sr2ctsmapper,
+                        SR2SOUNDTOOLS</p>
+                </div>
+            </section>
+
+            <section class="game-section" data-game="sr3">
+                <div class="game-header">
+                    <h2 class="game-title">
+                        <a href="saintrow/sr3.html">Saints Row The Third</a>
+                    </h2>
+                    <span class="game-badge">Advanced</span>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Extensive modding toolkit with advanced editing capabilities.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">Texture Editing</span>
+                        <span class="tool-tag">Mesh Editing</span>
+                        <span class="tool-tag">Language Files</span>
+                        <span class="tool-tag">ASM Modding</span>
+                    </div>
+                    <p class="tools-info"><strong>Featured Tools:</strong> Gibbed Tools, Mesh Importer, Striung Editor,
+                        Texture utilities</p>
+                </div>
+            </section>
+
+            <section class="game-section" data-game="sr4">
+                <div class="game-header">
+                    <h2 class="game-title">
+                        <a href="saintrow/sr4.html">Saints Row IV</a>
+                    </h2>
+                    <span class="game-badge">Modern</span>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Modern modding tools for the superhero edition with expanded
+                        customization.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">FOV Editing</span>
+                        <span class="tool-tag">Model Viewing</span>
+                        <span class="tool-tag">Audio Tools</span>
+                        <span class="tool-tag">Peg Assembly</span>
+                    </div>
+                    <p class="tools-info"><strong>Featured Tools:</strong> Peg Assembler, Mesh Viewer, Weapon Clone
+                        Tool, Minimauls Tools</p>
+                </div>
+            </section>
+
+            <section class="game-section" data-game="sr5">
+                <div class="game-header">
+                    <h2 class="game-title">
+                        <a href="saintrow/srgooh.html">Saints Row: Gat Out of Hell</a>
+                    </h2>
+                    <span class="game-badge">Spin-off</span>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Specialized tools for the Gat Out Of Hell standalone expansion.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">FOV Tools</span>
+                        <span class="tool-tag">Mod Manager</span>
+                        <span class="tool-tag">File Editing</span>
+                    </div>
+                    <p class="tools-info"><strong>Featured Tools:</strong> FOV Tool, Simple Mod Manager, Minimauls Tools
+                    </p>
+                </div>
+            </section>
+
+            <section class="game-section" data-game="sr6">
+                <div class="game-header">
+                    <h2 class="game-title">
+                        <a href="saintrow/sr3r.html">Saints Row The Third Remastered</a>
+                    </h2>
+                    <span class="game-badge">Remastered</span>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Updated tools for the enhanced remaster of Saints Row The Third.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">File Editing</span>
+                        <span class="tool-tag">Texture Modding</span>
+                        <span class="tool-tag">Extraction Tools</span>
+                    </div>
+                    <p class="tools-info"><strong>Featured Tools:</strong> Menthe SR-Tools, SRTTR Extraction Tools,
+                        Menthe Tools Fix</p>
+                </div>
+            </section>
+
+            <section class="game-section" data-game="sr2022">
+                <div class="game-header">
+                    <h2 class="game-title">
+                        <a href="saintrow/sr2022.html">Saints Row (2022)</a>
+                    </h2>
+                    <span class="game-badge">Modern</span>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Tools for the 2022 Saints Row reboot with modern engine support.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">Texture Extraction</span>
+                        <span class="tool-tag">Modern Engine</span>
+                        <span class="tool-tag">Growing Community</span>
+                    </div>
+                    <p class="tools-info"><strong>Featured Tools:</strong> Texture Unpacker, Extraction Tool</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- INFO SECTION -->
+        <section class="info-section">
+            <h3>Getting Started with Saints Row Modding</h3>
+            <p>New to Saints Row modding? Start with the <strong>Saints Row 2</strong> tools—they have the largest
+                community support and most comprehensive tool suite. The modding process typically involves extracting
+                game files, editing textures or models in external software, and repacking them back into the game.</p>
+            <p>Visit the <a href="https://www.saintsrowmods.com" target="_blank" class="info-link">Saints Row Mods
+                    Community</a> for tutorials, support, and additional resources.</p>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub. All tools are community-created and maintained.</p>
+        <p>Made with 🖤 for the Saints Row modding community</p>
+    </footer>
+
+    <!-- NAVBAR HIDE/SHOW ON SCROLL SCRIPT -->
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const scrollThreshold = 200; // Hide after scrolling 300px down
+        const showThreshold = 200;    // Show when within 200px of top
+
+        window.addEventListener('scroll', function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            // If near the top, always show
+            if (currentScroll < showThreshold) {
+                navbar.classList.remove('navbar-hidden');
+            }
+            // If scrolled past threshold, hide
+            else if (currentScroll > scrollThreshold) {
+                navbar.classList.add('navbar-hidden');
+            }
+        });
+    </script>
 </body>
+
 </html>

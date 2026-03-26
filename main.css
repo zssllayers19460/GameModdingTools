@@ -1,267 +1,499 @@
-*{
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+* {
     margin: 0;
     padding: 0;
-}
-.main{        /* Main Page */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url(img/bg.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-}
-.navbar{      /* navbar */
-    display: flex;
-}
-.logo ul li a{    /* logo stuff */
-    color: rgb(0, 255, 13);
-    text-decoration: none;
-    font-size: 28px;
-    font-family: Arial;
-    max-width: 100px;
-    float: right;
-    padding: 5px 10px;   
+    box-sizing: border-box;
 }
 
-form{
-    background-color: #1c4bf4;
-    width: 250px;
-    height: 44px;
-    border-radius: 10px;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(26, 26, 46, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #ff0000;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    transform: translateY(0);
+}
+
+.navbar.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+/* Add padding to body to account for fixed navbar */
+body {
+    padding-top: 70px;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
-    margin-left: auto;
-    padding-right: 5px;
 }
-input{
-    all: unset;
-    font: 16px system-ui;
-    color: #fff;
-    height: 100%;
-    width: 75%;
-    transition: 0.3s;
-    padding-left: 8px;
-}
-input:hover{
-    background-color: rgb(79, 162, 79);
-    border-radius: 9px;
-}
-::placeholder{
-    color: rgb(255, 255, 255);
-    opacity: 0.5; 
-}
-.searchbtn{
-    background-color: #1c4bf4;
-    color: #f2f2f2;
-    float: none;
-    padding: 5px;
-    margin-right: auto;
-    font-size: 14px;
-    height: 100%;
-    width: auto;
-    border: none;
-    cursor: pointer;
-    transition: 0.7s;
-}
-.searchbtn:hover{
-    background-color: rgb(255, 0, 0);
-    border-radius: 9px;
-}
-.content{    /* top info box */
-    max-width: 300px;
-    border: 2px solid rgb(0, 0, 0);
-    color: #fff;
-    background-color: rgb(66, 66, 66);
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: 5px;
-}
-.content2{      /* bottom info box */
-    width: 300px;
-    margin-top: 10px;
-    margin-left: auto;
-    border: 2px solid rgb(0, 0, 0);
-    color: #fff;
-    border-radius: 5px;
-    background-color: rgb(66, 66, 66);
-    margin-right: 5px;
-}
-.dropmenu{   /* dropdown/navbar alignment ect */
-    background-color: transparent;
-    margin-left: auto;
-}
-.dropmenu ul{
-    display: inline-flex;
-    list-style: none;
-    color: rgb(0, 0, 0);
-}
-.dropmenu ul li{   /* dropdown menu box size */
-    width: auto;
-    margin: 10px;
-    padding: 10px;
-}
-.dropmenu ul li a{ /* dropdown and menu text color */
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #00ff00;
     text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    font-style: italic;
-    min-width: auto;
-    transition:  0.5s;
+    transition: color 0.3s ease;
 }
-.dropmenu ul li:hover{    /* dropdown menu box */
-    background-color: transparent;
-    border-radius: 25px;  /*roundness of the boxes border*/
-    padding: 5px;
+
+.logo-text:hover {
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
-.dropmenu ul li a:hover{   /* navigation bar hover color */
-    color: rgb(0, 255, 34);
-    text-decoration: underline;
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+    margin-left: 50px;
 }
-.cod-sub-menu{ /* Cod dropdown menu items */
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+    color: #00ffff;
+    border-bottom: 2px solid #00ffff;
+}
+
+.submenu {
     display: none;
-}
-.dropmenu ul li:hover .cod-sub-menu{    /* cod dropdown menu box */
-    display: block;
     position: absolute;
-    background-color: rgb(54, 54, 54);
+    top: 100%;
+    left: 0;
+    background: rgba(30, 30, 50, 0.98);
+    backdrop-filter: blur(10px);
+    min-width: 200px;
+    border: 1px solid #ff0000;
+    border-radius: 8px;
+    padding: 15px 0;
     margin-top: 10px;
-    margin-left: -9px;
-    border-radius: 20px;
-    border-bottom: 1.5px solid rgb(255, 0, 0);
-    border-left: 1.5px solid rgb(255, 0, 0);
-    border-right: 1.5px solid rgb(255, 0, 0);
-    border-top: 1.5px solid rgb(255, 0, 0);
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
-.dropmenu ul li:hover .cod-sub-menu ul{
-    display: block;
-    margin: 10px;
+
+.nav-item:hover .submenu {
+    display: flex;
 }
-.dropmenu ul li:hover .cod-sub-menu ul li{    /* cod dropdown menu */
+
+.submenu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.submenu a:hover {
+    background: rgba(255, 0, 255, 0.1);
+    border-left-color: #ff00ff;
+    color: #ff00ff;
+    padding-left: 25px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-input {
+    background: none;
+    border: none;
+    color: #ffffff;
+    outline: none;
     width: 150px;
-    padding: 5px;
-    border-bottom: 1px solid rgb(255, 0, 0);
-    background: transparent;
-    border-radius: 0px;
-    text-align: left;
+    font-size: 0.9rem;
 }
-.dropmenu ul li:hover .cod-sub-menu ul li:last-child{
-    border-bottom: none;
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
-.dropmenu ul li:hover .cod-sub-menu ul li a:hover{
-    color: rgb(236,111,0);
+
+.search-btn {
+    background: #ff0000;
+    border: none;
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
-.gta-sub-menu{
-    display: none;
+
+.search-btn:hover {
+    background: #ff00ff;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
 }
-.dropmenu ul li:hover .gta-sub-menu{    /* gta dropdown menu box */
-    display: block;
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
+    border-bottom: 2px solid #ff0000;
+    padding: 60px 20px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
     position: absolute;
-    background-color: rgb(54, 54, 54);
-    margin-top: 10px;
-    margin-left: -9px;
+    top: -50%;
+    right: -50%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.1) 0%, transparent 70%);
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(30px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #00ffff, #ff00ff, #00ff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background: linear-gradient(135deg, #ff0000, #ff00ff);
+    color: #ffffff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 0, 255, 0.6);
+}
+
+/* ========================================
+   ABOUT SECTION
+   ======================================== */
+.about {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 60px 40px;
+    background: rgba(255, 0, 0, 0.05);
+    border: 2px solid #ff0000;
     border-radius: 10px;
-    border-bottom: 1.5px solid rgb(255, 0, 0);
-    border-left: 1.5px solid rgb(255, 0, 0);
-    border-right: 1.5px solid rgb(255, 0, 0);
-    border-top: 1.5px solid rgb(255, 0, 0);
-}
-.dropmenu ul li:hover .gta-sub-menu ul{
-    display: block;
-    margin: 10px;
-}
-.dropmenu ul li:hover .gta-sub-menu ul li{        /* gta dropdown menu */
-    width: 150px;
-    padding: 10px;
-    border-bottom: 1px solid rgb(255, 0, 0);
-    background: transparent;
-    border-radius: 0px;
-    text-align: left;
-}
-.dropmenu ul li:hover .gta-sub-menu ul li:last-child{
-    border-bottom: none;
-}
-.dropmenu ul li:hover .gta-sub-menu ul li a:hover{
-    color: rgb(46, 153, 0);
-}
-.sr-sub-menu{
-    display: none;
-}
-.dropmenu ul li:hover .sr-sub-menu{
-    display: block;
-    position: absolute;
-    background-color: rgb(54, 54, 54);
-    margin-top: 10px;
-    margin-left: -9px;
-    border-radius: 20px;
-    border-bottom: 1.5px solid rgb(255, 0, 0);
-    border-left: 1.5px solid rgb(255, 0, 0);
-    border-right: 1.5px solid rgb(255, 0, 0);
-    border-top: 1.5px solid rgb(255, 0, 0);
-}
-.dropmenu ul li:hover .sr-sub-menu ul{
-    display: block;
-    margin: 10px;
-}
-.dropmenu ul li:hover .sr-sub-menu ul li{
-    width: 150px;
-    padding: 10px;
-    border-bottom: 1px solid rgb(255, 1, 1);
-    background: transparent;
-    border-radius: 0px;
-    text-align: left;
-}
-.dropmenu ul li:hover .sr-sub-menu ul li:last-child{
-    border-bottom: none;
-}
-.dropmenu ul li:hover .sr-sub-menu ul li a:hover{
-    color: #9300c5;
-}
-.loadmore{
-    position: absolute;
-    left: auto;
-    width: auto;
-    top: 50px;
-    flex-wrap: wrap;
-    background-color: rgb(54, 54, 54);
-    border-radius: 20px;
-}
-.dropmenu li:hover .loadmore{
-    left: 192px;
-    border-bottom: 1.5px solid rgb(255, 0, 0);
-    border-left: 1.5px solid rgb(255, 0, 0);
-    border-right: 1.5px solid rgb(255, 0, 0);
-    border-top: 1.5px solid rgb(255, 0, 0);
+    text-align: center;
 }
 
-            /* Quick Link Links */
-
-.link{    /* google quick link */
-    width: auto;
-    height: auto;
-    margin-left: 30px;
-    margin-top: 11%;
+.about h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #ff00ff;
 }
-.link2{     /* Saints Row Mods Link */
-    width: auto;
-    height: auto;
-    margin-left: 30px;
-    margin-top: 1%;
+
+.about p {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin: 15px 0;
+    line-height: 1.8;
 }
-.link3{       /* Grand Theft Auto Mods Wiki Link */
-    width: auto;
-    height: auto;
-    margin-left: 30px;
-    margin-top: 1%;
+
+/* ========================================
+   GAMES SECTION
+   ======================================== */
+.games-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
 }
-         
 
+.games-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #00ffff;
+}
 
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
 
+.game-card {
+    background: rgba(66, 66, 66, 0.6);
+    border: 2px solid #666666;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
+.game-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff00ff;
+    box-shadow: 0 15px 40px rgba(255, 0, 255, 0.3);
+}
 
+.game-card-header {
+    padding: 30px 20px;
+    text-align: center;
+    color: #ffffff;
+}
 
+.game-card-header h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
 
+.game-card-header.cod {
+    background: linear-gradient(135deg, #ff6600, #ff8800);
+}
 
+.game-card-header.gta {
+    background: linear-gradient(135deg, #00aa00, #00dd00);
+}
 
+.game-card-header.sr {
+    background: linear-gradient(135deg, #ff0000, #ff00ff);
+}
+
+.game-card-body {
+    padding: 25px 20px;
+    color: #cccccc;
+}
+
+.game-card-body p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.card-link {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.card-link:hover {
+    color: #ff00ff;
+    margin-right: -10px;
+}
+
+/* ========================================
+   QUICK LINKS SECTION
+   ======================================== */
+.quick-links {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.quick-links h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #00ffff;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.quick-link-card {
+    background: rgba(66, 66, 66, 0.6);
+    border: 2px solid #666666;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff00ff;
+    box-shadow: 0 12px 30px rgba(255, 0, 255, 0.3);
+}
+
+.link-icon {
+    font-size: 3rem;
+}
+
+.link-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.sr-link {
+    border-color: #ff0000;
+}
+
+.sr-link:hover {
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.gta-link {
+    border-color: #00aa00;
+}
+
+.gta-link:hover {
+    background: rgba(0, 170, 0, 0.1);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background: rgba(26, 26, 46, 0.98);
+    border-top: 2px solid #ff0000;
+    padding: 40px 20px;
+    text-align: center;
+    color: #cccccc;
+    margin-top: 80px;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        margin-left: 0;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .games-section h2,
+    .quick-links h2 {
+        font-size: 2rem;
+    }
+
+    .games-grid,
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        padding: 40px 20px;
+        margin: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-box {
+        display: none;
+    }
+
+    .hero {
+        min-height: 350px;
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .about {
+        padding: 30px 15px;
+    }
+
+    .about h2 {
+        font-size: 1.6rem;
+    }
+}
