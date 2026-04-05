@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gentlemen of the Row Guide - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .tutorial-step {
+            background: rgba(66, 66, 66, 0.5);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .tutorial-step h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .note-box {
+            background: rgba(255, 100, 0, 0.2);
+            border-left: 4px solid #ff9900;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #00ccff;
+            text-decoration: none;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .feature-item h4 {
+            color: #ffaa33;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>Gentlemen of the Row Guide</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">Gentlemen of the Row</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">The essential Saints Row 2 super-mod - complete
+                installation and customization guide</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is Gentlemen of the Row?</h3>
+                <p>Gentlemen of the Row (GotR) is the definitive super-mod for Saints Row 2, created by the legendary
+                    IdolNinja. It fixes hundreds of bugs, restores cut content, adds new clothing, weapons, vehicles,
+                    missions, and countless gameplay tweaks. It's considered mandatory for the best Saints Row 2
+                    experience on PC.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>Bug Fixes</h4>
+                    <p>Hundreds of game-breaking and minor bug fixes, improved stability</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Restored Content</h4>
+                    <p>Cut missions, weapons, clothing, and vehicles restored</p>
+                </div>
+                <div class="feature-item">
+                    <h4>New Features</h4>
+                    <p>Additional gameplay mechanics, customization options</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Performance</h4>
+                    <p>Memory optimizations, loading improvements, crash fixes</p>
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Download Gentlemen of the Row</h3>
+                <p>Get the latest version from the official source:</p>
+                <div class="code-block">
+                    Download: Gentlemen_of_the_Row_Saints_Row_2_Super_Mod_v1.9.2.rar<br>
+                    Source: users.saintsrowmods.com/idolninja/sr2/gentlemen_of_the_row/
+                </div>
+                <div class="note-box">
+                    <strong>💡 Important:</strong> Always download from official sources to ensure you get the complete,
+                    virus-free package.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Pre-Installation Preparation</h3>
+                <p>Before installing, make sure you have:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>A clean installation of Saints Row 2 (Steam or GOG version)</li>
+                    <li>Backup of your save files (located in Documents\My Games\Saints Row 2)</li>
+                    <li>Backup of your game installation (optional but recommended)</li>
+                    <li>At least 2GB of free disk space</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Extract the Mod Files</h3>
+                <p>Extract the downloaded archive:</p>
+                <div class="code-block">
+                    1. Right-click the .rar file and select "Extract Here"<br>
+                    2. Navigate to the extracted folder<br>
+                    3. You should see:<br>
+                    - Gentlemen_of_the_Row_Saints_Row_2_Super_Mod_v1.9.2/<br>
+                    &nbsp;&nbsp;├── build/ (mod building tool)<br>
+                    &nbsp;&nbsp;├── optional_mod_stuff/ (additional options)<br>
+                    &nbsp;&nbsp;├── README.txt<br>
+                    &nbsp;&nbsp;└── Run_Gentlemen_of_the_Row.bat
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Running the Mod Builder</h3>
+                <p>Build your customized version of GotR:</p>
+                <div class="code-block">
+                    1. Double-click Run_Gentlemen_of_the_Row.bat<br>
+                    2. The tool will open with a menu of options<br>
+                    3. Select your game type (Steam, GOG, or Retail)<br>
+                    4. Choose your installation folder<br>
+                    5. Select optional features to include<br>
+                    6. Press Enter to build the mod<br>
+                    7. Wait for completion (usually 2-5 minutes)
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Customization Options</h3>
+                <p>GotR offers extensive customization:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Cheats:</strong> Unlock all cheats, add new cheats</li>
+                    <li><strong>Clothing:</strong> New outfits, accessories, customization options</li>
+                    <li><strong>Weapons:</strong> Restored weapons, new weapons, weapon stats</li>
+                    <li><strong>Vehicles:</strong> Restored vehicles, custom handling, new colors</li>
+                    <li><strong>Gameplay:</strong> Difficulty tweaks, activity changes, money adjustments</li>
+                    <li><strong>Visuals:</strong> ENB options, texture improvements, UI changes</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Installing the Mod</h3>
+                <p>After building, install the mod:</p>
+                <div class="code-block">
+                    1. The builder creates a "MY_CUSTOM_GOTR" folder<br>
+                    2. Copy the contents of "MY_CUSTOM_GOTR" to your Saints Row 2 installation folder<br>
+                    3. When prompted, overwrite existing files<br>
+                    4. The mod is now installed and ready to play
+                </div>
+                <div class="note-box">
+                    <strong>⚠️ Note:</strong> Always launch the game through the regular executable. GotR modifies game
+                    files directly.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 7: Post-Installation Setup</h3>
+                <p>Configure additional settings:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Launch the game once to generate new config files</li>
+                    <li>Adjust display.cfg for optimal performance</li>
+                    <li>Enable/disable specific GotR features via in-game menu</li>
+                    <li>Consider installing FPS Unlocker for better performance</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 8: Verifying Installation</h3>
+                <p>Check if GotR is working correctly:</p>
+                <div class="code-block">
+                    1. Start a new game or load a save<br>
+                    2. Look for new clothing options in stores<br>
+                    3. Check for new vehicles in garages<br>
+                    4. Verify restored missions are available<br>
+                    5. Test cheat codes to see if new cheats work
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 9: Adding Other Mods</h3>
+                <p>GotR is compatible with many other mods:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Texture Mods:</strong> Use PEG Tool mods alongside GotR</li>
+                    <li><strong>Vehicle Mods:</strong> CVTF Helper mods work with GotR</li>
+                    <li><strong>Audio Mods:</strong> Custom radio and sound mods</li>
+                    <li><strong>Install Order:</strong> Install GotR first, then other mods</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 10: Troubleshooting</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Game crashes on launch:</strong> Verify installation path, run as administrator</li>
+                    <li><strong>Missing features:</strong> Rebuild with all options selected</li>
+                    <li><strong>Performance issues:</strong> Install FPS Unlocker, reduce graphical settings</li>
+                    <li><strong>Save game corruption:</strong> Load older save, verify game files</li>
+                    <li><strong>Mod conflicts:</strong> Remove other mods, reinstall GotR</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 11: Uninstalling</h3>
+                <p>To remove GotR and restore original game:</p>
+                <div class="code-block">
+                    1. Verify game files through Steam/GOG<br>
+                    2. This will restore all original files<br>
+                    3. Delete any leftover mod files in the game folder<br>
+                    4. Reinstall if you want to start fresh
+                </div>
+            </div>
+
+            <div class="note-box">
+                <strong>👑 Legacy & Community:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Gentlemen of the Row was created by IdolNinja (RIP Mike Watson)</li>
+                    <li>The mod is a testament to community dedication</li>
+                    <li>Continued support and updates via saintsrowmods.com</li>
+                    <li>Join the community to share your GotR experiences</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Additional Resources</h3>
+                <p>→ <a href="https://www.saintsrowmods.com/forum/forums/saints-row-2.4/" class="info-link">SR2 Modding
+                        Forum</a></p>
+                <p>→ <a href="fps-unlocker.html" class="info-link">FPS Unlocker</a> for better performance with GotR</p>
+                <p>→ <a href="peg-tool.html" class="info-link">PEG Tool</a> for custom textures with GotR</p>
+                <p>→ <a href="audio-tools.html" class="info-link">Audio Tool Suite</a> for custom radio stations</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Honoring IdolNinja's legacy</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+
+</html>

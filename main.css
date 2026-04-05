@@ -195,8 +195,15 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(30px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
 }
 
 .hero-content {
@@ -295,6 +302,12 @@ body {
     overflow: hidden;
     transition: all 0.3s ease;
     cursor: pointer;
+}
+
+.game-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .game-card:hover {

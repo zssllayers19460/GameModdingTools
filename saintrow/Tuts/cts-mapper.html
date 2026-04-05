@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTS Mapper Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .tutorial-step {
+            background: rgba(66, 66, 66, 0.5);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .tutorial-step h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .note-box {
+            background: rgba(255, 100, 0, 0.2);
+            border-left: 4px solid #ff9900;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #00ccff;
+            text-decoration: none;
+        }
+
+        .coord-example {
+            background: #2a2a3a;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>CTS Mapper Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">CTS Mapper Tool</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">Edit map locations, spawn points, and mission markers in Saints Row 2</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is CTS Mapper?</h3>
+                <p>CTS Mapper is a powerful tool for editing Saints Row 2's map data. It allows you to view and modify map images, spawn points, mission markers, activity locations, and other world data that defines the game environment.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Download and Setup</h3>
+                <p>Get the latest version of CTS Mapper:</p>
+                <div class="code-block">
+                    Download: SR2CTSMapper2-01.zip<br>
+                    Source: saintsrowmods.com/forum/attachments/sr2ctsmapper2-01-zip.25577
+                </div>
+                <p>Extract the ZIP and run SR2CTSMapper.exe. The tool requires .NET Framework 4.5 or higher.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Loading Map Data</h3>
+                <p>To begin editing, you need to load the map files:</p>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>First, extract the <code>map.vpp_pc</code> file using ThomasJepp Tools</li>
+                    <li>Look for <code>.cts</code> files (CTS = Coordinate System)</li>
+                    <li>In CTS Mapper, click "File" → "Open" and select the <code>.cts</code> file</li>
+                    <li>The map will load showing all markers and zones</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Understanding Map Elements</h3>
+                <p>CTS Mapper displays several types of map data:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Red Markers:</strong> Mission start locations</li>
+                    <li><strong>Blue Markers:</strong> Activity points (insurance fraud, mayhem, etc.)</li>
+                    <li><strong>Green Markers:</strong> Store and shop locations</li>
+                    <li><strong>Yellow Markers:</strong> Safehouse and garage locations</li>
+                    <li><strong>Purple Zones:</strong> Gang territory boundaries</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Viewing Coordinates</h3>
+                <p>Each marker has X, Y, Z coordinates:</p>
+                <div class="coord-example">
+                    Example format: X: 1234.56, Y: 7890.12, Z: 45.67<br>
+                    X = East/West position<br>
+                    Y = North/South position<br>
+                    Z = Height (ground level, rooftop, etc.)
+                </div>
+                <p>Click any marker to view and edit its coordinates in the properties panel.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Editing Spawn Points</h3>
+                <p>To modify where NPCs or vehicles spawn:</p>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Select a spawn point marker from the list</li>
+                    <li>Enter new X, Y, Z coordinates in the properties panel</li>
+                    <li>Adjust rotation if needed (facing direction)</li>
+                    <li>Click "Apply" to save changes</li>
+                </ol>
+                <div class="note-box">
+                    <strong>💡 Tip:</strong> Use in-game coordinates (enable debug mode) to find exact positions.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Adding New Markers</h3>
+                <p>Create custom locations for missions or activities:</p>
+                <div class="code-block">
+                    1. Right-click anywhere on the map<br>
+                    2. Select "Add New Marker"<br>
+                    3. Choose marker type (Mission, Activity, Shop, etc.)<br>
+                    4. Enter coordinates and any additional parameters<br>
+                    5. Save the modified .cts file
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 7: Modifying Activity Zones</h3>
+                <p>Activities like Insurance Fraud have defined areas:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Select an activity zone from the list</li>
+                    <li>Adjust the zone boundaries by dragging corner points</li>
+                    <li>Change activity parameters (time limit, score targets)</li>
+                    <li>Preview changes in the 3D view</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 8: Mission Flow Editing</h3>
+                <p>CTS Mapper can also modify mission trigger points:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Find the mission start marker you want to edit</li>
+                    <li>Check the "Mission Trigger" properties</li>
+                    <li>Edit the mission ID to change which mission starts</li>
+                    <li>Add or remove requirements (gang reputation, completed missions)</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 9: Saving and Testing</h3>
+                <p>After editing, save your changes:</p>
+                <div class="code-block">
+                    1. File → Save or Save As<br>
+                    2. Place the modified .cts file in your mod folder:<br>
+                    Saints Row 2\mods\YourMod\map.vpp_pc\<br>
+                    3. Launch the game to test changes
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Common Mods with CTS Mapper</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>New Mission Locations:</strong> Add custom mission start points</li>
+                    <li><strong>Relocated Activities:</strong> Move Insurance Fraud to better locations</li>
+                    <li><strong>Custom Gang Territories:</strong> Redefine gang control areas</li>
+                    <li><strong>Safehouse Additions:</strong> Add new crib locations</li>
+                    <li><strong>Fast Travel Points:</strong> Create custom teleport locations</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Troubleshooting</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Map not loading:</strong> Ensure .cts files are extracted correctly</li>
+                    <li><strong>Markers not appearing:</strong> Check coordinates are within map bounds</li>
+                    <li><strong>Game crashes:</strong> Verify marker types and parameters are valid</li>
+                    <li><strong>Changes not showing:</strong> Confirm mod folder structure and load order</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <strong>📝 Advanced Techniques:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Export coordinates to text files for documentation</li>
+                    <li>Use the coordinate calculator for precise positioning</li>
+                    <li>Combine with script editing for full mission creation</li>
+                    <li>Create multiple versions to test different layouts</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Next Steps</h3>
+                <p>→ <a href="thomasjepp-tools.html" class="info-link">ThomasJepp Tools</a> for extracting map files</p>
+                <p>→ <a href="gotr-guide.html" class="info-link">Gentlemen of the Row</a> for enhanced map features</p>
+                <p>→ <a href="model-export.html" class="info-link">Model Export Tool</a> for custom world objects</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+
+</html>

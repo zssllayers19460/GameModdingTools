@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnWAV Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .tutorial-step {
+            background: rgba(66, 66, 66, 0.5);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .tutorial-step h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .note-box {
+            background: rgba(255, 100, 0, 0.2);
+            border-left: 4px solid #ff9900;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #00ccff;
+            text-decoration: none;
+        }
+
+        .format-spec {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>UnWAV Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">UnWAV</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">Repack audio files back into Saints Row 2 XWB format</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is UnWAV?</h3>
+                <p>UnWAV is the companion tool to XactExtract - it takes edited WAV files and repacks them into XWB (XACT Wave Bank) format that Saints Row 2 can read. This completes the audio modding workflow.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Audio Format Requirements</h3>
+                <div class="format-spec">
+                    Required Format:<br>
+                    - Sample Rate: 44.1 kHz (44100 Hz)<br>
+                    - Bit Depth: 16-bit<br>
+                    - Channels: Stereo (or Mono for voice/sfx)<br>
+                    - Format: PCM WAV
+                </div>
+                <div class="note-box">
+                    <strong>🎵 Important:</strong> Use Audacity to convert your audio to the correct format.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Basic Repack Command</h3>
+                <p>Replace all audio in an XWB bank:</p>
+                <div class="code-block">
+                    UnWAV.exe radio.xwb custom_audio_folder\
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Replacing Individual Tracks</h3>
+                <p>Replace specific tracks while keeping others:</p>
+                <div class="code-block">
+                    # Replace track 5 only<br>
+                    UnWAV.exe radio.xwb custom_track.wav -replace 5
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Creating New XWB Banks</h3>
+                <p>Build an entirely new XWB file from scratch:</p>
+                <div class="code-block">
+                    UnWAV.exe -create my_radio.xwb song1.wav song2.wav song3.wav
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Custom Radio Station</h3>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Extract original radio.xwb to see track structure</li>
+                    <li>Identify music and DJ commentary tracks</li>
+                    <li>Prepare your custom songs (44.1kHz, 16-bit, WAV)</li>
+                    <li>Replace tracks with UnWAV</li>
+                    <li>Test in-game</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Voice Line Replacement</h3>
+                <div class="code-block">
+                    1. Extract voice.xwb with XactExtract and XSB<br>
+                    2. Find the dialogue line to replace<br>
+                    3. Record custom line (match length and cadence)<br>
+                    4. UnWAV.exe voice.xwb custom_line.wav -replace [index]
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 7: Testing Your Audio Mod</h3>
+                <div class="code-block">
+                    1. Place modified .xwb file in:<br>
+                    Saints Row 2\mods\YourMod\audio.vpp_pc\<br>
+                    2. Launch the game and test
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Troubleshooting</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>No sound:</strong> Verify format (44.1kHz, 16-bit, WAV)</li>
+                    <li><strong>Clicking/popping:</strong> Normalize audio before repacking</li>
+                    <li><strong>Game crashes:</strong> Ensure track count matches original</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Next Steps</h3>
+                <p>→ <a href="xactextract.html" class="info-link">XactExtract</a> for extracting audio from XWB</p>
+                <p>→ <a href="sr2soundtools.html" class="info-link">Audio Tool Suite</a> for complete audio workflow</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+
+</html>

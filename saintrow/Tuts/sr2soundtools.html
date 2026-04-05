@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Tool Suite Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .tutorial-step {
+            background: rgba(66, 66, 66, 0.5);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .tutorial-step h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .note-box {
+            background: rgba(255, 100, 0, 0.2);
+            border-left: 4px solid #ff9900;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #00ccff;
+            text-decoration: none;
+        }
+
+        .audio-formats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .format-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>Audio Tool Suite Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">Audio Tool Suite</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">Complete guide to Saints Row 2 audio modding - custom
+                radio, sound effects, and voice lines</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is the Audio Tool Suite?</h3>
+                <p>The Audio Tool Suite is a collection of utilities for working with Saints Row 2 audio files. It
+                    includes UnXWB, XactExtract, UnWAV, and XactTool - everything you need to extract, edit, and repack
+                    game audio including radio stations, sound effects, music, and character voice lines.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Download and Setup</h3>
+                <p>Download the complete audio toolkit:</p>
+                <div class="code-block">
+                    Download: sr2soundtools-with-unxwb.zip<br>
+                    Source: saintsrowmods.com/forum/attachments/sr2soundtools-with-unxwb-zip.46948/
+                </div>
+                <p>Extract to your modding tools folder. The package includes:</p>
+                <ul>
+                    <li><strong>UnXWB.exe</strong> - Extract audio from XWB banks</li>
+                    <li><strong>XactExtract.exe</strong> - Command-line XWB extraction</li>
+                    <li><strong>UnWAV.exe</strong> - Repack audio back to XWB format</li>
+                    <li><strong>XactTool.exe</strong> - GUI audio bank manager</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Understanding Audio Files</h3>
+                <div class="audio-formats">
+                    <div class="format-card">
+                        <strong>.xwb</strong><br>XACT Wave Bank - contains audio data
+                    </div>
+                    <div class="format-card">
+                        <strong>.xsb</strong><br>XACT Sound Bank - contains sound metadata
+                    </div>
+                    <div class="format-card">
+                        <strong>.xgs</strong><br>XACT Global Settings
+                    </div>
+                </div>
+                <p>Audio is stored in audio.vpp_pc. Key banks:</p>
+                <ul style="margin-left: 20px;">
+                    <li>radio.xwb - Radio station music and DJ chatter</li>
+                    <li>sfx.xwb - Sound effects (guns, explosions, vehicles)</li>
+                    <li>voice.xwb - Character voice lines</li>
+                    <li>music.xwb - Background music</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Extracting Audio Files</h3>
+                <p>Use ThomasJepp Tools first, then extract audio banks:</p>
+                <div class="code-block">
+                    # Extract audio.vpp_pc with ThomasJepp Tools<br>
+                    ThomasJepp.SaintsRow.ExtractVPP.exe "audio.vpp_pc"<br>
+                    <br>
+                    # Now use UnXWB to extract individual audio files<br>
+                    UnXWB.exe radio.xwb<br>
+                    <br>
+                    # This creates a folder with all .wav files from that bank
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Working with XactExtract</h3>
+                <p>Command-line extraction for batch processing:</p>
+                <div class="code-block">
+                    # Basic extraction<br>
+                    XactExtract.exe radio.xwb<br>
+                    <br>
+                    # Extract with sound names from XSB file<br>
+                    XactExtract.exe radio.xwb radio.xsb<br>
+                    <br>
+                    # Extract specific track by index<br>
+                    XactExtract.exe radio.xwb -index 15 -o "my_track.wav"<br>
+                    <br>
+                    # Batch extract all XWB files in folder<br>
+                    for %f in (*.xwb) do XactExtract.exe "%f"
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Editing Audio Files</h3>
+                <p>Prepare your custom audio files:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Format Requirements:</strong> 44.1 kHz, 16-bit, Stereo WAV</li>
+                    <li><strong>Recommended Software:</strong> Audacity (free), Adobe Audition, GoldWave</li>
+                    <li><strong>Keep Original Length:</strong> Match duration of replaced audio for best compatibility
+                    </li>
+                    <li><strong>Normalize Volume:</strong> Match original audio levels to avoid distortion</li>
+                </ul>
+                <div class="note-box">
+                    <strong>🎵 Pro Tip:</strong> When creating custom radio stations, use consistent volume levels
+                    across all tracks.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Using UnWAV to Repack</h3>
+                <p>Repack edited audio back into XWB format:</p>
+                <div class="code-block">
+                    # Basic repack (replaces all audio in bank)<br>
+                    UnWAV.exe radio.xwb custom_audio_folder\<br>
+                    <br>
+                    # Repack with specific wave file<br>
+                    UnWAV.exe radio.xwb custom_track.wav -replace 15<br>
+                    <br>
+                    # Create new XWB from scratch<br>
+                    UnWAV.exe -create new_radio.xwb track1.wav track2.wav track3.wav
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 7: Custom Radio Station Guide</h3>
+                <p>Create your own radio station step by step:</p>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Extract the radio bank you want to replace (e.g., The Krunch 106.66)</li>
+                    <li>Identify track indices for music and DJ segments</li>
+                    <li>Edit or replace music tracks with your own songs</li>
+                    <li>Optional: Record custom DJ commentary</li>
+                    <li>Use UnWAV to repack the radio bank</li>
+                    <li>Test in-game to ensure proper playback</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 8: Voice Line Replacement</h3>
+                <p>Modify character dialogue:</p>
+                <div class="code-block">
+                    1. Extract voice.xwb from audio.vpp_pc<br>
+                    2. Use XactExtract with the XSB file to get proper names:<br>
+                    XactExtract.exe voice.xwb voice.xsb<br>
+                    3. Locate dialogue lines by character and mission<br>
+                    4. Edit WAV files with your custom voice recordings<br>
+                    5. Ensure duration matches original to avoid sync issues<br>
+                    6. Repack with UnWAV
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 9: Sound Effect Modding</h3>
+                <p>Replace weapon sounds, vehicle engines, etc.:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Weapon Sounds:</strong> sfx.xwb contains gunshots, reloads</li>
+                    <li><strong>Vehicle Engines:</strong> Engine sounds are in sfx.xwb</li>
+                    <li><strong>Environmental:</strong> Weather, ambient sounds</li>
+                    <li><strong>UI Sounds:</strong> Menu clicks, notifications</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 10: Testing and Installation</h3>
+                <p>Install your audio mod:</p>
+                <div class="code-block">
+                    1. Place modified .xwb file in mod folder:<br>
+                    Saints Row 2\mods\YourMod\audio.vpp_pc\<br>
+                    <br>
+                    2. Maintain original file name (e.g., radio.xwb)<br>
+                    <br>
+                    3. Launch the game and test:<br>
+                    - Custom radio: Tune to the modified station<br>
+                    - Voice lines: Trigger the mission/dialogue<br>
+                    - Sound effects: Use weapons/drive vehicles<br>
+                    <br>
+                    4. Check for audio glitches or sync issues
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Troubleshooting Audio Mods</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>No sound in-game:</strong> Verify file format (44.1kHz, 16-bit WAV)</li>
+                    <li><strong>Crackling/distortion:</strong> Reduce volume levels, normalize audio</li>
+                    <li><strong>Audio out of sync:</strong> Match original track length exactly</li>
+                    <li><strong>Radio skips/glitches:</strong> Check track indices and XSB references</li>
+                    <li><strong>Game crashes on audio load:</strong> Ensure XWB file is valid, check size limits</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <strong>🎧 Advanced Techniques:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Use XactTool GUI for easier bank management</li>
+                    <li>Create custom radio station names and artwork</li>
+                    <li>Add multiple sound variations for realistic effects</li>
+                    <li>Compress large audio files to save space (use 128-192kbps)</li>
+                    <li>Backup original banks before making changes</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Recommended Resources</h3>
+                <p>→ <a href="xactextract.html" class="info-link">XactExtract</a> detailed command reference</p>
+                <p>→ <a href="unwav.html" class="info-link">UnWAV</a> repacking guide</p>
+                <p>→ <a href="https://www.audacityteam.org/" class="info-link">Audacity</a> free audio editor</p>
+                <p>→ <a href="gotr-guide.html" class="info-link">Gentlemen of the Row</a> includes audio fixes</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+
+</html>

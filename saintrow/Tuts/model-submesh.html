@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Submesh Tool Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .tutorial-step {
+            background: rgba(66, 66, 66, 0.5);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .tutorial-step h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .note-box {
+            background: rgba(255, 100, 0, 0.2);
+            border-left: 4px solid #ff9900;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #00ccff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>Model Submesh Tool Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">Model Submesh Tool</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">Split complex models into editable components for
+                detailed modification</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is Model Submesh Tool?</h3>
+                <p>Model Submesh Tool is an advanced utility that splits Saints Row 2 models into their component parts
+                    (submeshes). This allows you to edit individual pieces of a model - like a character's shirt
+                    separate from their pants, or a car's body separate from its wheels.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Understanding Submeshes</h3>
+                <p>Complex models are composed of multiple submeshes:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Character Models:</strong> Head, torso, arms, legs, hands, feet</li>
+                    <li><strong>Vehicle Models:</strong> Body, wheels, windows, doors, bumpers</li>
+                    <li><strong>Weapon Models:</strong> Handle, barrel, magazine, sights</li>
+                    <li><strong>Each submesh can have its own:</strong> Material, texture, physics, animations</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Download and Setup</h3>
+                <p>Get the latest version of Model Submesh Tool:</p>
+                <div class="code-block">
+                    Download: cmesh2obj_0-2_submeshes.rar<br>
+                    Source: saintsrowmods.com/forum/attachments/cmesh2obj_0-2_submeshes-rar.27310
+                </div>
+                <p>Extract to the same folder as the regular Model Export Tool for best results.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Splitting a Model into Submeshes</h3>
+                <p>Extract individual submeshes from a model file:</p>
+                <div class="code-block">
+                    # Split model into separate submesh files<br>
+                    submesh_tool.exe "model.cmesh_pc" --split<br>
+                    <br>
+                    # This creates files like:<br>
+                    - model_submesh_0.obj (first component)<br>
+                    - model_submesh_1.obj (second component)<br>
+                    - model_submesh_2.obj (third component)<br>
+                    <br>
+                    # You'll also get a .txt file listing submesh information
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Analyzing Submesh Data</h3>
+                <p>The tool creates a .txt file with important information:</p>
+                <div class="code-block">
+                    Example submesh_info.txt:<br>
+                    Submesh 0: Body - 2456 vertices, Material: skin<br>
+                    Submesh 1: Head - 1890 vertices, Material: head_tex<br>
+                    Submesh 2: Hair - 1200 vertices, Material: hair_tex<br>
+                    Submesh 3: Pants - 2340 vertices, Material: denim<br>
+                    Submesh 4: Shirt - 2100 vertices, Material: cotton<br>
+                    <br>
+                    Use this to identify which submesh to edit.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Editing Individual Submeshes</h3>
+                <p>Edit only the parts you want to change:</p>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Import a single submesh OBJ file into Blender</li>
+                    <li>Make your modifications to that specific component</li>
+                    <li>Export back to OBJ format (maintaining vertex count)</li>
+                    <li>Rename to match original submesh filename</li>
+                    <li>Process with other submeshes you want to keep original</li>
+                </ol>
+                <div class="note-box">
+                    <strong>💡 Pro Tip:</strong> Keep a backup of all submesh files before editing.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Recombining Submeshes</h3>
+                <p>After editing, combine submeshes back into a complete model:</p>
+                <div class="code-block">
+                    # Recombine edited submeshes<br>
+                    submesh_tool.exe "model.cmesh_pc" --combine<br>
+                    <br>
+                    # Or combine specific submesh files<br>
+                    submesh_tool.exe "edited_submesh_0.obj" "original_submesh_1.obj" "edited_submesh_2.obj" -o
+                    "new_model.cmesh_pc"
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 7: Working with Textures</h3>
+                <p>Each submesh uses specific textures:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Note the material names from the info file</li>
+                    <li>Use PEG Tool to edit the corresponding textures</li>
+                    <li>Ensure UV mapping coordinates remain intact after editing</li>
+                    <li>Test texture alignment on individual submeshes</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 8: Advanced Submesh Operations</h3>
+                <p>More complex modifications you can perform:</p>
+                <div class="code-block">
+                    # Swap submeshes between different models<br>
+                    submesh_tool.exe "car_body.obj" "truck_wheels.obj" -o "custom_vehicle.cmesh_pc"<br>
+                    <br>
+                    # Add new submeshes to a model<br>
+                    submesh_tool.exe "character.cmesh_pc" "new_hat.obj" --append<br>
+                    <br>
+                    # Remove submeshes from a model<br>
+                    submesh_tool.exe "character.cmesh_pc" --remove 3<br>
+                    (removes submesh index 3)
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Common Submesh Mods</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Outfit Combinations:</strong> Mix different clothing pieces from multiple characters
+                    </li>
+                    <li><strong>Vehicle Customization:</strong> Swap wheels, add spoilers, combine car parts</li>
+                    <li><strong>Weapon Attachments:</strong> Add scopes, silencers, or custom accessories</li>
+                    <li><strong>Character Accessories:</strong> Add hats, glasses, jewelry to existing models</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Performance Considerations</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Keep total vertex count under game engine limits (~10k per model)</li>
+                    <li>Minimize the number of submeshes for better performance</li>
+                    <li>Use LOD (Level of Detail) versions for distant objects</li>
+                    <li>Test thoroughly after combining submeshes</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Troubleshooting</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Missing textures on specific parts:</strong> Check material assignments</li>
+                    <li><strong>Model parts misaligned:</strong> Verify submesh positioning in 3D space</li>
+                    <li><strong>Animation issues:</strong> Ensure skeleton bone weights are preserved</li>
+                    <li><strong>Combined model won't load:</strong> Check submesh order and vertex counts</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <strong>⚙️ Advanced Workflow Tips:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Create a spreadsheet tracking submesh indices and their purposes</li>
+                    <li>Use version control for complex multi-submesh projects</li>
+                    <li>Test each submesh individually before combining</li>
+                    <li>Document your modifications for future reference</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Next Steps</h3>
+                <p>→ <a href="model-export.html" class="info-link">Model Export Tool</a> for basic model extraction</p>
+                <p>→ <a href="peg-tool.html" class="info-link">PEG Tool</a> for submesh textures</p>
+                <p>→ <a href="gotr-guide.html" class="info-link">Gentlemen of the Row</a> for advanced model
+                    implementations</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEG Tool Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .tutorial-step {
+            background: rgba(66, 66, 66, 0.5);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        .tutorial-step h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .note-box {
+            background: rgba(255, 100, 0, 0.2);
+            border-left: 4px solid #ff9900;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #00ccff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            color: #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a>
+                <span>/</span>
+                <a href="../saintrow.html">Saints Row</a>
+                <span>/</span>
+                <a href="../sr2.html">SR2 Tools</a>
+                <span>/</span>
+                <span>PEG Tool Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+        
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">PEG Tool Tutorial</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">Complete guide to extracting and editing Saints Row 2 texture files</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is PEG Tool?</h3>
+                <p>PEG Tool is an essential utility for Saints Row 2 texture modding. It allows you to extract, view, and edit .peg texture files used throughout the game for character skins, vehicle paintjobs, clothing, and environment textures.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Download and Installation</h3>
+                <p>First, download the latest version of PEG Tool from the Saints Row Mods community:</p>
+                <div class="code-block">
+                    Download: PEG Tool v1.2.8<br>
+                    Source: saintsrowmods.com/forum/attachments/sr2pegtool_v128-zip.27301
+                </div>
+                <p>No installation required - simply extract the ZIP file to a folder of your choice (e.g., C:\SR2_Modding\PEGTool).</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Extracting Game Textures</h3>
+                <p>To begin modding, you need to extract the game's texture files:</p>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Navigate to your Saints Row 2 installation folder (usually <code>C:\Program Files (x86)\Steam\steamapps\common\Saints Row 2</code>)</li>
+                    <li>Use ThomasJepp Tools to extract <code>misc.vpp_pc</code> and <code>customize_item.vpp_pc</code></li>
+                    <li>Look for <code>.g_peg_pc</code> files - these are your texture files</li>
+                    <li>Open PEG Tool and drag a <code>.g_peg_pc</code> file onto the executable</li>
+                    <li>The tool will extract all textures as DDS files to the same folder</li>
+                </ol>
+                <div class="note-box">
+                    <strong>💡 Pro Tip:</strong> Create a dedicated "extracted" folder to keep your original files organized.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Editing Textures</h3>
+                <p>Once extracted, you can edit the DDS files using image editing software:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Required software:</strong> Photoshop with NVIDIA DDS plugin, GIMP with DDS plugin, or Paint.NET</li>
+                    <li><strong>Save settings:</strong> Always save as DDS with DXT5 compression for most textures</li>
+                    <li><strong>Alpha channels:</strong> Some textures use alpha for transparency - preserve these</li>
+                    <li><strong>Resolution:</strong> Keep original dimensions to avoid game crashes</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Repacking Textures</h3>
+                <p>After editing, you need to repack the textures back into game format:</p>
+                <div class="code-block">
+                    # Command line usage<br>
+                    PEGTool.exe your_texture.g_peg_pc -repack<br>
+                    <br>
+                    # Or use the GUI version:<br>
+                    - Select "Repack" mode<br>
+                    - Choose your edited DDS files<br>
+                    - Specify output location
+                </div>
+                <p>The tool will create a new .g_peg_pc file ready for the game.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Testing Your Mod</h3>
+                <p>To test your texture mod in-game:</p>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Place your modified .g_peg_pc file in the appropriate folder structure</li>
+                    <li>Create a mod folder: <code>Saints Row 2\mods\YourModName\</code></li>
+                    <li>Maintain the original folder structure (e.g., if the file came from <code>misc.vpp_pc</code>, put it in <code>mods\YourModName\misc.vpp_pc\</code>)</li>
+                    <li>Launch the game and check if your textures appear correctly</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Common Issues & Solutions</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Texture not showing:</strong> Check file path and ensure DXT5 compression</li>
+                    <li><strong>Game crashes:</strong> Verify texture dimensions match original</li>
+                    <li><strong>Corrupted colors:</strong> Use correct DDS format (DXT1 for opaque, DXT5 for alpha)</li>
+                    <li><strong>Tool not responding:</strong> Run as administrator or check file permissions</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <strong>🎨 Advanced Tips:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Combine with Chunk Texture Tool for easier management</li>
+                    <li>Use batch processing for multiple textures</li>
+                    <li>Backup original files before modifying</li>
+                    <li>Join the community at saintsrowmods.com for help</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Next Steps</h3>
+                <p>Once you've mastered PEG Tool, explore other tutorials:</p>
+                <p>→ <a href="chunk-texture.html" class="info-link">Chunk Texture Tool</a> for beginner-friendly texture editing</p>
+                <p>→ <a href="model-export.html" class="info-link">Model Export Tool</a> for 3D model editing</p>
+                <p>→ <a href="audio-tools.html" class="info-link">Audio Tool Suite</a> for custom radio and sounds</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+</html>

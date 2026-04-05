@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Export Tool Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .tutorial-step {
+            background: rgba(66, 66, 66, 0.5);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .tutorial-step h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .note-box {
+            background: rgba(255, 100, 0, 0.2);
+            border-left: 4px solid #ff9900;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #00ccff;
+            text-decoration: none;
+        }
+
+        .file-types {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .file-type-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .file-type-card h4 {
+            color: #ffaa33;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>Model Export Tool Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">Model Export Tool</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">Extract and edit Saints Row 2 3D models for Blender,
+                Maya, and 3DS Max</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is Model Export Tool?</h3>
+                <p>Model Export Tool (cmesh2obj) converts Saints Row 2's proprietary .cmesh_pc and .smesh_pc model files
+                    to standard .OBJ format that can be edited in any 3D modeling software. This is essential for
+                    creating custom characters, vehicles, and weapons.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Understanding Model Files</h3>
+                <div class="file-types">
+                    <div class="file-type-card">
+                        <h4>.cmesh_pc</h4>
+                        <p>Complex mesh files - characters, vehicles, detailed props</p>
+                    </div>
+                    <div class="file-type-card">
+                        <h4>.smesh_pc</h4>
+                        <p>Simple mesh files - low-poly props, environment objects</p>
+                    </div>
+                    <div class="file-type-card">
+                        <h4>.skl_pc</h4>
+                        <p>Skeleton files - bone structure for animated models</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Download and Setup</h3>
+                <p>Get the latest version of Model Export Tool:</p>
+                <div class="code-block">
+                    Download: cmesh2obj_0-2.rar<br>
+                    Source: saintsrowmods.com/forum/attachments/cmesh2obj_0-2-rar.27311
+                </div>
+                <p>Extract to a folder. You'll need:</p>
+                <ul>
+                    <li>cmesh2obj.exe (command-line converter)</li>
+                    <li>Python scripts for batch processing (optional)</li>
+                    <li>Documentation and examples</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Extracting Model Files</h3>
+                <p>First, you need to extract the model files from the game archives:</p>
+                <div class="code-block">
+                    1. Use ThomasJepp Tools to extract the relevant .vpp_pc files:<br>
+                    - characters.vpp_pc (character models)<br>
+                    - vehicles.vpp_pc (vehicle models)<br>
+                    - weapons.vpp_pc (weapon models)<br>
+                    - props.vpp_pc (environment objects)<br>
+                    <br>
+                    2. Look for .cmesh_pc and .smesh_pc files in the extracted folders
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Converting to OBJ Format</h3>
+                <p>Use cmesh2obj to convert game models to OBJ:</p>
+                <div class="code-block">
+                    # Basic conversion<br>
+                    cmesh2obj.exe "model.cmesh_pc" -o "model.obj"<br>
+                    <br>
+                    # Convert with skeleton data<br>
+                    cmesh2obj.exe "character.cmesh_pc" -s "character.skl_pc" -o "character.obj"<br>
+                    <br>
+                    # Batch convert all files in folder<br>
+                    for %f in (*.cmesh_pc) do cmesh2obj.exe "%f" -o "%~nf.obj"
+                </div>
+                <div class="note-box">
+                    <strong>⚠️ Important:</strong> Keep the .obj and .mtl files together - they contain material data.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Importing to Blender</h3>
+                <p>How to import your models into Blender:</p>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Open Blender and delete the default cube</li>
+                    <li>File → Import → Wavefront (.obj)</li>
+                    <li>Select your converted .obj file</li>
+                    <li>Check "Keep Vertex Order" and "Import UVs" options</li>
+                    <li>The model will appear with its textures mapped</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Editing Models</h3>
+                <p>Common modifications you can make:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Mesh Editing:</strong> Reshape, add or remove geometry</li>
+                    <li><strong>UV Mapping:</strong> Adjust texture coordinates</li>
+                    <li><strong>Material Changes:</strong> Modify colors and properties</li>
+                    <li><strong>Rigging:</strong> Create custom skeletons for animations</li>
+                </ul>
+                <div class="note-box">
+                    <strong>💡 Tip:</strong> Maintain vertex count and hierarchy structure to avoid game crashes.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 7: Exporting from Blender</h3>
+                <p>After editing, export back to OBJ format:</p>
+                <div class="code-block">
+                    File → Export → Wavefront (.obj)<br>
+                    Important settings:<br>
+                    - Check "Write Materials"<br>
+                    - Keep "Objects as OBJ Objects"<br>
+                    - Enable "Triangulate Faces"<br>
+                    - Maintain original scale (1.0)
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 8: Converting Back to Game Format</h3>
+                <p>Use Submesh Tool to convert OBJ back to .cmesh_pc:</p>
+                <div class="code-block">
+                    # Convert OBJ back to game format<br>
+                    submesh_tool.exe "model.obj" -o "model_new.cmesh_pc"<br>
+                    <br>
+                    # If you modified the skeleton<br>
+                    submesh_tool.exe "model.obj" -s "original.skl_pc" -o "model_new.cmesh_pc"
+                </div>
+                <div class="note-box">
+                    <strong>🔧 Note:</strong> The Submesh Tool is required for re-importing models back into the game.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 9: Testing Your Model</h3>
+                <p>To test your custom model in-game:</p>
+                <div class="code-block">
+                    1. Place the modified .cmesh_pc file in your mod folder<br>
+                    2. Maintain original file structure:<br>
+                    Saints Row 2\mods\YourMod\vehicles.vpp_pc\custom_car.cmesh_pc<br>
+                    3. Launch the game and spawn your model<br>
+                    4. Check for any visual glitches or crashes
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Common Model Mods</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Custom Vehicles:</strong> Import real cars or create unique designs</li>
+                    <li><strong>Character Models:</strong> Create new outfits, hairstyles, or body types</li>
+                    <li><strong>Weapon Replacements:</strong> Add realistic guns or sci-fi weapons</li>
+                    <li><strong>Environment Props:</strong> Add new buildings, signs, or decorations</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Troubleshooting</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Model invisible in-game:</strong> Check material assignments and UV mapping</li>
+                    <li><strong>Game crashes on load:</strong> Verify vertex count and polygon limits</li>
+                    <li><strong>Textures missing:</strong> Ensure .mtl file references correct texture paths</li>
+                    <li><strong>Wrong scale:</strong> Import original model first to check scale reference</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <strong>🎨 Advanced Tips:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Use reference models to maintain proper scale and proportions</li>
+                    <li>Keep LOD (Level of Detail) versions for better performance</li>
+                    <li>Test with low-poly versions first before adding detail</li>
+                    <li>Join the modding Discord for advanced rigging help</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Next Steps</h3>
+                <p>→ <a href="model-submesh.html" class="info-link">Model Submesh Tool</a> for advanced component
+                    editing</p>
+                <p>→ <a href="thomasjepp-tools.html" class="info-link">ThomasJepp Tools</a> for model extraction</p>
+                <p>→ <a href="peg-tool.html" class="info-link">PEG Tool</a> for model textures</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+
+</html>

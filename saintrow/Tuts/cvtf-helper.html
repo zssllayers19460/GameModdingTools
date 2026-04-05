@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVTF Helper Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .tutorial-step {
+            background: rgba(66, 66, 66, 0.5);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .tutorial-step h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .note-box {
+            background: rgba(255, 100, 0, 0.2);
+            border-left: 4px solid #ff9900;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #00ccff;
+            text-decoration: none;
+        }
+
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .stats-table th,
+        .stats-table td {
+            border: 1px solid #ff00ff;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .stats-table th {
+            background: rgba(255, 0, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>CVTF Helper Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">CVTF Helper</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">Complete guide to vehicle customization and handling
+                modifications</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is CVTF Helper?</h3>
+                <p>CVTF Helper is a specialized tool for Saints Row 2 vehicle modding. It simplifies working with CVTF
+                    (Custom Vehicle Tuning Files) and allows you to modify vehicle stats, handling, performance, and
+                    customization options for all vehicles in the game.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Download and Setup</h3>
+                <p>Get the latest version of CVTF Helper:</p>
+                <div class="code-block">
+                    Download: sr2_cvtf_helper_v1-00.rar<br>
+                    Source: saintsrowmods.com/forum/attachments/sr2_cvtf_helper_v1-00-rar.10602/
+                </div>
+                <p>Extract to your modding tools folder. Requires .NET Framework 4.5+.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Understanding CVTF Files</h3>
+                <p>CVTF files contain vehicle data:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Vehicle Stats:</strong> Speed, acceleration, braking, handling</li>
+                    <li><strong>Physical Properties:</strong> Weight, traction, suspension</li>
+                    <li><strong>Customization Options:</strong> Paint colors, body kits, wheels</li>
+                    <li><strong>Audio Settings:</strong> Engine sounds, horn, radio</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Extracting Vehicle Files</h3>
+                <p>First, extract vehicle data from the game:</p>
+                <div class="code-block">
+                    1. Use ThomasJepp Tools to extract vehicles.vpp_pc<br>
+                    2. Look for .cvtf_pc files (Custom Vehicle Tuning File)<br>
+                    3. Common vehicles: attrazione.cvtf_pc, bootlegger.cvtf_pc, etc.<br>
+                    4. Copy the .cvtf_pc file to your working folder
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Opening a CVTF File</h3>
+                <p>Load a vehicle file in CVTF Helper:</p>
+                <div class="code-block">
+                    1. Launch CVTF Helper<br>
+                    2. Click "Open" and select your .cvtf_pc file<br>
+                    3. The tool will display all vehicle data in an organized interface<br>
+                    4. Browse tabs to view different vehicle properties
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Modifying Vehicle Stats</h3>
+                <p>Adjust performance parameters:</p>
+                <table class="stats-table">
+                    <tr>
+                        <th>Stat</th>
+                        <th>Description</th>
+                        <th>Typical Range</th>
+                    </tr>
+                    <tr>
+                        <td>Top Speed</td>
+                        <td>Maximum velocity</td>
+                        <td>100-250</td>
+                    </tr>
+                    <tr>
+                        <td>Acceleration</td>
+                        <td>0-60 time multiplier</td>
+                        <td>0.5-3.0</td>
+                    </tr>
+                    <tr>
+                        <td>Braking</td>
+                        <td>Braking force</td>
+                        <td>50-200</td>
+                    </tr>
+                    <tr>
+                        <td>Traction</td>
+                        <td>Grip on road</td>
+                        <td>0.5-2.0</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td>Vehicle mass</td>
+                        <td>800-2500</td>
+                    </tr>
+                    <tr>
+                        <td>Handling</td>
+                        <td>Steering responsiveness</td>
+                        <td>0.5-2.5</td>
+                    </tr>
+                </table>
+                <div class="note-box">
+                    <strong>💡 Tip:</strong> Start with small adjustments (10-20%) and test in-game before making
+                    extreme changes.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Suspension & Physics Tuning</h3>
+                <p>Fine-tune vehicle behavior:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Suspension Stiffness:</strong> Higher = less body roll</li>
+                    <li><strong>Suspension Travel:</strong> How much wheels can move</li>
+                    <li><strong>Damping:</strong> Controls suspension rebound speed</li>
+                    <li><strong>Center of Mass:</strong> Affects handling and stability</li>
+                    <li><strong>Drivetrain:</strong> FWD, RWD, AWD selection</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 7: Customization Options</h3>
+                <p>Add or modify vehicle customization parts:</p>
+                <div class="code-block">
+                    # Available customization categories:<br>
+                    - Paint Colors (Primary, Secondary, Trim)<br>
+                    - Body Kits (Bumpers, Skirts, Wings)<br>
+                    - Wheels (Rims, Tires)<br>
+                    - Window Tint<br>
+                    - Neon Lights<br>
+                    - Hydraulics<br>
+                    - Engine Mods (Turbo, Nitrous)<br>
+                    <br>
+                    # Each category can have multiple options
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 8: Creating Custom Vehicles</h3>
+                <p>Create a completely new vehicle from scratch:</p>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Copy an existing .cvtf_pc file as a template</li>
+                    <li>Rename it to your new vehicle name</li>
+                    <li>Edit all stats and properties in CVTF Helper</li>
+                    <li>Assign a unique vehicle ID</li>
+                    <li>Add to spawn list for in-game availability</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 9: Vehicle Sound Modding</h3>
+                <p>Change engine sounds and audio:</p>
+                <div class="code-block">
+                    # Sound parameters you can edit:<br>
+                    EngineIdle = "engine_idle.wav"<br>
+                    EngineRev = "engine_rev.wav"<br>
+                    EngineAccelerate = "engine_accel.wav"<br>
+                    Horn = "horn.wav"<br>
+                    RadioType = "radio_classic"<br>
+                    <br>
+                    # Use Audio Tool Suite to create custom engine sounds
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 10: Testing Your Mod</h3>
+                <p>Install and test your modified vehicle:</p>
+                <div class="code-block">
+                    1. Place your .cvtf_pc file in mod folder:<br>
+                    Saints Row 2\mods\YourMod\vehicles.vpp_pc\<br>
+                    <br>
+                    2. Launch the game and spawn your vehicle<br>
+                    3. Test all aspects:<br>
+                    - Speed and acceleration<br>
+                    - Handling and braking<br>
+                    - Customization options<br>
+                    - Sound effects<br>
+                    <br>
+                    4. Use the cheat menu to spawn vehicles quickly:<br>
+                    #cheat spawn_vehicle [vehiclename]
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Advanced: Vehicle Imports</h3>
+                <p>Import custom 3D models as new vehicles:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Use Model Export Tool to import .obj models</li>
+                    <li>Assign model to CVTF file reference</li>
+                    <li>Set wheel positions and collision boxes</li>
+                    <li>Create custom textures with PEG Tool</li>
+                    <li>Test and adjust scaling</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Common Vehicle Mods</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Supercar Upgrades:</strong> Boost speed and handling of existing cars</li>
+                    <li><strong>Realistic Physics:</strong> More realistic weight and traction</li>
+                    <li><strong>Drift Cars:</strong> Lower traction, high power for drifting</li>
+                    <li><strong>Off-Road Vehicles:</strong> Increased suspension travel, higher clearance</li>
+                    <li><strong>Police Vehicles:</strong> Add sirens, police liveries</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Troubleshooting</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Vehicle not appearing:</strong> Check file path and vehicle ID conflicts</li>
+                    <li><strong>Physics glitches:</strong> Reduce weight and traction values</li>
+                    <li><strong>Sound not playing:</strong> Verify audio file references and formats</li>
+                    <li><strong>Customization missing:</strong> Check customization table entries</li>
+                    <li><strong>Game crashes:</strong> Ensure all parameters have valid values</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <strong>🏎️ Pro Tips:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Always backup original .cvtf_pc files before editing</li>
+                    <li>Create a test save with all vehicles unlocked</li>
+                    <li>Use Gentlemen of the Row for expanded vehicle options</li>
+                    <li>Join the vehicle modding community for shared resources</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Next Steps</h3>
+                <p>→ <a href="model-export.html" class="info-link">Model Export Tool</a> for custom vehicle models</p>
+                <p>→ <a href="peg-tool.html" class="info-link">PEG Tool</a> for vehicle textures and liveries</p>
+                <p>→ <a href="audio-tools.html" class="info-link">Audio Tool Suite</a> for custom engine sounds</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+
+</html>

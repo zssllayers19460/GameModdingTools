@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMESH to OBJ Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .tutorial-step {
+            background: rgba(66, 66, 66, 0.5);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .tutorial-step h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .note-box {
+            background: rgba(255, 100, 0, 0.2);
+            border-left: 4px solid #ff9900;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #00ccff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>CMESH to OBJ Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">CMESH to OBJ</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">Convert Saints Row 2 models to editable OBJ format for Blender</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is CMESH to OBJ?</h3>
+                <p>CMESH to OBJ (cmesh2obj) converts Saints Row 2's proprietary .cmesh_pc and .smesh_pc model files to standard .OBJ format that can be edited in any 3D modeling software like Blender, Maya, or 3DS Max.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Download and Setup</h3>
+                <div class="code-block">
+                    Download: cmesh2obj_0-2.rar<br>
+                    Source: saintsrowmods.com/forum/attachments/cmesh2obj_0-2-rar.27311
+                </div>
+                <p>Extract to a folder. You'll need cmesh2obj.exe and optionally Python scripts for batch processing.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Extracting Model Files</h3>
+                <div class="code-block">
+                    1. Use ThomasJepp Tools to extract .vpp_pc files:<br>
+                    - characters.vpp_pc (character models)<br>
+                    - vehicles.vpp_pc (vehicle models)<br>
+                    - weapons.vpp_pc (weapon models)<br>
+                    2. Look for .cmesh_pc and .smesh_pc files
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Converting to OBJ Format</h3>
+                <div class="code-block">
+                    # Basic conversion<br>
+                    cmesh2obj.exe "model.cmesh_pc" -o "model.obj"<br>
+                    <br>
+                    # Convert with skeleton data<br>
+                    cmesh2obj.exe "character.cmesh_pc" -s "character.skl_pc" -o "character.obj"<br>
+                    <br>
+                    # Batch convert<br>
+                    for %f in (*.cmesh_pc) do cmesh2obj.exe "%f" -o "%~nf.obj"
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Importing to Blender</h3>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Open Blender, delete default cube</li>
+                    <li>File → Import → Wavefront (.obj)</li>
+                    <li>Select your converted .obj file</li>
+                    <li>Check "Keep Vertex Order" and "Import UVs"</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Exporting from Blender</h3>
+                <div class="code-block">
+                    File → Export → Wavefront (.obj)<br>
+                    Settings:<br>
+                    - Check "Write Materials"<br>
+                    - Enable "Triangulate Faces"<br>
+                    - Maintain original scale
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Converting Back to Game Format</h3>
+                <div class="code-block">
+                    # Use Submesh Tool to convert back<br>
+                    submesh_tool.exe "model.obj" -o "model_new.cmesh_pc"
+                </div>
+                <div class="note-box">
+                    <strong>🔧 Note:</strong> You'll need the Model Submesh Tool for re-importing.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Troubleshooting</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Model invisible:</strong> Check material assignments</li>
+                    <li><strong>Game crashes:</strong> Verify vertex count and polygon limits</li>
+                    <li><strong>Wrong scale:</strong> Import original first to check scale reference</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Next Steps</h3>
+                <p>→ <a href="model-submesh.html" class="info-link">Model Submesh Tool</a> for advanced editing</p>
+                <p>→ <a href="thomasjepp-tools.html" class="info-link">ThomasJepp Tools</a> for extraction</p>
+                <p>→ <a href="peg-tool.html" class="info-link">PEG Tool</a> for model textures</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+
+</html>

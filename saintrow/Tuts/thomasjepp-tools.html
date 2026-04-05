@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThomasJepp Tools Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .tutorial-step { background: rgba(66, 66, 66, 0.5); border-left: 4px solid #ff00ff; padding: 20px; margin: 30px 0; border-radius: 8px; }
+        .tutorial-step h3 { color: #ff00ff; margin-bottom: 15px; }
+        .code-block { background: #1a1a2e; padding: 15px; border-radius: 8px; font-family: monospace; margin: 15px 0; overflow-x: auto; }
+        .note-box { background: rgba(255, 100, 0, 0.2); border-left: 4px solid #ff9900; padding: 15px; margin: 20px 0; border-radius: 8px; }
+        .back-link { display: inline-block; margin: 20px 0; color: #00ccff; text-decoration: none; }
+        .back-link:hover { color: #ff00ff; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>ThomasJepp Tools Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+        
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">ThomasJepp Saints Row Tools</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">The foundation of Saints Row 2 modding - extracting game assets</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What are ThomasJepp Tools?</h3>
+                <p>ThomasJepp Tools are the essential utilities for extracting Saints Row 2's VPP_PC archive files. Created by community developer Thomas Jepp, these tools unlock all game assets including textures, models, audio, and scripts for modification.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Download and Setup</h3>
+                <p>Download the latest version of ThomasJepp Tools:</p>
+                <div class="code-block">
+                    Download: ThomasJepp.SaintsRow-rev121.zip<br>
+                    Source: minimaul.saintsrowmods.com/files/tools/releases/
+                </div>
+                <p>Extract the ZIP to a folder (e.g., <code>C:\SR2_Modding\ThomasJepp</code>). No installation required.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Understanding VPP_PC Files</h3>
+                <p>Saints Row 2 stores game data in .vpp_pc archive files. Common archives include:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>misc.vpp_pc</strong> - Textures, UI elements, environment data</li>
+                    <li><strong>customize_item.vpp_pc</strong> - Clothing, character customization</li>
+                    <li><strong>audio.vpp_pc</strong> - Sound effects, music, voice lines</li>
+                    <li><strong>vehicles.vpp_pc</strong> - Vehicle models and data</li>
+                    <li><strong>weapons.vpp_pc</strong> - Weapon models and textures</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Extracting Archives</h3>
+                <p>Using the command-line tool to extract VPP_PC files:</p>
+                <div class="code-block">
+                    # Basic extraction command<br>
+                    ThomasJepp.SaintsRow.ExtractVPP.exe "C:\Game\Saints Row 2\misc.vpp_pc"<br>
+                    <br>
+                    # Extract to specific folder<br>
+                    ThomasJepp.SaintsRow.ExtractVPP.exe "misc.vpp_pc" -o "C:\Extracted\misc"<br>
+                    <br>
+                    # Batch extract multiple files<br>
+                    for %f in (*.vpp_pc) do ThomasJepp.SaintsRow.ExtractVPP.exe "%f"
+                </div>
+                <div class="note-box">
+                    <strong>⚠️ Important:</strong> Always work on copies of the original files. Never modify original game files directly.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Exploring Extracted Files</h3>
+                <p>After extraction, you'll find various file types:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>.g_peg_pc</strong> - Texture files (use PEG Tool)</li>
+                    <li><strong>.cmesh_pc / .smesh_pc</strong> - 3D model files (use Model Export Tool)</li>
+                    <li><strong>.xwb</strong> - Audio banks (use Audio Tool Suite)</li>
+                    <li><strong>.cts</strong> - Map and mission data (use CTS Mapper)</li>
+                    <li><strong>.xtbl</strong> - Game data tables (editable with text editor)</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Creating Mod Folders</h3>
+                <p>To create a mod without overwriting game files:</p>
+                <div class="code-block">
+                    # Create mod folder structure<br>
+                    Saints Row 2\<br>
+                    └── mods\<br>
+                        └── MyFirstMod\<br>
+                            └── misc.vpp_pc\<br>
+                                └── (extracted files go here)
+                </div>
+                <p>The game automatically loads mods from this folder structure, overriding original files.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Repacking for Distribution</h3>
+                <p>When sharing your mod, repack into .vpp_pc format:</p>
+                <div class="code-block">
+                    # Repack command<br>
+                    ThomasJepp.SaintsRow.BuildVPP.exe "MyMod" -o "MyMod.vpp_pc"<br>
+                    <br>
+                    # This creates a distributable .vpp_pc file
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Common Issues & Solutions</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Extraction fails:</strong> Run as administrator, check file permissions</li>
+                    <li><strong>Missing files:</strong> Ensure you extracted the correct .vpp_pc</li>
+                    <li><strong>Game not loading mod:</strong> Verify folder structure and file paths</li>
+                    <li><strong>Command not recognized:</strong> Use full path or add to PATH environment</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <strong>🔧 Advanced Techniques:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Use the GUI version for easier file browsing</li>
+                    <li>Create batch scripts for repetitive extraction tasks</li>
+                    <li>Combine with other tools for complete modding workflow</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Next Steps</h3>
+                <p>Now that you can extract files, explore specific modding tutorials:</p>
+                <p>→ <a href="peg-tool.html" class="info-link">PEG Tool</a> for texture editing</p>
+                <p>→ <a href="model-export.html" class="info-link">Model Export Tool</a> for 3D models</p>
+                <p>→ <a href="audio-tools.html" class="info-link">Audio Tool Suite</a> for custom sounds</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+</html>

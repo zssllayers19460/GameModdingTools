@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chunk Texture Tool Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .tutorial-step { background: rgba(66, 66, 66, 0.5); border-left: 4px solid #ff00ff; padding: 20px; margin: 30px 0; border-radius: 8px; }
+        .tutorial-step h3 { color: #ff00ff; margin-bottom: 15px; }
+        .code-block { background: #1a1a2e; padding: 15px; border-radius: 8px; font-family: monospace; margin: 15px 0; overflow-x: auto; }
+        .note-box { background: rgba(255, 100, 0, 0.2); border-left: 4px solid #ff9900; padding: 15px; margin: 20px 0; border-radius: 8px; }
+        .back-link { display: inline-block; margin: 20px 0; color: #00ccff; text-decoration: none; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid #ff00ff; padding: 10px; text-align: left; }
+        .comparison-table th { background: rgba(255, 0, 255, 0.2); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>Chunk Texture Tool Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+        
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">Chunk Texture Tool</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">Beginner-friendly GUI tool for Saints Row 2 texture editing</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is Chunk Texture Tool?</h3>
+                <p>Chunk Texture Tool is a user-friendly graphical interface for editing Saints Row 2 texture files. Unlike command-line tools, this GUI makes texture modding accessible to beginners with an intuitive drag-and-drop interface.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Download and Installation</h3>
+                <p>Get the latest version of Chunk Texture Tool:</p>
+                <div class="code-block">
+                    Download: SR2ChunksTextureTool_v1.28.zip<br>
+                    Source: saintsrowmods.com/forum/attachments/sr2chunkstexturetool_v1-28-zip.27300
+                </div>
+                <p>Extract to any folder and run SR2ChunksTextureTool.exe. No additional setup required.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Understanding the Interface</h3>
+                <p>Chunk Texture Tool has three main sections:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>File Browser:</strong> Navigate to your extracted .g_peg_pc files</li>
+                    <li><strong>Texture Preview:</strong> View the selected texture before editing</li>
+                    <li><strong>Edit Panel:</strong> Import new textures, adjust settings, and export</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Opening a Texture File</h3>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Click "Open File" or drag a .g_peg_pc file into the window</li>
+                    <li>The tool will display all textures contained in the file</li>
+                    <li>Select a texture from the list to preview it</li>
+                    <li>You can now see the texture's properties (resolution, format, mipmaps)</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Exporting for Editing</h3>
+                <p>To edit a texture in external software:</p>
+                <div class="code-block">
+                    1. Select the texture you want to edit<br>
+                    2. Click "Export" button<br>
+                    3. Choose DDS format (DXT5 recommended)<br>
+                    4. Save to your working folder<br>
+                    5. Edit with Photoshop, GIMP, or Paint.NET
+                </div>
+                <div class="note-box">
+                    <strong>💡 Tip:</strong> Always keep a backup of the original texture in case something goes wrong.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Importing Edited Textures</h3>
+                <p>After editing your DDS file, import it back:</p>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>In Chunk Texture Tool, select the texture you want to replace</li>
+                    <li>Click "Import" button</li>
+                    <li>Browse to your edited DDS file</li>
+                    <li>The tool will verify compatibility (resolution, format)</li>
+                    <li>Click "Save" to create the modified .g_peg_pc file</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Texture Format Guide</h3>
+                <table class="comparison-table">
+                    <tr><th>Texture Type</th><th>Recommended Format</th><th>Usage</th></tr>
+                    <tr><td>Character Skins</td><td>DXT5</td><td>Clothing, faces, body textures</td></tr>
+                    <tr><td>Vehicle Paint</td><td>DXT1</td><td>Car paint, decals without transparency</td></tr>
+                    <tr><td>UI Elements</td><td>DXT5</td><td>HUD, menus, icons with transparency</td></tr>
+                    <tr><td>Environment</td><td>DXT1</td><td>Buildings, terrain, props</td></tr>
+                </table>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 7: Common Modding Examples</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Custom Clothing:</strong> Edit customize_item.vpp_pc textures to create unique outfits</li>
+                    <li><strong>Vehicle Liveries:</strong> Modify vehicle textures for custom paint jobs</li>
+                    <li><strong>UI Overhaul:</strong> Change HUD colors, fonts, and menu backgrounds</li>
+                    <li><strong>Character Tattoos:</strong> Add custom tattoos or body art</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Troubleshooting</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Import fails:</strong> Check DDS format and dimensions match original</li>
+                    <li><strong>Texture corrupted in-game:</strong> Verify compression format (DXT1 vs DXT5)</li>
+                    <li><strong>Tool crashes on large files:</strong> Extract only the texture you need first</li>
+                    <li><strong>Preview not showing:</strong> Install DirectX End-User Runtime</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <strong>🎨 Pro Tips:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Use batch processing for editing multiple textures</li>
+                    <li>Combine with PEG Tool for advanced texture manipulation</li>
+                    <li>Test your mods frequently to catch issues early</li>
+                    <li>Join the Discord community for feedback and help</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Recommended Next Tutorials</h3>
+                <p>→ <a href="peg-tool.html" class="info-link">PEG Tool</a> for command-line texture manipulation</p>
+                <p>→ <a href="model-export.html" class="info-link">Model Export Tool</a> for 3D model editing</p>
+                <p>→ <a href="gotr-guide.html" class="info-link">Gentlemen of the Row</a> for complete game overhaul</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+</html>

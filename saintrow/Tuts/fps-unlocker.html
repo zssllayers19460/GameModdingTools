@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS Unlocker Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .tutorial-step {
+            background: rgba(66, 66, 66, 0.5);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .tutorial-step h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .note-box {
+            background: rgba(255, 100, 0, 0.2);
+            border-left: 4px solid #ff9900;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #00ccff;
+            text-decoration: none;
+        }
+
+        .warning-box {
+            background: rgba(255, 0, 0, 0.2);
+            border-left: 4px solid #ff0000;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>FPS Unlocker Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">FPS Unlocker & Performance Guide</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">Unlock frame rates and optimize Saints Row 2 for
+                modern hardware</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is FPS Unlocker?</h3>
+                <p>Saints Row 2 PC was originally capped at 30 FPS. The FPS Unlocker removes this limitation, allowing
+                    the game to run at high frame rates on modern monitors. This tutorial covers the unlocker and
+                    additional performance tweaks for the best experience.</p>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Important Warning:</strong> High frame rates can affect game physics and mission triggers.
+                Always test thoroughly and consider capping at 60 FPS for stability.
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Download FPS Unlocker</h3>
+                <p>Get the latest version compatible with your game version:</p>
+                <div class="code-block">
+                    Download: gog_sr2_fps_unlocker.zip (for GOG version)<br>
+                    Source: saintsrowmods.com/forum/attachments/gog_sr2_fps_unlocker-zip.26084
+                </div>
+                <p>Note: Different versions exist for Steam, GOG, and retail versions.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Installation</h3>
+                <p>Install the FPS Unlocker:</p>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Extract the FPS unlocker files</li>
+                    <li>Copy the .dll and .exe files to your Saints Row 2 installation folder</li>
+                    <li>Launch the game through the unlocker's .exe (not the original)</li>
+                    <li>For Steam: Add the unlocker .exe as a non-Steam game or use launch options</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Configuration Options</h3>
+                <p>Edit the config file to customize FPS limits:</p>
+                <div class="code-block">
+                    # FPSUnlocker.ini settings<br>
+                    [Settings]<br>
+                    FPSLimit = 60 # Set your desired limit (0 = unlimited)<br>
+                    VSync = 1 # Enable/disable VSync<br>
+                    Borderless = 0 # Borderless window mode<br>
+                    ResolutionScale = 1.0 # Render scale (higher = better quality)<br>
+                    <br>
+                    # Recommended settings for different monitors:<br>
+                    # 60Hz monitor: FPSLimit = 60<br>
+                    # 144Hz monitor: FPSLimit = 144 or 120<br>
+                    # 240Hz monitor: FPSLimit = 240 or 120
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Display & Graphics Tweaks</h3>
+                <p>Additional display.cfg file modifications:</p>
+                <div class="code-block">
+                    # Located in Documents\My Games\Saints Row 2\display.cfg<br>
+                    <br>
+                    [Display]<br>
+                    FullscreenWidth = 1920<br>
+                    FullscreenHeight = 1080<br>
+                    WindowWidth = 1920<br>
+                    WindowHeight = 1080<br>
+                    <br>
+                    [Graphics]<br>
+                    ShadowQuality = 2 # 0-2 (higher = better shadows)<br>
+                    ReflectionQuality = 2 # 0-2<br>
+                    DrawDistance = 1000 # Increase for less pop-in<br>
+                    DetailDistance = 800 # Object detail distance<br>
+                    PostProcessing = 1 # Bloom, motion blur, etc.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: GPU Compatibility Fixes</h3>
+                <p>For modern graphics cards (RTX, RX series):</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>NVIDIA Users:</strong> Force V-Sync through NVIDIA Control Panel</li>
+                    <li><strong>AMD Users:</strong> Use Radeon Software to set frame rate target</li>
+                    <li><strong>Intel Graphics:</strong> May require additional .dll patches</li>
+                </ul>
+                <div class="note-box">
+                    <strong>💡 Tip:</strong> Disable in-game V-Sync and use GPU control panel for best results.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Audio Sync Fixes</h3>
+                <p>High frame rates can cause audio desync:</p>
+                <div class="code-block">
+                    # Force audio to use system clock instead of game clock<br>
+                    [Audio]<br>
+                    UseSystemClock = 1<br>
+                    AudioLatency = 128 # Adjust if audio stutters<br>
+                    <br>
+                    # Alternative: Use external audio driver (ASIO) for low latency
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 7: Memory and Stability</h3>
+                <p>Large Address Aware (LAA) patch for better memory usage:</p>
+                <div class="code-block">
+                    1. Download Large Address Aware tool<br>
+                    2. Run LAA and select SR2_pc.exe<br>
+                    3. Check "Large Address Aware" flag<br>
+                    4. Apply and close<br>
+                    5. This allows the game to use up to 4GB RAM (instead of 2GB)
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 8: Mod Compatibility</h3>
+                <p>Ensure your mods work with FPS unlocker:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Gentlemen of the Row:</strong> Fully compatible, includes performance tweaks</li>
+                    <li><strong>Custom Missions:</strong> May need script adjustments for frame-dependent triggers</li>
+                    <li><strong>Vehicle Mods:</strong> Physics may behave differently at high FPS</li>
+                    <li><strong>Texture Mods:</strong> No conflicts - works with all texture mods</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 9: Troubleshooting Common Issues</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Game crashes on launch:</strong> Run as administrator, disable overlays (Discord, Steam)
+                    </li>
+                    <li><strong>Stuttering:</strong> Cap FPS to refresh rate, enable triple buffering</li>
+                    <li><strong>Physics glitches:</strong> Reduce FPS cap to 60, use Gentlemen of the Row fixes</li>
+                    <li><strong>Mission triggers not working:</strong> Temporarily cap FPS for specific missions</li>
+                    <li><strong>Input lag:</strong> Disable V-Sync, use exclusive fullscreen mode</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 10: Benchmarking</h3>
+                <p>Test your performance:</p>
+                <div class="code-block">
+                    1. Use MSI Afterburner or FRAPS to monitor FPS<br>
+                    2. Test in different areas: driving fast, crowded areas, explosions<br>
+                    3. Record stable FPS minimums<br>
+                    4. Adjust settings until stable 60 FPS or higher<br>
+                    5. Save your optimized config file
+                </div>
+            </div>
+
+            <div class="note-box">
+                <strong>🎮 Recommended Settings:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Low-end PC:</strong> 30 FPS cap, lowered draw distance, disabled shadows</li>
+                    <li><strong>Mid-range PC:</strong> 60 FPS cap, medium shadows, standard draw distance</li>
+                    <li><strong>High-end PC:</strong> 120-144 FPS, max settings, increased draw distance</li>
+                    <li><strong>Ultra-wide monitors:</strong> Use Flawless Widescreen for proper FOV</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Additional Performance Mods</h3>
+                <p>→ <a href="gotr-guide.html" class="info-link">Gentlemen of the Row</a> includes stability fixes and
+                    performance improvements</p>
+                <p>→ <a href="thomasjepp-tools.html" class="info-link">ThomasJepp Tools</a> for reducing texture memory
+                    usage</p>
+                <p>→ Visit <a href="https://www.pcgamingwiki.com/wiki/Saints_Row_2" class="info-link">PCGamingWiki</a>
+                    for more tweaks</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XactExtract Tutorial - Saints Row 2 Modding</title>
+    <link rel="stylesheet" href="../saintrow.css">
+    <style>
+        .tutorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .tutorial-step {
+            background: rgba(66, 66, 66, 0.5);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .tutorial-step h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .note-box {
+            background: rgba(255, 100, 0, 0.2);
+            border-left: 4px solid #ff9900;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #00ccff;
+            text-decoration: none;
+        }
+
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .command-table th,
+        .command-table td {
+            border: 1px solid #ff00ff;
+            padding: 10px;
+        }
+
+        .command-table th {
+            background: rgba(255, 0, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="logo-text">🎮 MODDING TOOLS</a>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>/</span>
+                <a href="../saintrow.html">Saints Row</a><span>/</span>
+                <a href="../sr2.html">SR2 Tools</a><span>/</span>
+                <span>XactExtract Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../sr2.html" class="back-link">← Back to Tools Hub</a>
+
+        <div class="tutorial-container">
+            <h1 class="page-title" style="font-size: 2.2rem;">XactExtract</h1>
+            <p class="page-subtitle" style="margin-bottom: 40px;">Command-line XWB audio extraction tool for Saints Row
+                2</p>
+
+            <div class="info-section" style="margin-top: 0;">
+                <h3>What is XactExtract?</h3>
+                <p>XactExtract is a powerful command-line utility for extracting audio files from XWB (XACT Wave Bank)
+                    containers used in Saints Row 2. It's part of the Audio Tool Suite and provides flexible options for
+                    extracting individual tracks or entire banks.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 1: Download and Setup</h3>
+                <p>XactExtract is included in the Audio Tool Suite:</p>
+                <div class="code-block">
+                    Download: sr2soundtools-with-unxwb.zip<br>
+                    Extract to: C:\SR2_Modding\AudioTools\
+                </div>
+                <p>XactExtract.exe is a command-line tool - best used from Command Prompt or PowerShell.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 2: Basic Syntax</h3>
+                <div class="code-block">
+                    XactExtract.exe [XWB file] [options]
+                </div>
+                <table class="command-table">
+                    <tr>
+                        <th>Option</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>-o &lt;filename&gt;</td>
+                        <td>Output specific track to file</td>
+                    </tr>
+                    <tr>
+                        <td>-index &lt;n&gt;</td>
+                        <td>Extract specific track by index</td>
+                    </tr>
+                    <tr>
+                        <td>-all</td>
+                        <td>Extract all tracks</td>
+                    </tr>
+                    <tr>
+                        <td>-list</td>
+                        <td>List all tracks in the XWB</td>
+                    </tr>
+                    <tr>
+                        <td>-xsb &lt;file&gt;</td>
+                        <td>Use XSB file for track names</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 3: Listing Tracks</h3>
+                <p>See what's inside an XWB file:</p>
+                <div class="code-block">
+                    # Basic listing<br>
+                    XactExtract.exe radio.xwb -list
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 4: Extracting a Single Track</h3>
+                <p>Extract one specific audio track:</p>
+                <div class="code-block">
+                    # Extract track 5 to a WAV file<br>
+                    XactExtract.exe radio.xwb -index 5 -o "my_track.wav"
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 5: Extracting All Tracks</h3>
+                <p>Extract every track from an XWB bank:</p>
+                <div class="code-block">
+                    # Extract all tracks to current folder<br>
+                    XactExtract.exe radio.xwb -all
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 6: Using XSB Files</h3>
+                <p>Get proper track names from the XSB sound bank:</p>
+                <div class="code-block">
+                    # Extract with names from XSB<br>
+                    XactExtract.exe radio.xwb radio.xsb -all
+                </div>
+                <div class="note-box">
+                    <strong>💡 Tip:</strong> Always use XSB files when available for better organization.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Step 7: Batch Processing</h3>
+                <p>Extract multiple XWB files at once:</p>
+                <div class="code-block">
+                    # Batch script example (Windows batch file)<br>
+                    @echo off<br>
+                    for %%f in (*.xwb) do (<br>
+                    echo Processing %%f<br>
+                    XactExtract.exe "%%f" -all<br>
+                    )
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Troubleshooting</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>"File not found" error:</strong> Check file path, use full path if needed</li>
+                    <li><strong>Corrupted WAV output:</strong> Try different extraction method</li>
+                    <li><strong>Missing tracks:</strong> Check if XSB file is needed for proper indexing</li>
+                    <li><strong>Tool crashes:</strong> Run as administrator, check file permissions</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>Next Steps</h3>
+                <p>→ <a href="unwav.html" class="info-link">UnWAV</a> for repacking audio files</p>
+                <p>→ <a href="sr2soundtools.html" class="info-link">Audio Tool Suite</a> for complete audio modding</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Game Modding Tools Hub | Saints Row 2 Modding Community</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 280) navbar.classList.add('navbar-hidden');
+            else navbar.classList.remove('navbar-hidden');
+        });
+    </script>
+</body>
+
+</html>
